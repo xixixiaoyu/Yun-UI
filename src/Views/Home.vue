@@ -36,36 +36,40 @@ export default {
         {
           iconName: 'vue',
           title: 'Vue3',
-          description: '使用了最新的 Vue3.2 setup 语法',
+          description: '使用了最新的 Vue3.2 setup 语法'
         },
         {
           iconName: 'vite',
           title: 'Vite3',
-          description: '官网基于 Vite3.x 构建',
+          description: '官网基于 Vite3.x 构建'
         },
         {
           iconName: 'ts',
           title: 'TypeScript',
-          description: '源代码采用了 TypeScript 编写',
+          description: '源代码采用了 TypeScript 编写'
         },
 
         {
           iconName: 'gj',
           title: '文档完整',
-          description: '所有组件拥有完整的使用文档及示例',
-        },
-      ],
+          description: '所有组件拥有完整的使用文档及示例'
+        }
+      ]
     }
-  },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-$green: #02bcb0;
-$border-radius: 4px;
-$color: #039994;
+$green: var(--yun-primary-color);
+$border-radius: var(--yun-border-radius);
+$color: var(--yun-primary-color-dark);
 .topNav-wrapper {
-  background: linear-gradient(145deg, rgb(168, 228, 251), rgb(194, 224, 236));
+  background: linear-gradient(
+    145deg,
+    var(--yun-primary-color-light),
+    var(--yun-primary-color-light2)
+  );
   clip-path: ellipse(80% 60% at 50% 40%);
   .topNav {
     background: transparent;
@@ -73,14 +77,19 @@ $color: #039994;
     box-shadow: none;
   }
   a {
-    margin: 0 8px;
-    background: $green;
-    color: var(--yun-text-color-0-invert);
+    margin: 0 12px;
+    background: var(--yun-primary-color);
+    color: var(--yun-white-text-color);
     display: inline-block;
-    padding: 8px 24px;
+    padding: 12px 24px;
     border-radius: $border-radius;
+    font-weight: 500;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     &:hover {
       text-decoration: none;
+      background: var(--yun-primary-color-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--yun-box-shadow);
     }
   }
 }

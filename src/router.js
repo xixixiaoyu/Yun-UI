@@ -46,13 +46,14 @@ import NotificationDemo from './components/NotificationDemo/index.vue'
 import ModalDemo from './components/ModalDemo/index.vue'
 import LoadingDemo from './components/LoadingDemo/index.vue'
 import CommentDemo from './components/CommentDemo/index.vue'
+import DesignSystemDemo from './components/DesignSystemDemo.vue'
 
 import { h } from 'vue'
 import Markdown from './components/Markdown.vue'
 import intro from './markdown/intro.md'
 import getStarted from './markdown/get-started.md'
 import install from './markdown/install.md'
-const md = (string) => h(Markdown, { content: string, key: string })
+const md = string => h(Markdown, { content: string, key: string })
 
 const history = createWebHashHistory()
 export const router = createRouter({
@@ -67,6 +68,7 @@ export const router = createRouter({
         { path: 'intro', component: md(intro) },
         { path: 'get-started', component: md(getStarted) },
         { path: 'install', component: md(install) },
+        { path: 'design-system', component: DesignSystemDemo },
         { path: 'switch', component: SwitchDemo },
         { path: 'button', component: ButtonDemo },
         { path: 'dialog', component: DialogDemo },
@@ -111,10 +113,10 @@ export const router = createRouter({
         { path: 'notification', component: NotificationDemo },
         { path: 'modal', component: ModalDemo },
         { path: 'loading', component: LoadingDemo },
-        { path: 'comment', component: CommentDemo },
-      ],
-    },
-  ],
+        { path: 'comment', component: CommentDemo }
+      ]
+    }
+  ]
 })
 router.afterEach(() => {
   // console.log("路由切换了");

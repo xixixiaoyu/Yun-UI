@@ -21,20 +21,20 @@ useDOMCreate('yun-modal')
 defineProps({
   title: {
     type: String,
-    default: '',
+    default: ''
   },
   width: {
     type: String,
-    default: '',
+    default: ''
   },
   height: {
     type: String,
-    default: '',
+    default: ''
   },
   visible: {
     type: Boolean,
-    default: false,
-  },
+    default: false
+  }
 })
 const emit = defineEmits(['maskClick', 'confirm'])
 const maskClick = () => {
@@ -44,7 +44,7 @@ const maskClick = () => {
 
 <script lang="ts">
 export default {
-  name: 'Modal',
+  name: 'Modal'
 }
 </script>
 
@@ -65,7 +65,10 @@ export default {
   .yun-modal-box {
     border-radius: var(--yun-border-radius);
     background-color: var(--yun-bgcolor-0);
-    box-shadow: 0px 15px 50px rgba($color: #000000, $alpha: 0.05);
+    box-shadow:
+      0px 8px 32px rgba(121, 180, 166, 0.15),
+      0px 16px 64px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--yun-border-1);
   }
 }
 .yun-modal-enter-active,

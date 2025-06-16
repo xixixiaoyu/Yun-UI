@@ -5,149 +5,163 @@
   --yun-black-color: #000;
   --yun-black-text-color: rgba(0, 0, 0, 0.9);
   --yun-disabled-opacity: 0.5;
-  // 背景
+
+  // 背景色系 - 优雅的中性色调
   --yun-bgcolor-0: rgb(255, 255, 255);
-  --yun-bgcolor-1: rgb(250, 250, 250);
-  --yun-bgcolor-2: rgb(245, 245, 245);
-  --yun-bgcolor-3: rgb(235, 235, 235);
-  --yun-bgcolor-4: rgb(225, 225, 225);
-  --yun-bgcolor-5: rgb(215, 215, 215);
-  --yun-bgcolor-6: rgb(205, 205, 205);
-  --yun-bgcolor-7: rgb(195, 195, 195);
-  --yun-bgcolor-8: rgb(185, 185, 185);
-  --yun-bgcolor-9: rgb(175, 175, 175);
-  // 背景反相
-  --yun-bgcolor-0-invert: rgb(20, 20, 20);
-  --yun-bgcolor-1-invert: rgb(30, 30, 30);
-  --yun-bgcolor-2-invert: rgb(40, 40, 40);
-  --yun-bgcolor-3-invert: rgb(50, 50, 50);
-  --yun-bgcolor-4-invert: rgb(60, 60, 60);
-  --yun-bgcolor-5-invert: rgb(70, 70, 70);
-  --yun-bgcolor-6-invert: rgb(80, 80, 80);
-  --yun-bgcolor-7-invert: rgb(90, 90, 90);
-  --yun-bgcolor-8-invert: rgb(110, 110, 110);
-  --yun-bgcolor-9-invert: rgb(120, 120, 120);
-  --active-theme-color: #41acb8;
-  // 字体颜色
-  --yun-text-color-0: rgb(20, 20, 20);
-  --yun-text-color-1: rgb(30, 30, 30);
-  --yun-text-color-2: rgb(50, 50, 50);
-  --yun-text-color-3: rgb(70, 70, 70);
-  --yun-text-color-4: rgb(90, 90, 90);
-  --yun-text-color-5: rgb(110, 110, 110);
-  --yun-text-color-6: rgb(130, 130, 130);
-  --yun-text-color-7: rgb(150, 150, 150);
-  --yun-text-color-8: rgb(170, 170, 170);
-  --yun-text-color-9: rgb(190, 190, 190);
-  // 字体颜色反相
-  --yun-text-color-0-invert: rgb(255, 255, 255);
-  --yun-text-color-1-invert: rgb(235, 235, 235);
-  --yun-text-color-2-invert: rgb(215, 215, 215);
-  --yun-text-color-3-invert: rgb(195, 195, 195);
-  --yun-text-color-4-invert: rgb(175, 175, 175);
-  --yun-text-color-5-invert: rgb(155, 155, 155);
-  --yun-text-color-6-invert: rgb(135, 135, 135);
-  --yun-text-color-7-invert: rgb(115, 115, 115);
-  --yun-text-color-8-invert: rgb(95, 95, 95);
-  --yun-text-color-9-invert: rgb(75, 75, 75);
-  // 阴影
-  --yun-box-shadow: 0px 1px 2px rgba(61, 109, 178, 0.15), 0px 4px 16px rgba(61, 109, 179, 0.2);
-  // 圆角
-  --yun-border-radius: 6px;
-  // 边框
-  --yun-border-0: 1px solid rgb(245, 245, 245);
-  --yun-border-1: 1px solid rgb(235, 235, 235);
-  --yun-border-2: 1px solid rgb(225, 225, 225);
-  --yun-border-3: 1px solid rgb(215, 215, 215);
-  --yun-border-4: 1px solid rgb(205, 205, 205);
-  --yun-border-5: 1px solid rgb(195, 195, 195);
-  --yun-border-6: 1px solid rgb(185, 185, 185);
-  --yun-border-7: 1px solid rgb(175, 175, 175);
-  --yun-border-8: 1px solid rgb(165, 165, 165);
-  --yun-border-9: 1px solid rgb(155, 155, 155);
-  --yun-mask-bgColor: rgba(0, 0, 0, 0.5);
+  --yun-bgcolor-1: rgb(252, 253, 253);
+  --yun-bgcolor-2: rgb(248, 250, 250);
+  --yun-bgcolor-3: rgb(241, 245, 245);
+  --yun-bgcolor-4: rgb(234, 240, 240);
+  --yun-bgcolor-5: rgb(227, 235, 235);
+  --yun-bgcolor-6: rgb(220, 230, 230);
+  --yun-bgcolor-7: rgb(213, 225, 225);
+  --yun-bgcolor-8: rgb(206, 220, 220);
+  --yun-bgcolor-9: rgb(199, 215, 215);
+
+  // 背景反相 - 深色主题
+  --yun-bgcolor-0-invert: rgb(18, 22, 22);
+  --yun-bgcolor-1-invert: rgb(25, 30, 30);
+  --yun-bgcolor-2-invert: rgb(32, 38, 38);
+  --yun-bgcolor-3-invert: rgb(39, 46, 46);
+  --yun-bgcolor-4-invert: rgb(46, 54, 54);
+  --yun-bgcolor-5-invert: rgb(53, 62, 62);
+  --yun-bgcolor-6-invert: rgb(60, 70, 70);
+  --yun-bgcolor-7-invert: rgb(67, 78, 78);
+  --yun-bgcolor-8-invert: rgb(74, 86, 86);
+  --yun-bgcolor-9-invert: rgb(81, 94, 94);
+
+  // 主题色 - 基于 #79b4a6 的优雅青绿色系
+  --active-theme-color: #79b4a6;
+  // 字体颜色 - 优雅的文字色彩层次
+  --yun-text-color-0: rgb(25, 35, 35);
+  --yun-text-color-1: rgb(35, 45, 45);
+  --yun-text-color-2: rgb(55, 65, 65);
+  --yun-text-color-3: rgb(75, 85, 85);
+  --yun-text-color-4: rgb(95, 105, 105);
+  --yun-text-color-5: rgb(115, 125, 125);
+  --yun-text-color-6: rgb(135, 145, 145);
+  --yun-text-color-7: rgb(155, 165, 165);
+  --yun-text-color-8: rgb(175, 185, 185);
+  --yun-text-color-9: rgb(195, 205, 205);
+
+  // 字体颜色反相 - 深色主题文字
+  --yun-text-color-0-invert: rgb(245, 248, 248);
+  --yun-text-color-1-invert: rgb(235, 240, 240);
+  --yun-text-color-2-invert: rgb(220, 228, 228);
+  --yun-text-color-3-invert: rgb(205, 216, 216);
+  --yun-text-color-4-invert: rgb(190, 204, 204);
+  --yun-text-color-5-invert: rgb(175, 192, 192);
+  --yun-text-color-6-invert: rgb(160, 180, 180);
+  --yun-text-color-7-invert: rgb(145, 168, 168);
+  --yun-text-color-8-invert: rgb(130, 156, 156);
+  --yun-text-color-9-invert: rgb(115, 144, 144);
+
+  // 阴影 - 基于主题色的柔和阴影
+  --yun-box-shadow: 0px 2px 8px rgba(121, 180, 166, 0.12), 0px 4px 20px rgba(121, 180, 166, 0.08);
+
+  // 圆角 - 现代化的圆角设计
+  --yun-border-radius: 8px;
+  // 边框 - 与背景色协调的边框色彩
+  --yun-border-0: 1px solid rgb(248, 250, 250);
+  --yun-border-1: 1px solid rgb(241, 245, 245);
+  --yun-border-2: 1px solid rgb(234, 240, 240);
+  --yun-border-3: 1px solid rgb(227, 235, 235);
+  --yun-border-4: 1px solid rgb(220, 230, 230);
+  --yun-border-5: 1px solid rgb(213, 225, 225);
+  --yun-border-6: 1px solid rgb(206, 220, 220);
+  --yun-border-7: 1px solid rgb(199, 215, 215);
+  --yun-border-8: 1px solid rgb(192, 210, 210);
+  --yun-border-9: 1px solid rgb(185, 205, 205);
+  --yun-mask-bgColor: rgba(25, 35, 35, 0.6);
   --yun-mask-zIndex: 99999;
-  // 主题色
-  --yun-primary-color: rgb(59, 121, 208);
-  --yun-primary-color-dark: rgb(38, 84, 148);
-  --yun-primary-color-light: rgb(217, 233, 255);
-  --yun-primary-color-light2: rgb(190, 211, 239);
-  --yun-primary-text-color: rgb(47, 88, 146);
-  --yun-primary-color-hover: rgb(54, 109, 187);
-  --yun-primary-color-active: rgb(42, 94, 149);
-  //
-  --yun-normal-color: rgb(240, 240, 240);
-  --yun-normal-color-dark: rgb(177, 176, 176);
-  --yun-normal-color-light: rgb(234, 234, 234);
-  --yun-normal-color-light2: rgb(216, 214, 214);
-  --yun-normal-text-color: rgb(66, 66, 66);
-  --yun-normal-color-hover: rgb(235, 235, 235);
-  --yun-normal-color-active: rgb(217, 217, 217);
-  // success
-  --yun-success-color: rgb(49, 196, 141);
-  --yun-success-color-dark: rgb(35, 153, 110);
-  --yun-success-color-light: rgb(229, 246, 235);
-  --yun-success-color-light2: rgb(199, 230, 204);
-  --yun-success-text-color: rgb(32, 161, 113);
-  --yun-success-color-hover: rgb(40, 176, 126);
-  --yun-success-color-active: rgb(28, 157, 110);
-  // info
-  --yun-info-color: rgb(59, 121, 208);
-  --yun-info-color-dark: rgb(33, 83, 153);
-  --yun-info-color-light: rgb(217, 233, 255);
-  --yun-info-color-light2: rgb(190, 211, 239);
-  --yun-info-text-color: rgb(47, 88, 146);
-  --yun-info-color-hover: rgb(54, 109, 187);
-  --yun-info-color-active: rgb(42, 94, 149);
-  // warning
-  --yun-warning-color: rgb(227, 179, 68);
-  --yun-warning-color-dark: rgb(186, 132, 7);
-  --yun-warning-color-light: rgb(255, 240, 209);
-  --yun-warning-color-light2: rgb(236, 218, 177);
-  --yun-warning-text-color: rgb(187, 128, 9);
-  --yun-warning-color-hover: rgb(222, 161, 17);
-  --yun-warning-color-active: rgb(187, 133, 7);
-  // error
-  --yun-error-color: rgb(249, 128, 128);
-  --yun-error-color-dark: rgb(197, 88, 88);
-  --yun-error-color-light: rgb(255, 234, 234);
-  --yun-error-color-light2: rgb(236, 208, 208);
-  --yun-error-text-color: #d10000;
-  --yun-error-color-hover: rgb(231, 113, 113);
-  --yun-error-color-active: rgb(204, 92, 92);
+
+  // 主题色系 - 基于 #79b4a6 的完整色彩体系
+  --yun-primary-color: #79b4a6;
+  --yun-primary-color-dark: #5a8a7a;
+  --yun-primary-color-light: #e8f2ef;
+  --yun-primary-color-light2: #d1e5de;
+  --yun-primary-text-color: #5a8a7a;
+  --yun-primary-color-hover: #8bc2b3;
+  --yun-primary-color-active: #6aa394;
+  // 中性色系 - 优雅的灰色调
+  --yun-normal-color: rgb(248, 250, 250);
+  --yun-normal-color-dark: rgb(199, 215, 215);
+  --yun-normal-color-light: rgb(252, 253, 253);
+  --yun-normal-color-light2: rgb(241, 245, 245);
+  --yun-normal-text-color: rgb(75, 85, 85);
+  --yun-normal-color-hover: rgb(241, 245, 245);
+  --yun-normal-color-active: rgb(234, 240, 240);
+
+  // 成功色系 - 与主题色协调的绿色
+  --yun-success-color: #52c41a;
+  --yun-success-color-dark: #389e0d;
+  --yun-success-color-light: #f6ffed;
+  --yun-success-color-light2: #d9f7be;
+  --yun-success-text-color: #389e0d;
+  --yun-success-color-hover: #73d13d;
+  --yun-success-color-active: #389e0d;
+
+  // 信息色系 - 柔和的蓝色调
+  --yun-info-color: #1890ff;
+  --yun-info-color-dark: #096dd9;
+  --yun-info-color-light: #e6f7ff;
+  --yun-info-color-light2: #bae7ff;
+  --yun-info-text-color: #096dd9;
+  --yun-info-color-hover: #40a9ff;
+  --yun-info-color-active: #096dd9;
+  // 警告色系 - 温暖的橙黄色调
+  --yun-warning-color: #faad14;
+  --yun-warning-color-dark: #d48806;
+  --yun-warning-color-light: #fffbe6;
+  --yun-warning-color-light2: #fff1b8;
+  --yun-warning-text-color: #d48806;
+  --yun-warning-color-hover: #ffc53d;
+  --yun-warning-color-active: #d48806;
+
+  // 错误色系 - 柔和的红色调
+  --yun-error-color: #ff4d4f;
+  --yun-error-color-dark: #cf1322;
+  --yun-error-color-light: #fff2f0;
+  --yun-error-color-light2: #ffccc7;
+  --yun-error-text-color: #cf1322;
+  --yun-error-color-hover: #ff7875;
+  --yun-error-color-active: #cf1322;
   // 标题
-  --yun-title-bold: 800;
-  // 表单样式
-  --yun-form-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
-  --yun-form-border-radius: 4px;
-  --yun-form-border-width: 1.5px;
-  --yun-form-transition: all 0.2s ease;
-  --yun-form-border-color: rgb(245, 245, 245);
-  --yun-form-border-color-hover: rgb(228, 228, 228);
-  --yun-form-border-color-active: rgba(0, 0, 0, 0.22);
+  --yun-title-bold: 600;
+
+  // 表单样式 - 现代化的表单设计
+  --yun-form-box-shadow: 0px 2px 8px rgba(121, 180, 166, 0.08);
+  --yun-form-border-radius: 6px;
+  --yun-form-border-width: 1px;
+  --yun-form-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --yun-form-border-color: rgb(227, 235, 235);
+  --yun-form-border-color-hover: rgb(213, 225, 225);
+  --yun-form-border-color-active: rgba(121, 180, 166, 0.3);
   --yun-form-border-color-focus: var(--yun-primary-color);
-  // 表单尺寸
-  --yun-form-input-padding-small: 2px 8px;
-  --yun-form-input-padding-medium: 4px 10px;
-  --yun-form-input-padding-large: 6px 12px;
-  --yun-form-input-height-small: 26px;
-  --yun-form-input-height-medium: 32px;
-  --yun-form-input-height-large: 36px;
-  --yun-form-input-line-height-small: 24px;
+  // 表单尺寸 - 优化的尺寸规范
+  --yun-form-input-padding-small: 4px 12px;
+  --yun-form-input-padding-medium: 6px 16px;
+  --yun-form-input-padding-large: 8px 20px;
+  --yun-form-input-height-small: 28px;
+  --yun-form-input-height-medium: 36px;
+  --yun-form-input-height-large: 44px;
+  --yun-form-input-line-height-small: 20px;
   --yun-form-input-line-height-medium: 24px;
   --yun-form-input-line-height-large: 28px;
-  --yun-form-font-size-small: 14px;
+  --yun-form-font-size-small: 13px;
   --yun-form-font-size-medium: 14px;
   --yun-form-font-size-large: 16px;
-  // 表单背景
-  --yun-form-bgcolor: rgb(245, 245, 245);
-  --yun-form-bgcolor-hover: rgb(228, 228, 228);
-  --yun-form-bgcolor-active: rgb(215, 215, 215);
+
+  // 表单背景 - 清爽的背景色彩
+  --yun-form-bgcolor: rgb(252, 253, 253);
+  --yun-form-bgcolor-hover: rgb(248, 250, 250);
+  --yun-form-bgcolor-active: rgb(241, 245, 245);
   --yun-form-bgcolor-focus: rgb(255, 255, 255);
-  // 表单背景2
-  --yun-form-bgcolor-high: rgba(6, 57, 88, 0.1);
-  --yun-form-bgcolor-high-hover: rgba(6, 57, 88, 0.16);
-  --yun-form-bgcolor-high-active: rgba(6, 57, 88, 0.2);
+
+  // 表单高亮背景
+  --yun-form-bgcolor-high: rgba(121, 180, 166, 0.06);
+  --yun-form-bgcolor-high-hover: rgba(121, 180, 166, 0.1);
+  --yun-form-bgcolor-high-active: rgba(121, 180, 166, 0.15);
   // dialog / modal
   --yun-modal-bgcolor: rgb(0, 0, 0, 0.5);
   // loading
@@ -163,137 +177,152 @@
 }
 
 .yun-dark {
-  // 全局
-  // 背景
-  --yun-bgcolor-0: rgb(20, 20, 20);
-  --yun-bgcolor-1: rgb(30, 30, 30);
-  --yun-bgcolor-2: rgb(40, 40, 40);
-  --yun-bgcolor-3: rgb(50, 50, 50);
-  --yun-bgcolor-4: rgb(60, 60, 60);
-  --yun-bgcolor-5: rgb(70, 70, 70);
-  --yun-bgcolor-6: rgb(80, 80, 80);
-  --yun-bgcolor-7: rgb(90, 90, 90);
-  --yun-bgcolor-8: rgb(100, 100, 100);
-  --yun-bgcolor-9: rgb(110, 110, 110);
-  // 背景反相
+  // 深色主题 - 优雅的深色背景
+  --yun-bgcolor-0: rgb(18, 22, 22);
+  --yun-bgcolor-1: rgb(25, 30, 30);
+  --yun-bgcolor-2: rgb(32, 38, 38);
+  --yun-bgcolor-3: rgb(39, 46, 46);
+  --yun-bgcolor-4: rgb(46, 54, 54);
+  --yun-bgcolor-5: rgb(53, 62, 62);
+  --yun-bgcolor-6: rgb(60, 70, 70);
+  --yun-bgcolor-7: rgb(67, 78, 78);
+  --yun-bgcolor-8: rgb(74, 86, 86);
+  --yun-bgcolor-9: rgb(81, 94, 94);
+
+  // 深色主题背景反相
   --yun-bgcolor-0-invert: rgb(255, 255, 255);
-  --yun-bgcolor-1-invert: rgb(245, 245, 245);
-  --yun-bgcolor-2-invert: rgb(235, 235, 235);
-  --yun-bgcolor-3-invert: rgb(225, 225, 225);
-  --yun-bgcolor-4-invert: rgb(215, 215, 215);
-  --yun-bgcolor-5-invert: rgb(205, 205, 205);
-  --yun-bgcolor-6-invert: rgb(195, 195, 195);
-  --yun-bgcolor-7-invert: rgb(185, 185, 185);
-  --yun-bgcolor-8-invert: rgb(175, 175, 175);
-  --yun-bgcolor-9-invert: rgb(165, 165, 165);
-  // 反相
-  --yun-text-color-0: rgb(255, 255, 255);
-  --yun-text-color-1: rgb(235, 235, 235);
-  --yun-text-color-2: rgb(215, 215, 215);
-  --yun-text-color-3: rgb(195, 195, 195);
-  --yun-text-color-4: rgb(175, 175, 175);
-  --yun-text-color-5: rgb(155, 155, 155);
-  --yun-text-color-6: rgb(135, 135, 135);
-  --yun-text-color-7: rgb(115, 115, 115);
-  --yun-text-color-8: rgb(95, 95, 95);
-  --yun-text-color-9: rgb(75, 75, 75);
-  // 字体颜色
-  --yun-text-color-0-invert: rgb(20, 20, 20);
-  --yun-text-color-1-invert: rgb(30, 30, 30);
-  --yun-text-color-2-invert: rgb(50, 50, 50);
-  --yun-text-color-3-invert: rgb(70, 70, 70);
-  --yun-text-color-4-invert: rgb(90, 90, 90);
-  --yun-text-color-5-invert: rgb(110, 110, 110);
-  --yun-text-color-6-invert: rgb(130, 130, 130);
-  --yun-text-color-7-invert: rgb(150, 150, 150);
-  --yun-text-color-8-invert: rgb(170, 170, 170);
-  --yun-text-color-9-invert: rgb(190, 190, 190);
-  // 边界
-  --yun-border-0: 1px solid rgb(30, 30, 30);
-  --yun-border-1: 1px solid rgb(40, 40, 40);
-  --yun-border-2: 1px solid rgb(50, 50, 50);
-  --yun-border-3: 1px solid rgb(60, 60, 60);
-  --yun-border-4: 1px solid rgb(70, 70, 70);
-  --yun-border-5: 1px solid rgb(80, 80, 80);
-  --yun-border-6: 1px solid rgb(90, 90, 90);
-  --yun-border-7: 1px solid rgb(100, 100, 100);
-  --yun-border-8: 1px solid rgb(110, 110, 110);
-  --yun-border-9: 1px solid rgb(120, 120, 120);
-  // 阴影
-  --yun-box-shadow: 0px 3px 15px rgba(243, 243, 243, 0.08);
-  // 圆角
-  --yun-border-radius: 6px;
-  // 主题色
-  --yun-primary-color: rgb(50, 86, 136);
-  --yun-primary-color-dark: rgb(75, 126, 198);
-  --yun-primary-color-light: #273141;
-  --yun-primary-color-light2: #374c6c;
-  --yun-primary-color-hover: rgb(52, 91, 146);
-  --yun-primary-color-active: rgb(26, 58, 92);
-  // success
-  --yun-success-color: rgb(32, 125, 91);
-  --yun-success-color-dark: rgb(35, 153, 110);
-  --yun-success-color-light: #2a3d2e;
-  --yun-success-color-light2: #3d5d42;
-  --yun-success-color-hover: rgb(34, 134, 97);
-  --yun-success-color-active: rgb(27, 109, 79);
-  // info
-  --yun-info-color: rgb(50, 86, 136);
-  --yun-info-color-dark: rgb(75, 126, 198);
-  --yun-info-color-light: #273141;
-  --yun-info-color-light2: #374c6c;
-  --yun-info-text-color: rgba(173, 207, 255, 0.8);
-  --yun-info-color-hover: rgb(52, 91, 146);
-  --yun-info-color-active: rgb(26, 58, 92);
-  // error
-  --yun-error-color: rgb(161, 74, 74);
-  --yun-error-color-dark: rgb(197, 88, 88);
-  --yun-error-color-light: #432e2e;
-  --yun-error-color-light2: #614140;
-  --yun-error-text-color: rgb(255, 127, 127, 0.8);
-  --yun-error-color-hover: rgb(175, 80, 80);
-  --yun-error-color-active: rgb(123, 55, 55);
-  // warning
-  --yun-warning-color: rgb(149, 124, 64);
-  --yun-warning-color-dark: rgb(186, 132, 7);
-  --yun-warning-color-light: #372b15;
-  --yun-warning-color-light2: #543c15;
-  --yun-warning-text-color: rgb(255, 224, 100, 0.8);
-  --yun-warning-color-hover: rgb(159, 132, 69);
-  --yun-warning-color-active: rgb(126, 104, 53);
-  // normal
-  --yun-normal-color: rgb(84, 81, 81);
-  --yun-normal-color-dark: rgb(103, 101, 101);
-  --yun-normal-color-light: #2f2f2f;
-  --yun-normal-color-light2: #464646;
-  --yun-normal-text-color: rgb(212, 212, 212, 0.8);
-  --yun-normal-color-hover: rgb(88, 88, 88);
-  --yun-normal-color-active: rgb(75, 75, 75);
-  // 表单样式
-  --yun-form-border-width: 1.5px;
-  --yun-form-border-color: rgb(35, 35, 35);
-  --yun-form-border-color-hover: rgb(40, 40, 40);
-  --yun-form-border-color-active: rgba(96, 96, 96, 0.8);
+  --yun-bgcolor-1-invert: rgb(252, 253, 253);
+  --yun-bgcolor-2-invert: rgb(248, 250, 250);
+  --yun-bgcolor-3-invert: rgb(241, 245, 245);
+  --yun-bgcolor-4-invert: rgb(234, 240, 240);
+  --yun-bgcolor-5-invert: rgb(227, 235, 235);
+  --yun-bgcolor-6-invert: rgb(220, 230, 230);
+  --yun-bgcolor-7-invert: rgb(213, 225, 225);
+  --yun-bgcolor-8-invert: rgb(206, 220, 220);
+  --yun-bgcolor-9-invert: rgb(199, 215, 215);
+  // 深色主题文字颜色
+  --yun-text-color-0: rgb(245, 248, 248);
+  --yun-text-color-1: rgb(235, 240, 240);
+  --yun-text-color-2: rgb(220, 228, 228);
+  --yun-text-color-3: rgb(205, 216, 216);
+  --yun-text-color-4: rgb(190, 204, 204);
+  --yun-text-color-5: rgb(175, 192, 192);
+  --yun-text-color-6: rgb(160, 180, 180);
+  --yun-text-color-7: rgb(145, 168, 168);
+  --yun-text-color-8: rgb(130, 156, 156);
+  --yun-text-color-9: rgb(115, 144, 144);
+
+  // 深色主题文字颜色反相
+  --yun-text-color-0-invert: rgb(25, 35, 35);
+  --yun-text-color-1-invert: rgb(35, 45, 45);
+  --yun-text-color-2-invert: rgb(55, 65, 65);
+  --yun-text-color-3-invert: rgb(75, 85, 85);
+  --yun-text-color-4-invert: rgb(95, 105, 105);
+  --yun-text-color-5-invert: rgb(115, 125, 125);
+  --yun-text-color-6-invert: rgb(135, 145, 145);
+  --yun-text-color-7-invert: rgb(155, 165, 165);
+  --yun-text-color-8-invert: rgb(175, 185, 185);
+  --yun-text-color-9-invert: rgb(195, 205, 205);
+  // 深色主题边框
+  --yun-border-0: 1px solid rgb(32, 38, 38);
+  --yun-border-1: 1px solid rgb(39, 46, 46);
+  --yun-border-2: 1px solid rgb(46, 54, 54);
+  --yun-border-3: 1px solid rgb(53, 62, 62);
+  --yun-border-4: 1px solid rgb(60, 70, 70);
+  --yun-border-5: 1px solid rgb(67, 78, 78);
+  --yun-border-6: 1px solid rgb(74, 86, 86);
+  --yun-border-7: 1px solid rgb(81, 94, 94);
+  --yun-border-8: 1px solid rgb(88, 102, 102);
+  --yun-border-9: 1px solid rgb(95, 110, 110);
+
+  // 深色主题阴影
+  --yun-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.3), 0px 2px 8px rgba(121, 180, 166, 0.1);
+
+  // 深色主题圆角
+  --yun-border-radius: 8px;
+
+  // 深色主题主色调 - 稍微调亮的青绿色
+  --yun-primary-color: #8bc2b3;
+  --yun-primary-color-dark: #6aa394;
+  --yun-primary-color-light: #2a3d36;
+  --yun-primary-color-light2: #3d5a4a;
+  --yun-primary-color-hover: #9dccc0;
+  --yun-primary-color-active: #79b4a6;
+  // 深色主题成功色
+  --yun-success-color: #73d13d;
+  --yun-success-color-dark: #52c41a;
+  --yun-success-color-light: #1f2f1f;
+  --yun-success-color-light2: #2f4a2f;
+  --yun-success-color-hover: #95de64;
+  --yun-success-color-active: #52c41a;
+
+  // 深色主题信息色
+  --yun-info-color: #40a9ff;
+  --yun-info-color-dark: #1890ff;
+  --yun-info-color-light: #1a2332;
+  --yun-info-color-light2: #2a3a4f;
+  --yun-info-text-color: rgba(173, 207, 255, 0.9);
+  --yun-info-color-hover: #69c0ff;
+  --yun-info-color-active: #1890ff;
+
+  // 深色主题错误色
+  --yun-error-color: #ff7875;
+  --yun-error-color-dark: #ff4d4f;
+  --yun-error-color-light: #331f1f;
+  --yun-error-color-light2: #4f2f2f;
+  --yun-error-text-color: rgba(255, 163, 158, 0.9);
+  --yun-error-color-hover: #ffa39e;
+  --yun-error-color-active: #ff4d4f;
+
+  // 深色主题警告色
+  --yun-warning-color: #ffc53d;
+  --yun-warning-color-dark: #faad14;
+  --yun-warning-color-light: #332a1a;
+  --yun-warning-color-light2: #4f3f2a;
+  --yun-warning-text-color: rgba(255, 229, 143, 0.9);
+  --yun-warning-color-hover: #ffd666;
+  --yun-warning-color-active: #faad14;
+  // 深色主题中性色
+  --yun-normal-color: rgb(67, 78, 78);
+  --yun-normal-color-dark: rgb(88, 102, 102);
+  --yun-normal-color-light: rgb(32, 38, 38);
+  --yun-normal-color-light2: rgb(46, 54, 54);
+  --yun-normal-text-color: rgba(220, 228, 228, 0.9);
+  --yun-normal-color-hover: rgb(74, 86, 86);
+  --yun-normal-color-active: rgb(60, 70, 70);
+
+  // 深色主题表单样式
+  --yun-form-border-width: 1px;
+  --yun-form-border-color: rgb(53, 62, 62);
+  --yun-form-border-color-hover: rgb(67, 78, 78);
+  --yun-form-border-color-active: rgba(139, 194, 179, 0.4);
   --yun-form-border-color-focus: var(--yun-primary-color);
-  // 表单背景
-  --yun-form-bgcolor: rgb(35, 35, 35);
-  --yun-form-bgcolor-hover: rgb(40, 40, 40);
-  --yun-form-bgcolor-active: rgb(32, 32, 32);
-  --yun-form-bgcolor-focus: rgb(45, 45, 45);
-  // 表单背景2
-  --yun-form-bgcolor-high: rgba(71, 71, 71, 0.5);
-  --yun-form-bgcolor-high-hover: rgba(71, 71, 71, 0.801);
-  --yun-form-bgcolor-high-active: rgba(71, 71, 71, 1);
-  // dialog / modal
-  --yun-modal-bgcolor: rgba(175, 175, 175, 0.05);
-  // loading
-  --yun-loading-bgcolor: rgba(0, 0, 0, 0.5);
-  // povpoer
-  --yun-povpoer-bgcolor: #333;
-  // plyr
+
+  // 深色主题表单背景
+  --yun-form-bgcolor: rgb(32, 38, 38);
+  --yun-form-bgcolor-hover: rgb(39, 46, 46);
+  --yun-form-bgcolor-active: rgb(25, 30, 30);
+  --yun-form-bgcolor-focus: rgb(46, 54, 54);
+
+  // 深色主题表单高亮背景
+  --yun-form-bgcolor-high: rgba(139, 194, 179, 0.08);
+  --yun-form-bgcolor-high-hover: rgba(139, 194, 179, 0.12);
+  --yun-form-bgcolor-high-active: rgba(139, 194, 179, 0.16);
+  // 深色主题对话框/模态框
+  --yun-modal-bgcolor: rgba(18, 22, 22, 0.8);
+
+  // 深色主题加载
+  --yun-loading-bgcolor: rgba(18, 22, 22, 0.6);
+
+  // 深色主题弹出框
+  --yun-povpoer-bgcolor: rgb(39, 46, 46);
+
+  // 深色主题播放器
   --plyr-color-main: var(--yun-primary-color);
-  // message
-  --yun-message-bgcolor: rgba(128, 128, 128, 0.231);
-  // notification
-  --yun-notification-bgcolor: rgba(128, 128, 128, 0.231);
+
+  // 深色主题消息
+  --yun-message-bgcolor: rgba(39, 46, 46, 0.95);
+
+  // 深色主题通知
+  --yun-notification-bgcolor: rgba(39, 46, 46, 0.95);
 }

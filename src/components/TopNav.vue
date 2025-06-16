@@ -48,8 +48,8 @@ const route = useRoute()
 defineProps({
   toggleMenuButtonVisible: {
     type: Boolean,
-    default: false,
-  },
+    default: false
+  }
 })
 
 const menuVisible = inject('menuVisible') // get
@@ -57,7 +57,7 @@ const toggleMenu = () => {
   menuVisible.value = !menuVisible.value
 }
 
-const changeMode = (mode) => {
+const changeMode = mode => {
   if (mode == 'dark') {
     document.getElementsByTagName('html')[0].classList.add('yun-dark')
     localStorage.setItem('mode', 'dark')
@@ -81,7 +81,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-$color: #007974;
+$color: var(--yun-primary-color);
 
 .topnav {
   display: flex;
@@ -109,7 +109,7 @@ $color: #007974;
       > span {
         font-size: 32px;
         font-weight: 700;
-        color: #36b1bf;
+        color: var(--yun-primary-color-hover);
         font-style: italic;
         margin-right: 2px;
       }

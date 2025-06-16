@@ -1,24 +1,27 @@
-$borderColorGray: #d9d9d9;
-$borderColorFocus: #666667;
-$theme: #68b0ad;
-$disabledColor: #757575;
-$placeholderColor: #757575;
-$colorGray: #666;
-$colorDark: #333;
-$colorBlack: #000;
-$selectionBGColor: #aae7dc;
-$disabledBGColor: #fafafa;
-$checkedBGColor: #409eff;
+// 更新的色彩变量 - 基于新的设计系统
+$borderColorGray: #e3ebeb;
+$borderColorFocus: #79b4a6;
+$theme: #79b4a6;
+$disabledColor: #9bb8b8;
+$placeholderColor: #9bb8b8;
+$colorGray: #7b9595;
+$colorDark: #374545;
+$colorBlack: #192626;
+$selectionBGColor: #d1e5de;
+$disabledBGColor: #fcfdfd;
+$checkedBGColor: #79b4a6;
 
-$warning: #f69d32;
-$secondary: #8c8c8c;
-$error: #f01217;
-$alert: #ff0f74;
+// 状态色彩 - 与主题协调的色彩
+$warning: #faad14;
+$secondary: #9bb8b8;
+$error: #ff4d4f;
+$alert: #ff4d4f;
 $success: #52c41a;
-$purple: #fc18dc;
-$violet: #701fbe;
-$cyan: #39dfbb;
+$purple: #722ed1;
+$violet: #531dab;
+$cyan: #13c2c2;
 
-$radius: 5px;
+// 设计规范
+$radius: 8px;
 
 $popoverIndex: 100;

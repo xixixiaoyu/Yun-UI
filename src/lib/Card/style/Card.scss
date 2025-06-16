@@ -1,73 +1,89 @@
 @import '../../style/common.scss';
 
-$border-color: #eaeaea;
 .coast-card {
-  border: 1px solid $border-color;
+  border: 1px solid var(--yun-border-2);
   width: 100%;
-  transition: all 0.25s;
-  border-radius: $radius;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--yun-border-radius);
+  background: var(--yun-bgcolor-0);
+  overflow: hidden;
 
   &-hoverable:hover {
-    box-shadow: rgba(0, 0, 0, 0.12) 0 5px 10px;
+    border-color: var(--yun-border-4);
+    box-shadow: var(--yun-box-shadow);
+    transform: translateY(-2px);
   }
 
   &-shadow {
-    box-shadow: rgba(0, 0, 0, 0.12) 0 5px 10px;
+    box-shadow: var(--yun-box-shadow);
 
     &.coast-card-hoverable:hover {
-      box-shadow: rgba(0, 0, 0, 0.12) 0 8px 30px;
+      box-shadow:
+        0px 4px 16px rgba(121, 180, 166, 0.15),
+        0px 8px 32px rgba(121, 180, 166, 0.1);
+      transform: translateY(-4px);
     }
   }
 
   &-secondary {
-    background: $secondary;
-    color: #fff;
+    background: var(--yun-normal-color);
+    color: var(--yun-text-color-1);
+    border-color: var(--yun-normal-color);
   }
 
   &-alert {
-    background: $alert;
-    color: #fff;
+    background: var(--yun-error-color);
+    color: var(--yun-white-text-color);
+    border-color: var(--yun-error-color);
   }
 
   &-success {
-    background: $success;
-    color: #fff;
+    background: var(--yun-success-color);
+    color: var(--yun-white-text-color);
+    border-color: var(--yun-success-color);
   }
 
   &-purple {
     background: $purple;
-    color: #fff;
+    color: var(--yun-white-text-color);
+    border-color: $purple;
   }
 
   &-warning {
-    background: $warning;
-    color: #fff;
+    background: var(--yun-warning-color);
+    color: var(--yun-white-text-color);
+    border-color: var(--yun-warning-color);
   }
 
   &-violet {
     background: $violet;
-    color: #fff;
+    color: var(--yun-white-text-color);
+    border-color: $violet;
   }
 
   &-error {
-    background: $error;
-    color: #fff;
+    background: var(--yun-error-color);
+    color: var(--yun-white-text-color);
+    border-color: var(--yun-error-color);
   }
 
   &-cyan {
     background: $cyan;
-    color: #fff;
+    color: var(--yun-white-text-color);
+    border-color: $cyan;
   }
 
   &-dark {
-    background: $theme;
-    color: #fff;
+    background: var(--yun-primary-color);
+    color: var(--yun-white-text-color);
+    border-color: var(--yun-primary-color);
   }
 
   &-lite {
-    background: #fff;
-    color: $colorBlack;
-    border-color: #fff;
+    background: var(--yun-bgcolor-0);
+    color: var(--yun-text-color-1);
+    border-color: transparent;
+    box-shadow: none;
 
     .coast-card-title {
       border-bottom: none;
@@ -75,17 +91,29 @@ $border-color: #eaeaea;
   }
 
   &-title {
-    font-size: 20px;
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
+    font-size: 18px;
+    font-weight: var(--yun-title-bold);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--yun-border-2);
+    color: var(--yun-text-color-1);
+    background: var(--yun-bgcolor-1);
+    margin: 0;
   }
 
   &-content,
   &-footer {
-    padding: 16px;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  &-content {
+    color: var(--yun-text-color-2);
   }
 
   &-footer {
-    border-top: 1px dashed $border-color;
+    border-top: 1px solid var(--yun-border-1);
+    background: var(--yun-bgcolor-1);
+    color: var(--yun-text-color-3);
+    font-size: 14px;
   }
 }

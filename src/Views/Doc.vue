@@ -6,6 +6,13 @@
     <Topnav class="nav" :toggleMenuButtonVisible="true" />
     <div class="content">
       <aside :class="{ open: menuVisible }">
+        <h2>设计系统</h2>
+        <ol class="Cpn">
+          <li>
+            <router-link to="/doc/design-system">🎨 设计系统展示</router-link>
+          </li>
+        </ol>
+
         <h2>组件</h2>
         <ol class="Cpn">
           <li class="title">
@@ -185,7 +192,7 @@ export default {
     }
 
     return { menuVisible, closeOverlay, isPhone }
-  },
+  }
 }
 </script>
 
@@ -286,17 +293,14 @@ aside {
         border-radius: 4px;
         color: var(--yun-text-color-5);
         &:not(.router-link-active):hover {
-          background-color: #f5f5f5;
-          color: #000;
+          background-color: var(--yun-primary-color-light);
+          color: var(--yun-text-color-1);
         }
       }
       .router-link-active {
-        background-color: var(--active-theme-color);
-        color: #fff;
-        // background: #fff;
-        // color: #36b1bf;
-        // text-decoration: underline;
-        // font-weight: 600;
+        background-color: var(--yun-primary-color);
+        color: var(--yun-white-text-color);
+        font-weight: 500;
       }
     }
   }

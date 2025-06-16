@@ -32,7 +32,7 @@ import {
   CheckmarkCircle24Regular,
   ErrorCircle24Regular,
   Alert24Regular,
-  Dismiss24Filled,
+  Dismiss24Filled
 } from '@vicons/fluent'
 import { Icon } from '@vicons/utils'
 // alert type
@@ -45,15 +45,15 @@ type Alert = {
 defineProps({
   list: {
     type: Array as PropType<Alert[]>,
-    default: () => [],
-  },
+    default: () => []
+  }
 })
 const emit = defineEmits(['close'])
 </script>
 
 <script lang="ts">
 export default {
-  name: 'Alert',
+  name: 'Alert'
 }
 </script>
 
@@ -70,9 +70,10 @@ export default {
     width: 100%;
     min-height: 32px;
     background-color: var(--yun-normal-color);
-    border-radius: var(--yun-form-border-radius);
-    margin-bottom: 10px;
-    padding: 8px 12px;
+    border-radius: var(--yun-border-radius);
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    border: 1px solid transparent;
     box-sizing: border-box;
     .alert-icon {
       margin: 1px 5px 0px 0px;
@@ -92,10 +93,10 @@ export default {
       user-select: none;
     }
     .btn-close:hover {
-      background: rgba($color: #000000, $alpha: 0.05);
+      background: var(--yun-bgcolor-3);
     }
     .btn-close:active {
-      background: rgba($color: #000000, $alpha: 0.15);
+      background: var(--yun-bgcolor-4);
     }
     .message {
       width: calc(100% - 40px);

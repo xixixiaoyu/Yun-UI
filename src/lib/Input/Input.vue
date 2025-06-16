@@ -54,7 +54,7 @@
           (v && showPassword) ||
           (v && clearable) ||
           (showCount && !clearable && !showPassword) ||
-          (showCount && maxLength),
+          (showCount && maxLength)
       }"
     >
       <div v-if="getCheckNumStr" class="yun-input-show-count">
@@ -160,7 +160,7 @@ defineExpose({ focusFn })
 
 <script lang="ts">
 export default {
-  name: 'Input',
+  name: 'Input'
 }
 </script>
 
@@ -179,15 +179,17 @@ export default {
   box-sizing: border-box;
   .label-left,
   .label-right {
-    height: 36px;
+    height: var(--yun-form-input-height-medium);
     display: inline-flex;
     vertical-align: middle;
     align-items: center;
-    padding: 0 8px;
-    background-color: #fafafa;
-    color: #888;
-    border: 1px solid #d9d9d9;
+    padding: 0 12px;
+    background-color: var(--yun-bgcolor-2);
+    color: var(--yun-text-color-4);
+    border: 1px solid var(--yun-border-2);
     border-radius: var(--yun-form-border-radius);
+    font-size: var(--yun-form-font-size-medium);
+    font-weight: 500;
   }
   .label-left {
     // border-top-left-radius: var(--yun-form-border-radius);
@@ -216,7 +218,8 @@ export default {
   }
   input::placeholder,
   textarea::placeholder {
-    color: rgb(165, 165, 165);
+    color: var(--yun-text-color-6);
+    font-weight: 400;
   }
   .yun-input-controls {
     display: inline-flex;
@@ -397,6 +400,7 @@ export default {
 .yun-input-view:focus-within {
   background-color: var(--yun-form-bgcolor-focus);
   border: var(--yun-form-border-width) var(--yun-form-border-color-focus) solid;
+  box-shadow: 0 0 0 2px rgba(121, 180, 166, 0.15);
 }
 
 .yun-input-view.yun-input-status-error {
