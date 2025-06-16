@@ -14,9 +14,9 @@
         <div v-show="dateValue" class="yun-date-picker-dateValue">
           {{ dateValue }}
         </div>
-        <icon size="16px" class="yun-date-picker-icon">
+        <Icon size="16px" class="yun-date-picker-icon">
           <CalendarLtr12Regular />
-        </icon>
+        </Icon>
       </div>
     </template>
     <template #popover-body>
@@ -26,36 +26,36 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import Date from "./Date.vue";
-import { datePickerProps } from "./props";
-import { CalendarLtr12Regular } from "@vicons/fluent";
-import { Icon } from "@vicons/utils";
-const props = defineProps(datePickerProps);
-let isShowPicker = ref(false);
-let dateValue = ref<string | undefined>(props.modelValue);
-let yunPopoverRef = ref();
-const emit = defineEmits(["change", "update:modelValue"]);
+import { ref } from 'vue'
+import Date from './Date.vue'
+import { datePickerProps } from './props'
+import { CalendarLtr12Regular } from '@vicons/fluent'
+import { Icon } from '@vicons/utils'
+const props = defineProps(datePickerProps)
+const isShowPicker = ref(false)
+const dateValue = ref<string | undefined>(props.modelValue)
+const yunPopoverRef = ref()
+const emit = defineEmits(['change', 'update:modelValue'])
 const show = () => {
-  yunPopoverRef.value.show();
-};
+  yunPopoverRef.value.show()
+}
 const hide = () => {
-  yunPopoverRef.value.hide();
-};
+  yunPopoverRef.value.hide()
+}
 const change = (date) => {
-  emit("update:modelValue", date.value);
-  emit("change", { date: date, show, hide });
+  emit('update:modelValue', date.value)
+  emit('change', { date: date, show, hide })
   if (props.autoClose) {
-    hide();
+    hide()
   }
-};
-defineExpose({ show, hide });
+}
+defineExpose({ show, hide })
 </script>
 
 <script lang="ts">
 export default {
-  name: "DatePicker",
-};
+  name: 'DatePicker',
+}
 </script>
 
 <style lang="scss" scoped>

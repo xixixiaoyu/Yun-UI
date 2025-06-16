@@ -15,10 +15,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-const bool = ref(true);
+import { ref } from 'vue'
+const bool = ref(true)
 const change = (e) => {
-  console.log(e);
-  console.log(bool.value);
-};
+  console.log(e)
+  console.log(bool.value)
+}
 </script>

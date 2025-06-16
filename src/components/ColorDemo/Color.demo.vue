@@ -20,8 +20,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-const colors = ref(["primary", "normal", "info", "warning", "error", "success"]);
+import { ref } from 'vue'
+const colors = ref(['primary', 'normal', 'info', 'warning', 'error', 'success'])
 </script>
 
 <style lang="scss" scoped>

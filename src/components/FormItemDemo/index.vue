@@ -7,27 +7,27 @@
 </template>
 
 <script setup>
-import indexTitle from "../indexTitle.vue";
-import Demo from "../Demo.vue";
-import Attr from "../Attr.vue";
-import { columns } from "../../lib/data";
+import indexTitle from '../indexTitle.vue'
+import Demo from '../Demo.vue'
+import Attr from '../Attr.vue'
+import { columns } from '../../lib/data'
 
-import CityDemo1 from "./default.demo.vue";
+import CityDemo1 from './default.demo.vue'
 
 const data = [
   {
-    params: "title",
-    desc: "表单标题",
-    type: "string",
-    select: "/node_modules",
+    params: 'title',
+    desc: '表单标题',
+    type: 'string',
+    select: '/node_modules',
     default: "''",
   },
   {
-    params: "direction",
-    desc: "表单item方向",
-    type: "string",
-    select: "x / y",
-    default: "x",
+    params: 'direction',
+    desc: '表单item方向',
+    type: 'string',
+    select: 'x / y',
+    default: 'x',
   },
-];
+]
 </script>

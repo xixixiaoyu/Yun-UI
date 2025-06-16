@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import Demo from "../Demo.vue";
-import Card1 from "./Card.default.demo.vue";
-import Card2 from "./Card.hover.demo.vue";
-import Card3 from "./Card.shadow.demo.vue";
-import Card4 from "./Card.slot.demo.vue";
-import Card5 from "./Card.type.demo.vue";
+import Demo from '../Demo.vue'
+import Card1 from './Card.default.demo.vue'
+import Card2 from './Card.hover.demo.vue'
+import Card3 from './Card.shadow.demo.vue'
+import Card4 from './Card.slot.demo.vue'
+import Card5 from './Card.type.demo.vue'
 
 export default {
   components: {
@@ -32,7 +32,7 @@ export default {
       Card3,
       Card4,
       Card5,
-    };
+    }
   },
-};
+}
 </script>

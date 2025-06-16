@@ -3,61 +3,61 @@
 </demo>
 
 <template>
-  <co-layout>
-    <co-header>Header</co-header>
-    <co-content>Content</co-content>
-  </co-layout>
+  <CoLayout>
+    <CoHeader>Header</CoHeader>
+    <CoContent>Content</CoContent>
+  </CoLayout>
 
-  <co-layout>
-    <co-header>Header</co-header>
-    <co-content>Content</co-content>
-    <co-footer>Footer</co-footer>
-  </co-layout>
+  <CoLayout>
+    <CoHeader>Header</CoHeader>
+    <CoContent>Content</CoContent>
+    <CoFooter>Footer</CoFooter>
+  </CoLayout>
 
-  <co-layout>
-    <co-aside width="200px">Aside</co-aside>
-    <co-content>Content</co-content>
-  </co-layout>
+  <CoLayout>
+    <CoAside width="200px">Aside</CoAside>
+    <CoContent>Content</CoContent>
+  </CoLayout>
 
-  <co-layout>
-    <co-header>Header</co-header>
-    <co-layout>
-      <co-aside width="200px">Aside</co-aside>
-      <co-content>Content</co-content>
-    </co-layout>
-  </co-layout>
+  <CoLayout>
+    <CoHeader>Header</CoHeader>
+    <CoLayout>
+      <CoAside width="200px">Aside</CoAside>
+      <CoContent>Content</CoContent>
+    </CoLayout>
+  </CoLayout>
 
-  <co-layout>
-    <co-header>Header</co-header>
-    <co-layout>
-      <co-aside width="200px">Aside</co-aside>
-      <co-layout>
-        <co-content>Content</co-content>
-        <co-footer>Footer</co-footer>
-      </co-layout>
-    </co-layout>
-  </co-layout>
+  <CoLayout>
+    <CoHeader>Header</CoHeader>
+    <CoLayout>
+      <CoAside width="200px">Aside</CoAside>
+      <CoLayout>
+        <CoContent>Content</CoContent>
+        <CoFooter>Footer</CoFooter>
+      </CoLayout>
+    </CoLayout>
+  </CoLayout>
 
-  <co-layout>
-    <co-aside width="200px">Aside</co-aside>
-    <co-layout>
-      <co-header>Header</co-header>
-      <co-content>Content</co-content>
-    </co-layout>
-  </co-layout>
+  <CoLayout>
+    <CoAside width="200px">Aside</CoAside>
+    <CoLayout>
+      <CoHeader>Header</CoHeader>
+      <CoContent>Content</CoContent>
+    </CoLayout>
+  </CoLayout>
 
-  <co-layout>
-    <co-aside width="100px">Aside</co-aside>
-    <co-layout>
-      <co-header height="70px">Header</co-header>
-      <co-content>Content</co-content>
-      <co-footer height="50px">Footer</co-footer>
-    </co-layout>
-  </co-layout>
+  <CoLayout>
+    <CoAside width="100px">Aside</CoAside>
+    <CoLayout>
+      <CoHeader height="70px">Header</CoHeader>
+      <CoContent>Content</CoContent>
+      <CoFooter height="50px">Footer</CoFooter>
+    </CoLayout>
+  </CoLayout>
 </template>
 
 <script setup>
-import { CoAside, CoFooter, CoHeader, CoContent, CoLayout } from "../../lib/Layout/index";
+import { CoAside, CoFooter, CoHeader, CoContent, CoLayout } from '../../lib/Layout/index'
 </script>
 
 <style lang="scss" scoped>

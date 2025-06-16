@@ -1,15 +1,15 @@
 <script>
 export default {
-  name: "YunStepsItem",
+  name: 'YunStepsItem',
   props: {
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     desc: {
       type: String,
-      default: "",
+      default: '',
     },
   },
-};
+}
 </script>

@@ -24,29 +24,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref, PropType, computed } from "vue";
+import { ref, PropType, computed } from 'vue'
 type Options = {
-  label: number | string;
-  value: number | string;
-};
+  label: number | string
+  value: number | string
+}
 const props = defineProps({
   options: {
     type: Array as PropType<Options[]>,
     default() {
-      return [];
+      return []
     },
     required: true,
     validator(value: PropType<Options[]>) {
-      return value.length >= 0;
+      return value.length >= 0
     },
   },
   trigger: {
     type: String,
-    default: "hover",
+    default: 'hover',
   },
   placement: {
     type: String,
-    default: "bottom",
+    default: 'bottom',
   },
   arrow: {
     type: Boolean,
@@ -54,54 +54,54 @@ const props = defineProps({
   },
   width: {
     type: String,
-    default: "",
+    default: '',
   },
   maxHeight: {
     type: String,
-    default: "300px",
+    default: '300px',
   },
   align: {
     type: String,
-    default: "left",
+    default: 'left',
   },
-});
+})
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-let yunPopoverRef = ref();
-let show = () => {
-  yunPopoverRef.value.show();
-};
-let hide = () => {
-  yunPopoverRef.value.hide();
-};
-const emit = defineEmits(["change"]);
+const yunPopoverRef = ref()
+const show = () => {
+  yunPopoverRef.value.show()
+}
+const hide = () => {
+  yunPopoverRef.value.hide()
+}
+const emit = defineEmits(['change'])
 const change = (item) => {
-  emit("change", { show, hide, value: item });
+  emit('change', { show, hide, value: item })
   setTimeout(() => {
-    yunPopoverRef.value.hide();
-  }, 80);
-};
-defineExpose({ show, hide });
+    yunPopoverRef.value.hide()
+  }, 80)
+}
+defineExpose({ show, hide })
 const _options = computed(() => {
   if (
     Array.isArray(props.options) &&
-    Object.prototype.toString.call(props.options[0]) != "[object Object]"
+    Object.prototype.toString.call(props.options[0]) != '[object Object]'
   ) {
     return props.options.map((e) => {
       return {
         label: e,
         value: e,
-      };
-    });
+      }
+    })
   } else {
-    return props.options;
+    return props.options
   }
-});
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "Dropdown",
-};
+  name: 'Dropdown',
+}
 </script>
 
 <style lang="scss" scoped>

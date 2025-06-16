@@ -8,16 +8,16 @@
 <script setup>
 const openWithDelay = (type) => {
   YunNotification[type]({
-    title: "通知",
-    content: "我会自己消失哦",
+    title: '通知',
+    content: '我会自己消失哦',
     delay: 1500,
-  });
-};
+  })
+}
 const openWithoutDelay = (type) => {
   YunNotification[type]({
-    title: "通知",
-    content: "没有得到你的允许之前我是不会消失的！",
+    title: '通知',
+    content: '没有得到你的允许之前我是不会消失的！',
     delay: 0,
-  });
-};
+  })
+}
 </script>

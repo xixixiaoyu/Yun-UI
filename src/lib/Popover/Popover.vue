@@ -19,35 +19,35 @@
 </template>
 
 <script>
-import { PROP_TOP_LEFT, PROP_TOP_RIGHT, PROP_BOTTOM_LEFT, PROP_BOTTOM_RIGHT } from "./const";
+import { PROP_TOP_LEFT, PROP_TOP_RIGHT, PROP_BOTTOM_LEFT, PROP_BOTTOM_RIGHT } from './const'
 export default {
-  name: "Popover",
-};
+  name: 'Popover',
+}
 
 // 定义指定位置的 Enum
-const placementEnum = [PROP_TOP_LEFT, PROP_TOP_RIGHT, PROP_BOTTOM_LEFT, PROP_BOTTOM_RIGHT];
+const placementEnum = [PROP_TOP_LEFT, PROP_TOP_RIGHT, PROP_BOTTOM_LEFT, PROP_BOTTOM_RIGHT]
 </script>
 
 <script setup>
-import { useVisible, useComputedPosStyle } from "./usePopover";
+import { useVisible, useComputedPosStyle } from './usePopover'
 
 const props = defineProps({
   placement: {
     type: String,
-    default: "bottom-left",
+    default: 'bottom-left',
     validator(val) {
-      const result = placementEnum.includes(val);
+      const result = placementEnum.includes(val)
       if (!result) {
-        throw new Error(`你的 placement 必须是${placementEnum.join("、")}中的一个 `);
+        throw new Error(`你的 placement 必须是${placementEnum.join('、')}中的一个 `)
       }
-      return result;
+      return result
     },
   },
-});
+})
 
-const { isVisible, onMouseenter, onMouseleave } = useVisible();
+const { isVisible, onMouseenter, onMouseleave } = useVisible()
 
-const { referenceTarget, contentTarget, contentStyle } = useComputedPosStyle(props, isVisible);
+const { referenceTarget, contentTarget, contentStyle } = useComputedPosStyle(props, isVisible)
 </script>
 
 <style lang="scss" scoped>

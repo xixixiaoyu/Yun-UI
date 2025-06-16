@@ -25,74 +25,74 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, nextTick } from "vue";
-import { inputTagProps } from "./props";
-import { Icon } from "@vicons/utils";
-import { Add16Regular } from "@vicons/fluent";
+import { ref, watch, nextTick } from 'vue'
+import { inputTagProps } from './props'
+import { Icon } from '@vicons/utils'
+import { Add16Regular } from '@vicons/fluent'
 
-const props = defineProps(inputTagProps);
-const inputValue = ref();
-const tagsValue = ref(props.modelValue);
-const isInput = ref(false);
-const yunInputRef = ref();
-let isEnter = false;
-let delDownTimer;
-let delDownCheck = 0;
+const props = defineProps(inputTagProps)
+const inputValue = ref()
+const tagsValue = ref(props.modelValue)
+const isInput = ref(false)
+const yunInputRef = ref()
+let isEnter = false
+let delDownTimer
+let delDownCheck = 0
 watch(
   () => props.modelValue,
   () => {
-    tagsValue.value = props.modelValue;
+    tagsValue.value = props.modelValue
   }
-);
+)
 const openInput = () => {
-  isInput.value = true;
+  isInput.value = true
   nextTick(() => {
-    yunInputRef.value.focusFn();
-  });
+    yunInputRef.value.focusFn()
+  })
   document.onkeydown = function (event) {
-    if (inputValue.value == "") {
+    if (inputValue.value == '') {
       if (event.keyCode == 8 || event.keyCode == 46) {
-        clearTimeout(delDownTimer);
+        clearTimeout(delDownTimer)
         delDownTimer = setTimeout(() => {
-          delDownCheck = 0;
-        }, 500);
-        delDownCheck += 1;
+          delDownCheck = 0
+        }, 500)
+        delDownCheck += 1
         if (delDownCheck >= 2) {
-          tagsValue.value.splice(tagsValue.value.length - 1, 1);
-          delDownCheck = 0;
+          tagsValue.value.splice(tagsValue.value.length - 1, 1)
+          delDownCheck = 0
         }
       }
     } else {
       if (event.keyCode == 13) {
-        isEnter = true;
+        isEnter = true
       }
     }
-  };
-};
+  }
+}
 const blurFn = (e) => {
-  isInput.value = false;
-  document.onkeydown = null;
-  addTag();
+  isInput.value = false
+  document.onkeydown = null
+  addTag()
   if (isEnter) {
-    openInput();
+    openInput()
   }
-  isEnter = false;
-};
+  isEnter = false
+}
 const addTag = () => {
-  if (!!inputValue.value) {
-    tagsValue.value.push(inputValue.value);
+  if (inputValue.value) {
+    tagsValue.value.push(inputValue.value)
   }
-  inputValue.value = "";
-};
+  inputValue.value = ''
+}
 const delTag = (index) => {
-  tagsValue.value.splice(index, 1);
-};
+  tagsValue.value.splice(index, 1)
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "InputTag",
-};
+  name: 'InputTag',
+}
 </script>
 
 <style lang="scss">

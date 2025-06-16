@@ -21,15 +21,15 @@
 <script setup lang="ts">
 const open = (type: any, layout: string) => {
   Dialog[type]({
-    title: "删除确认",
-    content: "你是否要删除该账号",
+    title: '删除确认',
+    content: '你是否要删除该账号',
     layout: layout,
     ok: () => {
-      console.log("确认删除");
+      console.log('确认删除')
     },
     cancel: () => {
-      console.log("取消");
+      console.log('取消')
     },
-  });
-};
+  })
+}
 </script>

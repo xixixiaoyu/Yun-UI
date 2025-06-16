@@ -9,19 +9,19 @@
 const props = defineProps({
   title: {
     type: String,
-    default: "标题",
+    default: '标题',
   },
   direction: {
     type: String,
-    default: "x",
+    default: 'x',
   },
-});
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "FormItem",
-};
+  name: 'FormItem',
+}
 </script>
 
 <style lang="scss" scoped>

@@ -73,91 +73,91 @@
 </template>
 
 <script lang="ts" setup>
-import { tableProps } from "./props";
-import { ref, onMounted } from "vue";
-import Flex from "../Flex/Flex.vue";
-const props = defineProps(tableProps);
-let yunTableRef = ref<HTMLElement | any>(null); // 表格的 ref
-let yunTableBodyRef = ref<HTMLElement | any>(null); // 表格的 body ref
+import { tableProps } from './props'
+import { ref, onMounted } from 'vue'
+import Flex from '../Flex/Flex.vue'
+const props = defineProps(tableProps)
+const yunTableRef = ref<HTMLElement | any>(null) // 表格的 ref
+const yunTableBodyRef = ref<HTMLElement | any>(null) // 表格的 body ref
 // 设置左右线
-let leftIndex = ref<number>(-1);
-let rightIndex = ref<number>(-1);
+const leftIndex = ref<number>(-1)
+const rightIndex = ref<number>(-1)
 // 设置展示线 过渡
-let isShowLeftLine = ref(false);
-let isShowRightLine = ref(false);
+const isShowLeftLine = ref(false)
+const isShowRightLine = ref(false)
 
 const setSubLine = () => {
   props.columns.map((e, i) => {
-    if (e.sticky == "left") {
-      leftIndex.value = i;
-    } else if (e.sticky == "right" && rightIndex.value == -1) {
-      rightIndex.value = i;
+    if (e.sticky == 'left') {
+      leftIndex.value = i
+    } else if (e.sticky == 'right' && rightIndex.value == -1) {
+      rightIndex.value = i
       if (yunTableRef.value!.scrollWidth != yunTableRef.value!.offsetWidth) {
-        isShowRightLine.value = true;
+        isShowRightLine.value = true
       }
     }
-  });
-};
+  })
+}
 
 const setShowLine = (e: any) => {
   if (e.target.scrollWidth != e.target.offsetWidth) {
-    isShowLeftLine.value = e.target.scrollLeft >= 5;
-    isShowRightLine.value = e.target.scrollLeft <= e.target.scrollWidth - e.target.offsetWidth - 5;
+    isShowLeftLine.value = e.target.scrollLeft >= 5
+    isShowRightLine.value = e.target.scrollLeft <= e.target.scrollWidth - e.target.offsetWidth - 5
   }
-};
+}
 
 // 设置粘住左右
 const setSticky = (column: any) => {
-  if (column.sticky == "left") {
-    return `position: sticky;left:${column.offsetX || "0px"};z-index:1;`;
-  } else if (column.sticky == "right") {
-    return `position: sticky;right:${column.offsetX || "0px"};z-index:1;`;
+  if (column.sticky == 'left') {
+    return `position: sticky;left:${column.offsetX || '0px'};z-index:1;`
+  } else if (column.sticky == 'right') {
+    return `position: sticky;right:${column.offsetX || '0px'};z-index:1;`
   }
-};
+}
 
 // 设置单元格宽度
-let niceWidth = ref<string>("");
+const niceWidth = ref<string>('')
 const setWidth = () => {
-  let sw = yunTableRef.value!.scrollWidth;
-  let w = yunTableRef.value!.offsetWidth;
+  const sw = yunTableRef.value!.scrollWidth
+  const w = yunTableRef.value!.offsetWidth
   if (w >= sw) {
-    let autoLen = props.columns.filter((e) => e.width == "auto").length;
-    let wTotal = 0;
+    const autoLen = props.columns.filter((e) => e.width == 'auto').length
+    let wTotal = 0
     props.columns
-      .filter((e) => e.width != "auto")
+      .filter((e) => e.width != 'auto')
       .map((e) => {
-        wTotal += parseFloat(e.width);
-      });
-    niceWidth.value = `${(w - wTotal) / autoLen - 4}px`;
+        wTotal += parseFloat(e.width)
+      })
+    niceWidth.value = `${(w - wTotal) / autoLen - 4}px`
   }
-};
+}
 
 // 防抖
-let lock = false;
+let lock = false
 const throttle = (e: any, delay: any) => {
   if (leftIndex.value == -1 && rightIndex.value == -1) {
-    return;
+    return
   }
   if (!lock) {
     // 判断是否锁
-    lock = true; // 锁住
+    lock = true // 锁住
     setTimeout(() => {
-      setShowLine(e);
-      lock = false; // 开锁
-    }, delay);
+      setShowLine(e)
+      lock = false // 开锁
+    }, delay)
   }
-};
+}
 onMounted(() => {
-  setWidth();
+  setWidth()
   // 设置固定单元格的阴影
-  setSubLine();
-});
+  setSubLine()
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "Table",
-};
+  name: 'Table',
+}
 </script>
 
 <style lang="scss">
@@ -190,7 +190,7 @@ export default {
     position: absolute;
     right: -12px;
     top: -1px;
-    content: "";
+    content: '';
     width: 12px;
     height: calc(100% + 2px);
     opacity: 0;
@@ -207,7 +207,7 @@ export default {
     position: absolute;
     left: -12px;
     top: -1px;
-    content: "";
+    content: '';
     width: 12px;
     opacity: 0;
     transition: all 0.25s ease;

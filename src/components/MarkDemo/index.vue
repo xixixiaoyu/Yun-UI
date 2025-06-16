@@ -7,48 +7,48 @@
 </template>
 
 <script setup>
-import indexTitle from "../indexTitle.vue";
-import Demo from "../Demo.vue";
-import Attr from "../Attr.vue";
+import indexTitle from '../indexTitle.vue'
+import Demo from '../Demo.vue'
+import Attr from '../Attr.vue'
 
-import { columns } from "../../lib/data";
-import MarkDemo1 from "./Mark.default.demo.vue";
+import { columns } from '../../lib/data'
+import MarkDemo1 from './Mark.default.demo.vue'
 
 const data = [
   {
-    params: "type",
-    desc: "配色类型",
-    type: "string",
-    select: "normal / success / error / warning / info",
-    default: "normal",
+    params: 'type',
+    desc: '配色类型',
+    type: 'string',
+    select: 'normal / success / error / warning / info',
+    default: 'normal',
   },
   {
-    params: "round",
-    desc: "圆角",
-    type: "number",
-    select: "/",
-    default: "true",
+    params: 'round',
+    desc: '圆角',
+    type: 'number',
+    select: '/',
+    default: 'true',
   },
   {
-    params: "size",
-    desc: "大小",
-    type: "number / string",
-    select: "/",
+    params: 'size',
+    desc: '大小',
+    type: 'number / string',
+    select: '/',
     default: "''",
   },
   {
-    params: "bold",
-    desc: "加粗",
-    type: "number",
-    select: "/",
-    default: "400",
+    params: 'bold',
+    desc: '加粗',
+    type: 'number',
+    select: '/',
+    default: '400',
   },
   {
-    params: "to",
-    desc: "跳转链接",
-    type: "string",
-    select: "/",
+    params: 'to',
+    desc: '跳转链接',
+    type: 'string',
+    select: '/',
     default: "''",
   },
-];
+]
 </script>

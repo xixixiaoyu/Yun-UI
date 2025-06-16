@@ -10,8 +10,8 @@
 </template>
 
 <script setup>
-import { watchEffect, ref, onUnmounted } from "vue";
-import Icon from "../Icon/Icon.vue";
+import { watchEffect, ref, onUnmounted } from 'vue'
+import Icon from '../Icon/Icon.vue'
 
 const props = defineProps({
   visibilityHeight: {
@@ -21,61 +21,61 @@ const props = defineProps({
   right: {
     type: String,
     required: false,
-    default: "20",
+    default: '20',
   },
   bottom: {
     type: String,
     required: false,
-    default: "16",
+    default: '16',
   },
-});
-const emit = defineEmits(["clicked"]);
+})
+const emit = defineEmits(['clicked'])
 
-const visible = ref(document.documentElement.scrollTop > 0);
-let timer = null;
+const visible = ref(document.documentElement.scrollTop > 0)
+let timer = null
 
 const pageScroll = () => {
-  visible.value = document.documentElement.scrollTop;
-};
-window.addEventListener("scroll", pageScroll);
+  visible.value = document.documentElement.scrollTop
+}
+window.addEventListener('scroll', pageScroll)
 
 const onBacktop = () => {
-  emit("clicked");
+  emit('clicked')
   //设表先关
-  clearInterval(timer);
+  clearInterval(timer)
 
   // 设置定时器
   timer = setInterval(function () {
     // 不断让scrollTop卷去的高度减少
-    document.documentElement.scrollTop -= 50;
+    document.documentElement.scrollTop -= 50
 
     //定时器要停
     if (document.documentElement.scrollTop <= 0) {
-      clearInterval(timer);
+      clearInterval(timer)
     }
-  }, 16);
-};
+  }, 16)
+}
 
 watchEffect(
   () => {
     if (visible.value > props.visibilityHeight) {
-      visible.value = true;
+      visible.value = true
     } else {
-      visible.value = false;
+      visible.value = false
     }
   },
   {
-    flush: "post",
+    flush: 'post',
   }
-);
+)
 
-const rightOffset = props.right + "%";
-const bottomOffset = props.bottom + "%";
+const rightOffset = props.right + '%'
+const bottomOffset = props.bottom + '%'
 
 onUnmounted(() => {
-  clearInterval(timer);
-  window.removeEventListener("scroll", pageScroll);
-});
+  clearInterval(timer)
+  window.removeEventListener('scroll', pageScroll)
+})
 </script>
 
 <style lang="scss">

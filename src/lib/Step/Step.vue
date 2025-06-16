@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import { computed } from "vue";
+import { computed } from 'vue'
 export default {
-  name: "YunStep",
+  name: 'YunStep',
   props: {
     count: {
       type: Number,
@@ -27,24 +27,24 @@ export default {
     },
     activeColor: {
       type: String,
-      default: "#27ba9b",
+      default: '#27ba9b',
     },
     defaultColor: {
       type: String,
-      default: "#e4e4e4",
+      default: '#e4e4e4',
     },
     width: {
       type: String,
-      default: "100%",
+      default: '100%',
     },
   },
   setup(props) {
-    const color = computed(() => props.width);
+    const color = computed(() => props.width)
     return {
       color,
-    };
+    }
   },
-};
+}
 </script>
 
 <style>

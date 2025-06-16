@@ -7,13 +7,13 @@
   >
     <Flex class="yun-pagination-control" gap="5px">
       <Flex class="yun-pagination-page-box" gap="5px">
-        <icon
+        <Icon
           size="14"
           class="yun-pagination-page-btn yun-pagination-control-btn"
           @click="changePage('prve', 1)"
         >
           <ChevronBackOutline />
-        </icon>
+        </Icon>
         <div
           v-show="pageNum - 1 > pageShowSize && maxLen > pageShowSize * 2 + 7"
           class="yun-pagination-page-btn"
@@ -21,7 +21,7 @@
         >
           1
         </div>
-        <icon
+        <Icon
           v-show="
             pageNum - 1 > pageShowSize && maxLen > pageShowSize * 2 + 7 && pageInterval[0] != 1 + 1
           "
@@ -30,7 +30,7 @@
           @click="changePage('prve', pageShowSize * 2)"
         >
           <EllipsisHorizontal />
-        </icon>
+        </Icon>
 
         <div
           v-for="(item, index) in pageInterval"
@@ -41,7 +41,7 @@
         >
           {{ item }}
         </div>
-        <icon
+        <Icon
           v-show="
             pageNum < maxLen - pageShowSize &&
             maxLen > pageShowSize * 2 + 7 &&
@@ -52,7 +52,7 @@
           @click="changePage('next', pageShowSize * 2)"
         >
           <EllipsisHorizontal />
-        </icon>
+        </Icon>
         <div
           v-show="pageNum < maxLen - pageShowSize && maxLen > pageShowSize * 2 + 7"
           class="yun-pagination-page-btn"
@@ -60,13 +60,13 @@
         >
           {{ maxLen }}
         </div>
-        <icon
+        <Icon
           size="14"
           class="yun-pagination-page-btn yun-pagination-control-btn"
           @click="changePage('next', 1)"
         >
           <ChevronForwardOutline />
-        </icon>
+        </Icon>
       </Flex>
       <InputPro
         v-model="pageSizebackup"
@@ -107,107 +107,107 @@
 </template>
 
 <script lang="ts" setup>
-import { paginationProps } from "./props";
-import { ref, computed, watch } from "vue";
-import { ChevronForwardOutline, ChevronBackOutline, EllipsisHorizontal } from "@vicons/ionicons5";
-import { Icon } from "@vicons/utils";
-const props = defineProps(paginationProps);
+import { paginationProps } from './props'
+import { ref, computed, watch } from 'vue'
+import { ChevronForwardOutline, ChevronBackOutline, EllipsisHorizontal } from '@vicons/ionicons5'
+import { Icon } from '@vicons/utils'
+const props = defineProps(paginationProps)
 const generateArray = (start, end) => {
-  return Array.from(new Array(end + 1).keys()).slice(start);
-};
-let pageNum = ref(props.pageNum);
-let pageSize = ref(props.pageSize);
+  return Array.from(new Array(end + 1).keys()).slice(start)
+}
+const pageNum = ref(props.pageNum)
+const pageSize = ref(props.pageSize)
 watch(
   () => props.pageNum,
   (v) => {
-    changePage(false, v);
+    changePage(false, v)
   }
-);
+)
 watch(
   () => props.pageSize,
   (v) => {
-    pageSize.value = v;
+    pageSize.value = v
   }
-);
-let maxLen = computed(() => {
-  return Math.ceil(props.total / pageSize.value);
-});
-let pageInterval = computed(() => {
-  let start = pageNum.value - props.pageShowSize;
-  let end = pageNum.value + props.pageShowSize;
+)
+const maxLen = computed(() => {
+  return Math.ceil(props.total / pageSize.value)
+})
+const pageInterval = computed(() => {
+  let start = pageNum.value - props.pageShowSize
+  let end = pageNum.value + props.pageShowSize
   if (pageNum.value <= props.pageShowSize) {
-    start = 1;
-    end = props.pageShowSize * 2;
+    start = 1
+    end = props.pageShowSize * 2
   }
   if (pageNum.value >= maxLen.value - props.pageShowSize) {
-    start = maxLen.value - props.pageShowSize * 2;
-    end = maxLen.value;
+    start = maxLen.value - props.pageShowSize * 2
+    end = maxLen.value
   }
   if (start <= 0) {
-    start = 1;
+    start = 1
   }
   if (maxLen.value <= props.pageShowSize * 2 + 7) {
-    start = 1;
-    end = maxLen.value;
+    start = 1
+    end = maxLen.value
   }
   if (end == 1 && props.total > pageSize.value) {
-    end += 1;
+    end += 1
   }
-  let pageArr = generateArray(start, end);
+  let pageArr = generateArray(start, end)
   if (pageArr.length < 1) {
-    pageArr = [1];
+    pageArr = [1]
   }
-  return pageArr;
-});
-const emit = defineEmits(["update:pageNum", "update:pageSize", "change"]);
+  return pageArr
+})
+const emit = defineEmits(['update:pageNum', 'update:pageSize', 'change'])
 const changePage = (type, num) => {
-  if (type == "next") {
-    pageNum.value += num;
-  } else if (type == "prve") {
-    pageNum.value -= num;
+  if (type == 'next') {
+    pageNum.value += num
+  } else if (type == 'prve') {
+    pageNum.value -= num
   } else {
-    pageNum.value = num;
+    pageNum.value = num
   }
   if (pageNum.value < 1) {
-    pageNum.value = 1;
+    pageNum.value = 1
   } else if (pageNum.value > maxLen.value) {
-    pageNum.value = maxLen.value;
+    pageNum.value = maxLen.value
   }
-  pageNumbackup.value = pageNum.value;
-  emit("change", {
+  pageNumbackup.value = pageNum.value
+  emit('change', {
     pageNum: pageNum.value,
     pageSize: pageSize.value,
     total: props.total,
     pageShowSize: props.pageShowSize,
-  });
-  emit("update:pageNum", pageNum.value);
-  emit("update:pageSize", pageSize.value);
-};
-let pageNumbackup = ref(1);
-let pageSizebackup = ref(20);
+  })
+  emit('update:pageNum', pageNum.value)
+  emit('update:pageSize', pageSize.value)
+}
+const pageNumbackup = ref(1)
+const pageSizebackup = ref(20)
 const checkPageNum = (e) => {
-  e = String(e);
-  pageNumbackup.value = Number(e.replace(/[^\d]/g, ""));
-  changePage(false, pageNumbackup.value);
-};
+  e = String(e)
+  pageNumbackup.value = Number(e.replace(/[^\d]/g, ''))
+  changePage(false, pageNumbackup.value)
+}
 const checkPageSize = (e) => {
-  e = String(e);
-  pageSizebackup.value = Number(e.replace(/[^\d]/g, ""));
+  e = String(e)
+  pageSizebackup.value = Number(e.replace(/[^\d]/g, ''))
   if (pageSizebackup.value < 1) {
-    pageSizebackup.value = 1;
+    pageSizebackup.value = 1
   }
   if (pageSizebackup.value > props.total) {
-    pageSizebackup.value = props.total;
+    pageSizebackup.value = props.total
   }
-  pageSize.value = pageSizebackup.value;
-  changePage(false, pageNumbackup.value);
-};
+  pageSize.value = pageSizebackup.value
+  changePage(false, pageNumbackup.value)
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "Pagination",
-};
+  name: 'Pagination',
+}
 </script>
 
 <style lang="scss">

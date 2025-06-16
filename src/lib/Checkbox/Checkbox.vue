@@ -28,24 +28,24 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from "vue";
+import { ref, watch } from 'vue'
 const props = defineProps({
   label: {
     type: String,
     default: () => {
-      return "";
+      return ''
     },
   },
   block: {
     type: Boolean,
     default: () => {
-      return false;
+      return false
     },
   },
   round: {
     type: Boolean,
     default: () => {
-      return false;
+      return false
     },
   },
   iconable: {
@@ -55,33 +55,33 @@ const props = defineProps({
   checked: {
     type: Boolean,
     default: () => {
-      return false;
+      return false
     },
   },
-});
-const emit = defineEmits(["change"]);
+})
+const emit = defineEmits(['change'])
 
-let _checked = ref(props.checked || false);
+const _checked = ref(props.checked || false)
 
 watch(
   () => props.checked,
   (v) => {
     if (v != _checked.value) {
-      _checked.value = v;
+      _checked.value = v
     }
   }
-);
+)
 
 const setChecked = (e: Event) => {
-  _checked.value = (e.target as HTMLInputElement).checked;
-  emit("change", _checked.value);
-};
+  _checked.value = (e.target as HTMLInputElement).checked
+  emit('change', _checked.value)
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "Checkbox",
-};
+  name: 'Checkbox',
+}
 </script>
 
 <style lang="scss" scoped>

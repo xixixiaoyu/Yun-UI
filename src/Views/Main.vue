@@ -180,26 +180,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { useRouter } from "vue-router";
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 onMounted(() => {
-  var duration = 3 * 1000;
-  var animationEnd = Date.now() + duration;
-  var defaults = {
+  const duration = 3 * 1000
+  const animationEnd = Date.now() + duration
+  const defaults = {
     startVelocity: 30,
     spread: 360,
     ticks: 60,
     zIndex: 0,
-  };
+  }
   function randomInRange(min: number, max: number) {
-    return Math.random() * (max - min) + min;
+    return Math.random() * (max - min) + min
   }
   const interval: any = setInterval(function () {
-    var timeLeft = animationEnd - Date.now();
+    const timeLeft = animationEnd - Date.now()
     if (timeLeft <= 0) {
-      return clearInterval(interval);
+      return clearInterval(interval)
     }
-    var particleCount = 50 * (timeLeft / duration);
+    const particleCount = 50 * (timeLeft / duration)
     confetti(
       Object.assign({}, defaults, {
         particleCount,
@@ -208,7 +208,7 @@ onMounted(() => {
           y: Math.random() - 0.2,
         },
       })
-    );
+    )
     confetti(
       Object.assign({}, defaults, {
         particleCount,
@@ -217,285 +217,285 @@ onMounted(() => {
           y: Math.random() - 0.2,
         },
       })
-    );
-  }, 300);
-});
-const router = useRouter();
-let v = ref("");
-let yunPopoverRef = ref();
+    )
+  }, 300)
+})
+const router = useRouter()
+const v = ref('')
+const yunPopoverRef = ref()
 const submit = () => {
-  Toast.error({ text: v.value || "密码不可为空" });
-  yunPopoverRef.value.hide();
-};
+  Toast.error({ text: v.value || '密码不可为空' })
+  yunPopoverRef.value.hide()
+}
 const openDialog = (type: any) => {
   Dialog[type]({
-    title: "删除确认",
-    content: "删除之后无法恢复，请确定",
+    title: '删除确认',
+    content: '删除之后无法恢复，请确定',
     ok: () => {
-      console.log("确定");
+      console.log('确定')
     },
     cancel: () => {
-      console.log("取消");
+      console.log('取消')
     },
-  });
-};
-let user = ref({
-  username: "",
-  password: "",
-  age: "",
-  sex: "1",
+  })
+}
+const user = ref({
+  username: '',
+  password: '',
+  age: '',
+  sex: '1',
   hobby: [],
-  school: "",
-  home: "",
+  school: '',
+  home: '',
   dark: true,
-  pay: "",
-});
-let sex_options = ref([
-  { label: "未知", value: "0" },
-  { label: "男", value: "1" },
-  { label: "女", value: "2" },
-]);
-let hobby_options = ref([
-  { label: "唱歌", value: 1 },
-  { label: "跳", value: 2 },
-  { label: "rap", value: 3 },
-  { label: "打篮球", value: 44 },
-]);
-let home_options = ref([
+  pay: '',
+})
+const sex_options = ref([
+  { label: '未知', value: '0' },
+  { label: '男', value: '1' },
+  { label: '女', value: '2' },
+])
+const hobby_options = ref([
+  { label: '唱歌', value: 1 },
+  { label: '跳', value: 2 },
+  { label: 'rap', value: 3 },
+  { label: '打篮球', value: 44 },
+])
+const home_options = ref([
   {
-    label: "广东",
-    value: "1",
+    label: '广东',
+    value: '1',
   },
   {
-    label: "深圳",
-    value: "2",
+    label: '深圳',
+    value: '2',
   },
   {
-    label: "杭州",
-    value: "3",
+    label: '杭州',
+    value: '3',
   },
   {
-    label: "上海",
-    value: "4",
+    label: '上海',
+    value: '4',
   },
   {
-    label: "北京",
-    value: "5",
+    label: '北京',
+    value: '5',
   },
-]);
+])
 const breadcrumb_options = ref([
   {
-    label: "首页",
-    to: "/",
+    label: '首页',
+    to: '/',
   },
   {
-    label: "Vue",
-    to: "https://vuejs.org/",
+    label: 'Vue',
+    to: 'https://vuejs.org/',
   },
   {
-    label: "商品列表",
-    to: "",
+    label: '商品列表',
+    to: '',
   },
   {
-    label: "商品详情",
-    to: "",
+    label: '商品详情',
+    to: '',
     active: true,
   },
-]);
+])
 const tab_soptions = ref([
-  { label: "北京", value: "1" },
-  { label: "上海", value: "2" },
-  { label: "广州", value: "3" },
-  { label: "深圳", value: "4" },
-  { label: "乌鲁木齐", value: "5" },
-]);
-let dropdown_options = ref([
+  { label: '北京', value: '1' },
+  { label: '上海', value: '2' },
+  { label: '广州', value: '3' },
+  { label: '深圳', value: '4' },
+  { label: '乌鲁木齐', value: '5' },
+])
+const dropdown_options = ref([
   {
-    label: "西游记",
-    value: "1",
+    label: '西游记',
+    value: '1',
   },
   {
-    label: "水浒传",
-    value: "2",
+    label: '水浒传',
+    value: '2',
   },
   {
-    label: "三国演义",
-    value: "3",
+    label: '三国演义',
+    value: '3',
   },
   {
-    label: "红楼梦",
-    value: "4",
+    label: '红楼梦',
+    value: '4',
   },
-]);
-let list = ref([
+])
+const list = ref([
   {
-    type: "info",
-    title: "成功发送一条消息",
-    content: "",
-  },
-  {
-    type: "normal",
-    title: "成功发送一条消息",
-    content: "",
+    type: 'info',
+    title: '成功发送一条消息',
+    content: '',
   },
   {
-    type: "warning",
-    title: "成功发送一条消息",
-    content: "",
+    type: 'normal',
+    title: '成功发送一条消息',
+    content: '',
   },
   {
-    type: "error",
-    title: "成功发送一条消息",
-    content: "",
+    type: 'warning',
+    title: '成功发送一条消息',
+    content: '',
   },
   {
-    type: "success",
-    title: "成功发送一条消息",
-    content: "",
+    type: 'error',
+    title: '成功发送一条消息',
+    content: '',
   },
-]);
+  {
+    type: 'success',
+    title: '成功发送一条消息',
+    content: '',
+  },
+])
 const message = (type: string) => {
-  Toast[type]({ text: "愿所有相遇都不会被辜负" });
-};
+  Toast[type]({ text: '愿所有相遇都不会被辜负' })
+}
 
-let d = ref("2022-12-12");
+const d = ref('2022-12-12')
 
 const open = (type) => {
   YunNotification[type]({
-    title: "通知",
-    content: "这是一条重要的通知！！！",
-  });
-};
-const modalVisible1 = ref(false);
-const modalVisible2 = ref(false);
+    title: '通知',
+    content: '这是一条重要的通知！！！',
+  })
+}
+const modalVisible1 = ref(false)
+const modalVisible2 = ref(false)
 
 const data: any = [
   {
     id: 1,
-    name: "小明",
-    age: "14",
+    name: '小明',
+    age: '14',
     sex: 1,
-    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
-    hobby: ["唱", "跳", "rap", "游泳", "爬山", "看电影", "越野"],
+    intro: '从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。',
+    hobby: ['唱', '跳', 'rap', '游泳', '爬山', '看电影', '越野'],
   },
   {
     id: 2,
-    name: "小卢",
-    age: "24",
+    name: '小卢',
+    age: '24',
     sex: 1,
-    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
-    hobby: ["唱", "跳", "rap", "游泳", "爬山", "看电影", "越野"],
+    intro: '从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。',
+    hobby: ['唱', '跳', 'rap', '游泳', '爬山', '看电影', '越野'],
   },
   {
     id: 3,
-    name: "小娟",
-    age: "25",
+    name: '小娟',
+    age: '25',
     sex: 0,
-    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
-    hobby: ["唱", "跳", "rap", "游泳", "爬山", "看电影", "越野"],
+    intro: '从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。',
+    hobby: ['唱', '跳', 'rap', '游泳', '爬山', '看电影', '越野'],
   },
   {
     id: 4,
-    name: "小贝",
-    age: "22",
+    name: '小贝',
+    age: '22',
     sex: 0,
-    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
-    hobby: ["唱", "跳", "rap", "游泳", "爬山", "看电影", "越野"],
+    intro: '从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。',
+    hobby: ['唱', '跳', 'rap', '游泳', '爬山', '看电影', '越野'],
   },
   {
     id: 5,
-    name: "小飞",
-    age: "13",
+    name: '小飞',
+    age: '13',
     sex: 3,
-    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
-    hobby: ["唱", "跳", "rap", "游泳", "爬山", "看电影", "越野"],
+    intro: '从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。',
+    hobby: ['唱', '跳', 'rap', '游泳', '爬山', '看电影', '越野'],
   },
-];
+]
 
 const columns = [
   {
-    title: "id",
-    width: "50px",
-    field: "id",
-    x: "center",
-    sticky: "left",
-    offsetX: "0px",
+    title: 'id',
+    width: '50px',
+    field: 'id',
+    x: 'center',
+    sticky: 'left',
+    offsetX: '0px',
   },
   {
-    title: "姓名",
-    width: "100px",
-    field: "name",
-    x: "center",
-    sticky: "left",
-    offsetX: "50px",
+    title: '姓名',
+    width: '100px',
+    field: 'name',
+    x: 'center',
+    sticky: 'left',
+    offsetX: '50px',
   },
   {
-    title: "年龄",
-    width: "200px",
-    field: "age",
-    x: "center",
+    title: '年龄',
+    width: '200px',
+    field: 'age',
+    x: 'center',
   },
   {
-    title: "性别",
-    width: "200px",
-    field: "sex",
-    x: "center",
+    title: '性别',
+    width: '200px',
+    field: 'sex',
+    x: 'center',
   },
   {
-    title: "爱好",
-    width: "400px",
-    field: "hobby",
+    title: '爱好',
+    width: '400px',
+    field: 'hobby',
   },
   {
-    title: "介绍",
-    width: "400px",
-    field: "intro",
+    title: '介绍',
+    width: '400px',
+    field: 'intro',
   },
   {
-    title: "操作",
-    width: "120px",
-    field: "action",
-    sticky: "right",
-    offsetX: "0px",
-    x: "center",
+    title: '操作',
+    width: '120px',
+    field: 'action',
+    sticky: 'right',
+    offsetX: '0px',
+    x: 'center',
   },
-];
+]
 
 const formatSex = (sex: number) => {
   switch (sex) {
     case 0:
-      return "女";
+      return '女'
     case 1:
-      return "男";
+      return '男'
     default:
-      return "未知";
+      return '未知'
   }
-};
+}
 
 const set = (row: any, column: any) => {
-  Toast.info({ text: "你可以拿到这一行的数据" + JSON.stringify(row) });
-  console.log(row, column);
-};
+  Toast.info({ text: '你可以拿到这一行的数据' + JSON.stringify(row) })
+  console.log(row, column)
+}
 const del = (row: any, column: any) => {
-  Toast.warning({ text: "你也可以拿到这一列的数据" + JSON.stringify(column) });
-};
+  Toast.warning({ text: '你也可以拿到这一列的数据' + JSON.stringify(column) })
+}
 
 onMounted(() => {
   document.onkeydown = function (event) {
-    var e = event || window.event || arguments.callee.caller.arguments[0];
+    const e = event || window.event || arguments.callee.caller.arguments[0]
     if (e && e.keyCode == 27) {
       // 按 Esc
-      modalVisible1.value = false;
-      modalVisible2.value = false;
+      modalVisible1.value = false
+      modalVisible2.value = false
     }
-  };
-});
+  }
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "Main",
-};
+  name: 'Main',
+}
 </script>
 
 <style lang="scss" scoped>

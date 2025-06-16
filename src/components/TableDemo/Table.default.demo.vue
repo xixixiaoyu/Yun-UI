@@ -17,7 +17,7 @@
       <Flex y="center">
         <Badge v-if="row.fraction >= 60" round type="success" />
         <Badge v-else round type="error" />
-        <span>{{ row.fraction >= 60 ? "良好" : "很差" }}</span>
+        <span>{{ row.fraction >= 60 ? '良好' : '很差' }}</span>
       </Flex>
     </template>
     <template #sex="{ row }"> {{ formatSex(row.sex) }} </template>
@@ -40,108 +40,108 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-let data = ref([
+const data = ref([
   {
     id: 1,
-    name: "小明",
-    avatar: "https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668",
-    age: "14",
+    name: '小明',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
+    age: '14',
     fraction: 63,
-    mail: "div@kamtao.com",
+    mail: 'div@kamtao.com',
     sex: 1,
-    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
+    intro: '从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。',
   },
   {
     id: 2,
-    name: "小卢",
-    avatar: "https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668",
-    age: "24",
+    name: '小卢',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
+    age: '24',
     fraction: 82,
-    mail: "div@kamtao.com",
+    mail: 'div@kamtao.com',
     sex: 1,
-    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
+    intro: '从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。',
   },
   {
     id: 3,
-    name: "小娟",
-    avatar: "https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668",
-    age: "25",
+    name: '小娟',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
+    age: '25',
     fraction: 91,
-    mail: "div@kamtao.com",
+    mail: 'div@kamtao.com',
     sex: 0,
-    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
+    intro: '从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。',
   },
   {
     id: 4,
-    name: "小贝",
-    avatar: "https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668",
-    age: "22",
-    mail: "div@kamtao.com",
+    name: '小贝',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
+    age: '22',
+    mail: 'div@kamtao.com',
     fraction: 31,
     sex: 0,
-    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
+    intro: '从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。',
   },
   {
     id: 5,
-    name: "小飞",
-    avatar: "https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668",
-    age: "13",
+    name: '小飞',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
+    age: '13',
     fraction: 54,
-    mail: "div@kamtao.com",
+    mail: 'div@kamtao.com',
     sex: 3,
-    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
+    intro: '从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。',
   },
-]);
+])
 
 const columns = [
   {
-    title: "id",
-    width: "100px",
-    field: "id",
-    x: "center",
+    title: 'id',
+    width: '100px',
+    field: 'id',
+    x: 'center',
   },
   {
-    title: "信息",
-    width: "180px",
-    field: "info",
+    title: '信息',
+    width: '180px',
+    field: 'info',
   },
   {
-    title: "年龄",
-    width: "80px",
-    field: "age",
-    x: "center",
+    title: '年龄',
+    width: '80px',
+    field: 'age',
+    x: 'center',
   },
   {
-    title: "性别",
-    width: "80px",
-    field: "sex",
-    x: "center",
+    title: '性别',
+    width: '80px',
+    field: 'sex',
+    x: 'center',
   },
   {
-    title: "成绩",
-    width: "100px",
-    field: "fraction",
-    x: "center",
+    title: '成绩',
+    width: '100px',
+    field: 'fraction',
+    x: 'center',
   },
   {
-    title: "介绍",
-    width: "auto",
-    field: "intro",
+    title: '介绍',
+    width: 'auto',
+    field: 'intro',
   },
-];
+]
 
 const formatSex = (sex: number) => {
   switch (sex) {
     case 0:
-      return "女";
+      return '女'
     case 1:
-      return "男";
+      return '男'
     default:
-      return "未知";
+      return '未知'
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

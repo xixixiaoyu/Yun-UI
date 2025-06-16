@@ -13,16 +13,16 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-let yunPopOkRef = ref();
+import { ref } from 'vue'
+const yunPopOkRef = ref()
 // 确认
 const ok = () => {
-  Toast.success({ text: "确定" });
-  yunPopOkRef.value.hide();
-};
+  Toast.success({ text: '确定' })
+  yunPopOkRef.value.hide()
+}
 // 取消
 const cancel = () => {
-  Toast.info({ text: "取消" });
-  yunPopOkRef.value.hide();
-};
+  Toast.info({ text: '取消' })
+  yunPopOkRef.value.hide()
+}
 </script>

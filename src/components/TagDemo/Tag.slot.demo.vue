@@ -24,8 +24,8 @@
 
 <script setup lang="ts">
 const handleClose = () => {
-  Toast({ text: "您点击了关闭" });
-};
+  Toast({ text: '您点击了关闭' })
+}
 </script>
 
 <style lang="scss" scoped>

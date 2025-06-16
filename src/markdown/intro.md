@@ -7,15 +7,14 @@
 然后在你的代码中写入下面的代码
 
 ```js
-<script setup>
-  import { LewButton } from 'lew-ui'
-</script>
-```
-但，你别忘了还要在 `main.ts` 引入样式
-```js
-import "lew-ui/dist/style.css";
+<script setup>import {LewButton} from 'lew-ui'</script>
 ```
 
+但，你别忘了还要在 `main.ts` 引入样式
+
+```js
+import 'lew-ui/dist/style.css'
+```
 
 就可以使用我提供的组件了。
 
@@ -27,9 +26,9 @@ import "lew-ui/dist/style.css";
 
 ```js
 import { createApp } from 'vue'
-import Lew from "lew-ui";
-import "lew-ui/dist/style.css";
+import Lew from 'lew-ui'
+import 'lew-ui/dist/style.css'
 
-const app = createApp(App);
-app.use(Lew);
+const app = createApp(App)
+app.use(Lew)
 ```

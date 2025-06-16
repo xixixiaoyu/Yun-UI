@@ -14,7 +14,7 @@
         </svg>
         <transition name="fade">
           <span class="show-world" v-show="show">{{
-            showCode === true ? "隐藏代码" : "显示代码"
+            showCode === true ? '隐藏代码' : '显示代码'
           }}</span>
         </transition>
       </div>
@@ -23,45 +23,45 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import "prismjs";
-const Prism = window.Prism;
+import { ref } from 'vue'
+import 'prismjs'
+const Prism = window.Prism
 export default {
-  name: "code-per",
+  name: 'CodePer',
   props: {
     component: {
       type: Object,
     },
   },
   setup(props, context) {
-    const show = ref(false);
+    const show = ref(false)
     const enter = () => {
-      show.value = true;
-    };
+      show.value = true
+    }
     const leave = () => {
-      show.value = false;
-    };
+      show.value = false
+    }
     return {
       show,
       enter,
       leave,
-    };
+    }
   },
   computed: {
     showCode: function () {
       if (this.height === 0) {
-        return false;
+        return false
       } else {
-        return true;
+        return true
       }
     },
   },
   data() {
     return {
-      html: "",
+      html: '',
       height: 0,
       computedHeight: 0,
-    };
+    }
   },
   mounted() {
     //由于打包后不支持
@@ -69,23 +69,23 @@ export default {
     this.html = Prism.highlight(
       this.component.__sourceCode,
       Prism.languages.javascript,
-      "javascript"
-    );
+      'javascript'
+    )
     this.$nextTick(() => {
-      let { height } = this.$refs.codePer.getBoundingClientRect();
-      this.computedHeight = height;
-    });
+      const { height } = this.$refs.codePer.getBoundingClientRect()
+      this.computedHeight = height
+    })
   },
   methods: {
     toggle() {
       if (this.height === 0) {
-        this.height = this.computedHeight;
+        this.height = this.computedHeight
       } else {
-        this.height = 0;
+        this.height = 0
       }
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -104,7 +104,9 @@ pre {
   border-radius: 6px;
   transition: 300ms;
   &:hover {
-    box-shadow: 0 0 8px 0 var(--yun-bgcolor-0), 0 2px 4px 0 var(--yun-bgcolor-1);
+    box-shadow:
+      0 0 8px 0 var(--yun-bgcolor-0),
+      0 2px 4px 0 var(--yun-bgcolor-1);
     .down {
       transform: translateX(-35px);
     }

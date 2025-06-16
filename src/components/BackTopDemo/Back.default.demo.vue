@@ -9,5 +9,5 @@
 </template>
 
 <script setup>
-import { BackTop } from "../../lib/index";
+import { BackTop } from '../../lib/index'
 </script>

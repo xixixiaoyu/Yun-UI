@@ -9,12 +9,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch } from 'vue'
 const props = defineProps({
   modelValue: {
     type: Boolean,
     default: () => {
-      return false;
+      return false
     },
   },
   round: {
@@ -25,24 +25,24 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-});
-const v = ref(props.modelValue);
+})
+const v = ref(props.modelValue)
 watch(
   () => props.modelValue,
   () => {
-    v.value = props.modelValue;
+    v.value = props.modelValue
   }
-);
-const emit = defineEmits(["update:modelValue"]);
+)
+const emit = defineEmits(['update:modelValue'])
 const change = () => {
-  emit("update:modelValue", v.value);
-};
+  emit('update:modelValue', v.value)
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "Switch",
-};
+  name: 'Switch',
+}
 </script>
 
 <style lang="scss" scoped>
@@ -64,7 +64,7 @@ input::before {
   position: absolute;
   left: 0px;
   top: 0px;
-  content: "";
+  content: '';
   width: 38px;
   height: 24px;
   background: var(--yun-form-bgcolor);
@@ -85,7 +85,7 @@ input::after {
   position: absolute;
   width: 16px;
   height: 16px;
-  content: "";
+  content: '';
   border-radius: 2px;
   background: var(--yun-white-color);
   transition: var(--yun-form-transition);

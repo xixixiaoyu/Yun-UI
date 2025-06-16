@@ -1,0 +1,25 @@
+# 依赖目录
+node_modules/
+.pnpm-store/
+
+# 构建输出
+dist/
+build/
+.vite/
+
+# 配置文件
+*.config.js
+*.config.ts
+vite.*.config.*
+
+# 第三方文件
+public/
+mitt.js
+
+# 临时文件
+.DS_Store
+*.log
+
+# 其他
+coverage/
+.nyc_output/

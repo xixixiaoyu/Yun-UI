@@ -20,44 +20,44 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-import { useDOMCreate } from "../hooks/index";
-import { DrawerProps, getClass, getSizeStyle } from "./index";
-import { useScrollLock } from "@vueuse/core";
-useDOMCreate("yun-drawer");
+import { ref, watch } from 'vue'
+import { useDOMCreate } from '../hooks/index'
+import { DrawerProps, getClass, getSizeStyle } from './index'
+import { useScrollLock } from '@vueuse/core'
+useDOMCreate('yun-drawer')
 
-const emit = defineEmits(["update:visible"]);
-const props = defineProps(DrawerProps);
+const emit = defineEmits(['update:visible'])
+const props = defineProps(DrawerProps)
 
-let visible = ref(props.visible);
-let isShowMain = ref(false);
-let isLockScroll = useScrollLock(document.body);
+const visible = ref(props.visible)
+const isShowMain = ref(false)
+const isLockScroll = useScrollLock(document.body)
 
 watch(
   () => props.visible,
   (val) => {
-    visible.value = val;
+    visible.value = val
     setTimeout(() => {
       // 展开抽屉
-      isShowMain.value = val;
+      isShowMain.value = val
       // 锁定body滚动
-      isLockScroll.value = val;
-    }, 50);
+      isLockScroll.value = val
+    }, 50)
   }
-);
+)
 
 const close = () => {
-  isShowMain.value = false;
+  isShowMain.value = false
   setTimeout(() => {
-    emit("update:visible", false);
-  }, 100);
-};
+    emit('update:visible', false)
+  }, 100)
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "Drawer",
-};
+  name: 'Drawer',
+}
 </script>
 
 <style lang="scss">

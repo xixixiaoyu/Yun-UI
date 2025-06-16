@@ -12,8 +12,8 @@
 </template>
 
 <script setup>
-import { Tabs, Tab } from "../../lib/index";
-import { ref } from "vue";
+import { Tabs, Tab } from '../../lib/index'
+import { ref } from 'vue'
 
-const x = ref("导航1");
+const x = ref('导航1')
 </script>

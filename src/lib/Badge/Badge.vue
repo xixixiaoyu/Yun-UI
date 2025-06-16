@@ -12,7 +12,7 @@
 defineProps({
   type: {
     type: String,
-    default: "normal",
+    default: 'normal',
   },
   round: {
     type: Boolean,
@@ -20,15 +20,15 @@ defineProps({
   },
   value: {
     type: String,
-    default: "",
+    default: '',
   },
-});
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "Badge",
-};
+  name: 'Badge',
+}
 </script>
 
 <style lang="scss">

@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { Skeleton } from "../../lib/index";
+import { Skeleton } from '../../lib/index'
 </script>
 
 <style lang="scss" scoped>

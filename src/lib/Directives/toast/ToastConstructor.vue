@@ -21,8 +21,8 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from "vue";
-import { computed, onMounted, ref } from "vue";
+import type { PropType } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import {
   Info24Regular,
   Warning24Regular,
@@ -30,19 +30,19 @@ import {
   ErrorCircle24Regular,
   Alert24Regular,
   Dismiss24Filled,
-} from "@vicons/fluent";
-import { Icon } from "@vicons/utils";
+} from '@vicons/fluent'
+import { Icon } from '@vicons/utils'
 
-type ToastType = "normal" | "info" | "success" | "warning" | "error";
+type ToastType = 'normal' | 'info' | 'success' | 'warning' | 'error'
 const props = defineProps({
   text: {
     type: String,
-    default: "",
+    default: '',
   },
   type: {
     type: String as PropType<ToastType>,
-    default: "normal",
-    validator: (val: string) => ["normal", "info", "success", "warning", "error"].includes(val),
+    default: 'normal',
+    validator: (val: string) => ['normal', 'info', 'success', 'warning', 'error'].includes(val),
   },
   delay: {
     type: Number,
@@ -58,51 +58,51 @@ const props = defineProps({
   },
   id: {
     type: String,
-    default: "",
+    default: '',
   },
   top: {
     type: Number,
     default: 10,
   },
-});
+})
 
-const emit = defineEmits(["destroy"]);
+const emit = defineEmits(['destroy'])
 
-const visible = ref(false);
-let timer: any = ref(null);
+const visible = ref(false)
+const timer: any = ref(null)
 
 const classes = computed(() => [
-  "yun-toast",
+  'yun-toast',
   {
-    "yun-toast-center": props.center,
+    'yun-toast-center': props.center,
     [`yun-toast-${props.type}`]: props.type,
   },
-]);
+])
 onMounted(() => {
-  visible.value = true;
-  startTimer();
-});
+  visible.value = true
+  startTimer()
+})
 const handleClose = () => {
-  visible.value = false;
-  emit("destroy");
-};
+  visible.value = false
+  emit('destroy')
+}
 const startTimer = () => {
   if (props.delay > 0) {
     timer.value = setTimeout(() => {
-      handleClose();
-    }, props.delay);
+      handleClose()
+    }, props.delay)
   }
-};
+}
 const clearTimer = () => {
-  clearTimeout(timer.value);
-  timer.value = null;
-};
+  clearTimeout(timer.value)
+  timer.value = null
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "Toast",
-};
+  name: 'Toast',
+}
 </script>
 
 <style lang="scss" scoped>

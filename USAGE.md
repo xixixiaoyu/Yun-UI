@@ -32,6 +32,7 @@ app.mount('#app')
 ```
 
 在组件中使用：
+
 ```vue
 <template>
   <div>
@@ -59,6 +60,7 @@ app.mount('#app')
 ```
 
 在组件中按需引入：
+
 ```vue
 <template>
   <div>
@@ -94,29 +96,30 @@ app.use(Button)
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="https://unpkg.com/yun-ui/dist/style.css">
-</head>
-<body>
-  <div id="app">
-    <yun-button type="primary">CDN 按钮</yun-button>
-  </div>
-  
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="https://unpkg.com/yun-ui/dist/yun-ui.umd.js"></script>
-  <script>
-    const { createApp } = Vue
-    const app = createApp({})
-    app.use(YunUI.default)
-    app.mount('#app')
-  </script>
-</body>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/yun-ui/dist/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <yun-button type="primary">CDN 按钮</yun-button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/yun-ui/dist/yun-ui.umd.js"></script>
+    <script>
+      const { createApp } = Vue
+      const app = createApp({})
+      app.use(YunUI.default)
+      app.mount('#app')
+    </script>
+  </body>
 </html>
 ```
 
 ## 🎨 主要组件
 
 ### 基础组件
+
 - `Button` - 按钮组件
 - `Icon` - 图标组件
 - `Avatar` - 头像组件
@@ -124,6 +127,7 @@ app.use(Button)
 - `Badge` - 徽章组件
 
 ### 表单组件
+
 - `Input` - 输入框
 - `InputPro` - 增强输入框
 - `Checkbox` - 复选框
@@ -132,15 +136,18 @@ app.use(Button)
 - `DatePicker` - 日期选择器
 
 ### 数据展示
+
 - `Table` - 表格
 - `Card` - 卡片
 - `Pagination` - 分页
 
 ### 导航组件
+
 - `Tabs` - 标签页
 - `Breadcrumb` - 面包屑
 
 ### 反馈组件
+
 - `Alert` - 警告提示
 - `Modal` - 模态框
 - `Dialog` - 对话框
@@ -156,7 +163,7 @@ import { Button } from 'yun-ui'
 const buttonProps: ButtonProps = {
   type: 'primary',
   size: 'large',
-  disabled: false
+  disabled: false,
 }
 ```
 

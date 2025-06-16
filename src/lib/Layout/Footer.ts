@@ -1,24 +1,24 @@
-import { defineComponent, h } from "vue";
+import { defineComponent, h } from 'vue'
 
 const CoastFooter = defineComponent({
-  name: "CoastFooter",
+  name: 'CoastFooter',
   props: {
     height: {
       type: String,
-      default: "60px",
+      default: '60px',
     },
   },
   setup(props, { slots }) {
     return () =>
       h(
-        "footer",
+        'footer',
         {
-          class: "coast-footer",
+          class: 'coast-footer',
           style: { height: props.height },
         },
         slots.default?.()
-      );
+      )
   },
-});
+})
 
-export default CoastFooter;
+export default CoastFooter

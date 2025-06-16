@@ -16,19 +16,19 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-const visible = ref(false);
+const visible = ref(false)
 const toggle = () => {
-  visible.value = !visible.value;
-};
+  visible.value = !visible.value
+}
 
 const handleConfirm = () => {
-  console.log("onConfirm");
-  return false;
-};
+  console.log('onConfirm')
+  return false
+}
 
 const handleCloseOverlay = () => {
-  console.log("handleCloseOverlay");
-};
+  console.log('handleCloseOverlay')
+}
 </script>

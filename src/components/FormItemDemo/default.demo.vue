@@ -37,62 +37,62 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
-let user = ref({
-  username: "",
-  password: "",
-  age: "",
-  sex: "0",
+const user = ref({
+  username: '',
+  password: '',
+  age: '',
+  sex: '0',
   hobby: [],
-  school: "",
-  home: "",
-  intro: "",
+  school: '',
+  home: '',
+  intro: '',
   dark: true,
   tags: [],
-  pay: "",
-});
+  pay: '',
+})
 
-let sex_options = ref([
-  { label: "未知", value: "0" },
-  { label: "男", value: "1" },
-  { label: "女", value: "2" },
-]);
+const sex_options = ref([
+  { label: '未知', value: '0' },
+  { label: '男', value: '1' },
+  { label: '女', value: '2' },
+])
 
-let pay_options = ref([
-  { label: "微信", value: "1" },
-  { label: "支付宝", value: "2" },
-  { label: "Apple Pay", value: "3" },
-]);
-let hobby_options = ref([
-  { label: "唱歌", value: "1" },
-  { label: "跳", value: "2" },
-  { label: "rap", value: "3" },
-  { label: "打篮球", value: "44" },
-]);
-let home_options = ref([
+const pay_options = ref([
+  { label: '微信', value: '1' },
+  { label: '支付宝', value: '2' },
+  { label: 'Apple Pay', value: '3' },
+])
+const hobby_options = ref([
+  { label: '唱歌', value: '1' },
+  { label: '跳', value: '2' },
+  { label: 'rap', value: '3' },
+  { label: '打篮球', value: '44' },
+])
+const home_options = ref([
   {
-    label: "广东",
-    value: "1",
+    label: '广东',
+    value: '1',
   },
   {
-    label: "深圳",
-    value: "2",
+    label: '深圳',
+    value: '2',
   },
   {
-    label: "杭州",
-    value: "3",
+    label: '杭州',
+    value: '3',
   },
   {
-    label: "上海",
-    value: "4",
+    label: '上海',
+    value: '4',
   },
   {
-    label: "北京",
-    value: "5",
+    label: '北京',
+    value: '5',
   },
-]);
-let d = ref("2020-12-12");
+])
+const d = ref('2020-12-12')
 </script>
 
 <style lang="scss" scoped>

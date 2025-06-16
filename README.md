@@ -87,8 +87,7 @@ pnpm build:demo
 
 历史提交信息非常规范，你可以按提交的顺序逐个查看；你也可以直接查看每个组件的源代码和示例
 
-运行请使用 `yarn run dev`
-打包请使用 `yarn run build`
+运行请使用 `yarn run dev` 打包请使用 `yarn run build`
 
 ![image](https://tva3.sinaimg.cn/mw690/007c1Ltfgy1h556shr9dkj31yk0qo7i4.jpg)
 

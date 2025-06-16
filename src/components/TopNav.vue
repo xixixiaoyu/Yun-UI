@@ -36,48 +36,48 @@
   </div>
 </template>
 <script setup>
-import { inject, onMounted } from "vue";
-import { LogoGithub, MoonOutline, SunnyOutline } from "@vicons/ionicons5";
-import { Icon } from "@vicons/utils";
-import { useRoute, useRouter } from "vue-router";
-import { Toast } from "../lib/directives";
+import { inject, onMounted } from 'vue'
+import { LogoGithub, MoonOutline, SunnyOutline } from '@vicons/ionicons5'
+import { Icon } from '@vicons/utils'
+import { useRoute, useRouter } from 'vue-router'
+import { Toast } from '../lib/directives'
 
-const router = useRouter();
-const route = useRoute();
+const router = useRouter()
+const route = useRoute()
 
 defineProps({
   toggleMenuButtonVisible: {
     type: Boolean,
     default: false,
   },
-});
+})
 
-const menuVisible = inject("menuVisible"); // get
+const menuVisible = inject('menuVisible') // get
 const toggleMenu = () => {
-  menuVisible.value = !menuVisible.value;
-};
+  menuVisible.value = !menuVisible.value
+}
 
 const changeMode = (mode) => {
-  if (mode == "dark") {
-    document.getElementsByTagName("html")[0].classList.add("yun-dark");
-    localStorage.setItem("mode", "dark");
+  if (mode == 'dark') {
+    document.getElementsByTagName('html')[0].classList.add('yun-dark')
+    localStorage.setItem('mode', 'dark')
   } else {
-    document.getElementsByTagName("html")[0].classList.remove("yun-dark");
-    localStorage.setItem("mode", "light");
+    document.getElementsByTagName('html')[0].classList.remove('yun-dark')
+    localStorage.setItem('mode', 'light')
   }
-};
+}
 
 const goHome = () => {
-  if (route.name === "home") {
-    Toast.info({ text: "您已经在首页了 ~" });
+  if (route.name === 'home') {
+    Toast.info({ text: '您已经在首页了 ~' })
   } else {
-    router.push("/");
+    router.push('/')
   }
-};
+}
 
 onMounted(() => {
-  changeMode(localStorage.getItem("mode") || "light");
-});
+  changeMode(localStorage.getItem('mode') || 'light')
+})
 </script>
 
 <style lang="scss" scoped>

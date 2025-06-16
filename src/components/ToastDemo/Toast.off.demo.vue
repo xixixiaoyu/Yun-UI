@@ -11,22 +11,22 @@
 <script setup>
 const onClick1 = () => {
   Toast({
-    text: "一条可以关闭的消息提示，不操作七秒后我就会自动消失哦 ~",
+    text: '一条可以关闭的消息提示，不操作七秒后我就会自动消失哦 ~',
     showClose: true,
     delay: 7000,
     destroyed() {
-      console.log("我走了");
+      console.log('我走了')
     },
-  });
-};
+  })
+}
 const onClick2 = () => {
   Toast({
-    text: "这是一条需要点击关闭的消息提示 ~",
+    text: '这是一条需要点击关闭的消息提示 ~',
     showClose: true,
     delay: 0,
     destroyed() {
-      console.log("我走了");
+      console.log('我走了')
     },
-  });
-};
+  })
+}
 </script>

@@ -5,19 +5,19 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed } from 'vue'
 const props = defineProps({
   direction: {
     type: String,
-    default: "row",
+    default: 'row',
   },
   x: {
     type: String,
-    default: "center", // start center end
+    default: 'center', // start center end
   },
   y: {
     type: String,
-    default: "center", // start center end
+    default: 'center', // start center end
   },
   wrap: {
     type: Boolean,
@@ -25,35 +25,35 @@ const props = defineProps({
   },
   mode: {
     type: String,
-    default: "", // around / between / evenly
+    default: '', // around / between / evenly
   },
   gap: {
     type: String,
-    default: "10px",
+    default: '10px',
   },
   width: {
     type: String,
-    default: "",
+    default: '',
   },
-});
+})
 
-const { direction, x, y, wrap, mode, gap, width } = props;
+const { direction, x, y, wrap, mode, gap, width } = props
 
 const classes = computed(() => {
   return {
-    [`${"yun-flex-" + direction}`]: direction,
-    [`${"yun-flex-x-" + x}`]: x,
-    [`${"yun-flex-y-" + y}`]: y,
-    [`yun-flex-wrap`]: wrap,
-    [`${"yun-flex-mode-" + mode}`]: mode,
-  };
-});
+    [`${'yun-flex-' + direction}`]: direction,
+    [`${'yun-flex-x-' + x}`]: x,
+    [`${'yun-flex-y-' + y}`]: y,
+    ['yun-flex-wrap']: wrap,
+    [`${'yun-flex-mode-' + mode}`]: mode,
+  }
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "Flex",
-};
+  name: 'Flex',
+}
 </script>
 
 <style lang="scss" scoped>

@@ -14,10 +14,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-const visible = ref(false);
+const visible = ref(false)
 const toggle = () => {
-  visible.value = !visible.value;
-};
+  visible.value = !visible.value
+}
 </script>

@@ -33,64 +33,64 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
-import { ChevronBack, ChevronForward } from "@vicons/ionicons5";
-import { getMonthDate, getHeadDate } from "./date";
-import { dateProps } from "./props";
-const props = defineProps(dateProps);
-let dateValue = ref<string | undefined>(props.modelValue);
-let dateArr: any = dateValue.value?.split("-");
+import { ref, computed } from 'vue'
+import { ChevronBack, ChevronForward } from '@vicons/ionicons5'
+import { getMonthDate, getHeadDate } from './date'
+import { dateProps } from './props'
+const props = defineProps(dateProps)
+const dateValue = ref<string | undefined>(props.modelValue)
+const dateArr: any = dateValue.value?.split('-')
 // 获取当天日期对象
-let today = new Date();
+const today = new Date()
 // 获取当前年份
-let curYear = ref(today.getFullYear());
+const curYear = ref(today.getFullYear())
 // 获取当前月份
-let curMonth = ref(today.getMonth() + 1);
-let curDay = ref(today.getDate());
+const curMonth = ref(today.getMonth() + 1)
+const curDay = ref(today.getDate())
 // 年份
-let _year = ref(parseInt(dateArr[0]) || today.getFullYear());
+const _year = ref(parseInt(dateArr[0]) || today.getFullYear())
 // 月份
-let _month = ref(parseInt(dateArr[1]) || today.getMonth() + 1);
-let dateData = ref(getMonthDate());
+const _month = ref(parseInt(dateArr[1]) || today.getMonth() + 1)
+const dateData = ref(getMonthDate())
 const prevMonth = () => {
   if (_month.value > 1) {
-    _month.value -= 1;
+    _month.value -= 1
   } else {
-    _year.value -= 1;
-    _month.value = 12;
+    _year.value -= 1
+    _month.value = 12
   }
-  dateData.value = getMonthDate(_year.value, _month.value);
-};
+  dateData.value = getMonthDate(_year.value, _month.value)
+}
 const nextMonth = () => {
   if (_month.value < 12) {
-    _month.value += 1;
+    _month.value += 1
   } else {
-    _year.value += 1;
-    _month.value = 1;
+    _year.value += 1
+    _month.value = 1
   }
-  dateData.value = getMonthDate(_year.value, _month.value);
-};
-const emit = defineEmits(["change", "update:modelValue"]);
+  dateData.value = getMonthDate(_year.value, _month.value)
+}
+const emit = defineEmits(['change', 'update:modelValue'])
 const selectDateFn = (item) => {
-  let v = {
+  const v = {
     year: _year.value,
     month: _month.value,
     day: item.showDate,
     value: `${_year.value}-${formatZero(_month.value)}-${formatZero(item.showDate)}`,
-  };
-  dateValue.value = v.value;
-  emit("update:modelValue", dateValue.value);
-  emit("change", v);
-};
+  }
+  dateValue.value = v.value
+  emit('update:modelValue', dateValue.value)
+  emit('change', v)
+}
 const formatZero = (num) => {
-  return num < 10 ? "0" + num : num;
-};
+  return num < 10 ? '0' + num : num
+}
 const checkDateSelect = computed(() => (item) => {
   if (item.date > 0 && item.date <= item.showDate) {
-    let c = `${_year.value}-${formatZero(_month.value)}-${formatZero(item.showDate)}`;
-    return dateValue.value == c;
+    const c = `${_year.value}-${formatZero(_month.value)}-${formatZero(item.showDate)}`
+    return dateValue.value == c
   }
-});
+})
 </script>
 
 <style lang="scss">

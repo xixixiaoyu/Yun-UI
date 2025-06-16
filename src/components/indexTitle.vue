@@ -10,13 +10,13 @@
 defineProps({
   title: {
     type: String,
-    default: "",
+    default: '',
   },
   subTitle: {
     type: String,
-    default: "",
+    default: '',
   },
-});
+})
 </script>
 
 <style scoped>

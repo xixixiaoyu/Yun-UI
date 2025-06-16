@@ -11,28 +11,28 @@
 </template>
 
 <script lang="ts">
-import "./style/card.scss";
-import type { PropType } from "vue";
-import { computed, defineComponent } from "vue";
+import './style/card.scss'
+import type { PropType } from 'vue'
+import { computed, defineComponent } from 'vue'
 type CardTypeType =
-  | "secondary"
-  | "alert"
-  | "success"
-  | "purple"
-  | "warning"
-  | "violet"
-  | "error"
-  | "cyan"
-  | "dark"
-  | "lite";
+  | 'secondary'
+  | 'alert'
+  | 'success'
+  | 'purple'
+  | 'warning'
+  | 'violet'
+  | 'error'
+  | 'cyan'
+  | 'dark'
+  | 'lite'
 interface CardProps {
-  title?: string;
-  hoverable?: boolean;
-  shadow?: boolean;
-  type?: CardTypeType;
+  title?: string
+  hoverable?: boolean
+  shadow?: boolean
+  type?: CardTypeType
 }
 export default defineComponent({
-  name: "YunCard",
+  name: 'YunCard',
   props: {
     title: {
       type: String,
@@ -51,28 +51,28 @@ export default defineComponent({
       required: false,
       validator: (val: string) => {
         return [
-          "secondary",
-          "alert",
-          "success",
-          "purple",
-          "warning",
-          "violet",
-          "error",
-          "cyan",
-          "dark",
-          "lite",
-        ].includes(val);
+          'secondary',
+          'alert',
+          'success',
+          'purple',
+          'warning',
+          'violet',
+          'error',
+          'cyan',
+          'dark',
+          'lite',
+        ].includes(val)
       },
     },
   },
   setup(props: CardProps) {
-    const { hoverable, shadow, type } = props;
+    const { hoverable, shadow, type } = props
     const classes = computed(() => ({
-      "coast-card-hoverable": hoverable,
-      "coast-card-shadow": shadow,
+      'coast-card-hoverable': hoverable,
+      'coast-card-shadow': shadow,
       [`coast-card-${type}`]: type,
-    }));
-    return { classes };
+    }))
+    return { classes }
   },
-});
+})
 </script>

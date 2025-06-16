@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { Row, Col } from "../../lib/Grid/index";
+import { Row, Col } from '../../lib/Grid/index'
 </script>
 
 <style lang="scss" scoped>

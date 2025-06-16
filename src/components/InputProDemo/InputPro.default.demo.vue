@@ -49,12 +49,12 @@ x布局
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-let value1 = ref("");
-const value2 = ref("");
+import { ref } from 'vue'
+const value1 = ref('')
+const value2 = ref('')
 const clear = (e) => {
-  console.log(e);
-};
+  console.log(e)
+}
 </script>
 
 <style lang="scss" scoped></style>

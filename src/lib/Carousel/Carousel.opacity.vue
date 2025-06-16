@@ -33,19 +33,19 @@
 </template>
 
 <script setup>
-import { ref, watch, onUnmounted } from "vue";
-import Icon from "../Icon/Icon.vue";
+import { ref, watch, onUnmounted } from 'vue'
+import Icon from '../Icon/Icon.vue'
 
 const props = defineProps({
   width: {
     type: [String, Number],
     require: true,
-    default: "1150",
+    default: '1150',
   },
   height: {
     type: [String, Number],
     require: true,
-    default: "600",
+    default: '600',
   },
   sliders: {
     type: Array,
@@ -64,69 +64,69 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-});
+})
 
 // 默认显示的图片的索引
-const index = ref(0);
-const wrapWidth = props.width + "px";
-const wrapHeight = props.height + "px";
+const index = ref(0)
+const wrapWidth = props.width + 'px'
+const wrapHeight = props.height + 'px'
 // 自动播放
-let timer = null;
+let timer = null
 
 const autoPlayFn = () => {
-  clearInterval(timer);
+  clearInterval(timer)
   timer = setInterval(() => {
-    index.value++;
+    index.value++
     if (index.value >= props.sliders.length) {
-      index.value = 0;
+      index.value = 0
     }
-  }, props.duration);
-};
+  }, props.duration)
+}
 
 watch(
   () => props.sliders,
   (newVal) => {
     // 有数据&开启自动播放，才调用自动播放函数
     if (newVal.length && props.autoPlay) {
-      index.value = 0;
-      autoPlayFn();
+      index.value = 0
+      autoPlayFn()
     }
   },
   { immediate: true }
-);
+)
 
 // 鼠标进入停止，移出开启自动，前提条件：autoPlay为true
 const stop = () => {
-  if (timer) clearInterval(timer);
-};
+  if (timer) clearInterval(timer)
+}
 const start = () => {
   if (props.sliders.length && props.autoPlay) {
-    autoPlayFn();
+    autoPlayFn()
   }
-};
+}
 
 // 上一张下一张
 const toggle = (step) => {
-  const newIndex = index.value + step;
+  const newIndex = index.value + step
   if ((newIndex === -1 || newIndex >= props.sliders.length) && !props.loop) {
-    return;
+    return
   } else {
     if (newIndex >= props.sliders.length) {
-      index.value = 0;
-      return;
+      index.value = 0
+      return
     }
     if (newIndex < 0) {
-      index.value = props.sliders.length - 1;
-      return;
+      index.value = props.sliders.length - 1
+      return
     }
   }
-  index.value = newIndex;
-};
+  index.value = newIndex
+}
 
 // 组件消耗，清理定时器
 onUnmounted(() => {
-  clearInterval(timer);
-});
+  clearInterval(timer)
+})
 </script>
 
 <style lang="scss" scoped>

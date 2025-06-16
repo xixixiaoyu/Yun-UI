@@ -10,20 +10,20 @@
 </template>
 
 <script lang="ts" setup>
-import { useToPage } from "../hooks/index";
-const yunTo = useToPage();
+import { useToPage } from '../hooks/index'
+const yunTo = useToPage()
 
 defineProps({
   type: {
     type: String,
-    default: "normal",
+    default: 'normal',
     validator(value: string) {
-      return typeRules.includes(value);
+      return typeRules.includes(value)
     },
   },
   size: {
     type: [String, Number],
-    default: "",
+    default: '',
   },
   round: {
     type: Boolean,
@@ -31,20 +31,20 @@ defineProps({
   },
   to: {
     type: String,
-    default: "",
+    default: '',
   },
   bold: {
     type: Number,
     default: 400,
   },
-});
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "Mark",
-};
-const typeRules = ["normal", "success", "error", "warning", "info"];
+  name: 'Mark',
+}
+const typeRules = ['normal', 'success', 'error', 'warning', 'info']
 </script>
 
 <style lang="scss">

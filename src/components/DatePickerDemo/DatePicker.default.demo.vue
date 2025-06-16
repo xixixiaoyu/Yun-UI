@@ -11,18 +11,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-let d = ref("2022-12-12");
+import { ref } from 'vue'
+const d = ref('2022-12-12')
 
 const change1 = (e: any) => {
-  Toast.info({ text: e.date.value });
-};
+  Toast.info({ text: e.date.value })
+}
 const change2 = (e: any) => {
-  Toast.info({ text: "它在 1 秒后关闭" });
+  Toast.info({ text: '它在 1 秒后关闭' })
   setTimeout(() => {
-    e.hide();
-  }, 1000);
-};
+    e.hide()
+  }, 1000)
+}
 </script>
 
 <style lang="scss" scoped></style>

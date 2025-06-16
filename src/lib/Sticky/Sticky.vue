@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import { onMounted, ref, inject } from "vue";
-import { useWindowScroll } from "@vueuse/core";
+import { onMounted, ref, inject } from 'vue'
+import { useWindowScroll } from '@vueuse/core'
 export default {
-  name: "AppHeaderSticky",
+  name: 'AppHeaderSticky',
   props: {
     component: {
       type: Object,
@@ -26,12 +26,12 @@ export default {
     //     y.value = scrollTop;
     //   };
     // });
-    const menuVisible = inject("menuVisible");
-    const isOffset = menuVisible.value ? "160px" : "0";
-    const { y } = useWindowScroll();
-    return { y, isOffset };
+    const menuVisible = inject('menuVisible')
+    const isOffset = menuVisible.value ? '160px' : '0'
+    const { y } = useWindowScroll()
+    return { y, isOffset }
   },
-};
+}
 </script>
 
 <style lang="scss">

@@ -9,13 +9,13 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { City } from "../../lib/index";
+import { ref } from 'vue'
+import { City } from '../../lib/index'
 
-const fullLocation = ref(null);
+const fullLocation = ref(null)
 const changeCity = (result) => {
-  fullLocation.value = result.fullLocation;
-};
+  fullLocation.value = result.fullLocation
+}
 </script>
 
 <style>

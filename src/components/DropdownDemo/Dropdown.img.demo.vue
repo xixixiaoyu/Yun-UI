@@ -23,28 +23,28 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-let options = ref([
+const options = ref([
   {
-    label: "西游记",
-    value: "1",
+    label: '西游记',
+    value: '1',
   },
   {
-    label: "水浒传",
-    value: "2",
+    label: '水浒传',
+    value: '2',
   },
   {
-    label: "三国演义",
-    value: "3",
+    label: '三国演义',
+    value: '3',
   },
   {
-    label: "红楼梦",
-    value: "4",
+    label: '红楼梦',
+    value: '4',
   },
-]);
+])
 
 const change = (e) => {
-  Toast({ text: e.value.label, type: "success" });
-};
+  Toast({ text: e.value.label, type: 'success' })
+}
 </script>

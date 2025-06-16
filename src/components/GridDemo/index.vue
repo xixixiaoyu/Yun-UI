@@ -10,11 +10,11 @@
 </template>
 
 <script setup>
-import Demo from "../Demo.vue";
-import GridDemo1 from "./Grid.default.demo.vue";
-import GridDemo2 from "./Grid.gutter.demo.vue";
-import GridDemo3 from "./Grid.hybrid.demo.vue";
-import GridDemo4 from "./Grid.offset.demo.vue";
-import GridDemo5 from "./Grid.justify.demo.vue";
-import GridDemo6 from "./Grid.responsive.demo.vue";
+import Demo from '../Demo.vue'
+import GridDemo1 from './Grid.default.demo.vue'
+import GridDemo2 from './Grid.gutter.demo.vue'
+import GridDemo3 from './Grid.hybrid.demo.vue'
+import GridDemo4 from './Grid.offset.demo.vue'
+import GridDemo5 from './Grid.justify.demo.vue'
+import GridDemo6 from './Grid.responsive.demo.vue'
 </script>

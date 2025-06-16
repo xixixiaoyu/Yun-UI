@@ -15,15 +15,15 @@
 defineProps({
   type: {
     type: String,
-    default: "normal",
+    default: 'normal',
   },
-});
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "Comment",
-};
+  name: 'Comment',
+}
 </script>
 
 <style lang="scss">

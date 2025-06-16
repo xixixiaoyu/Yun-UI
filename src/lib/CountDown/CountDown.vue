@@ -20,10 +20,10 @@
 
 export default {
   data: () => ({
-    days: "0",
-    hours: "00",
-    mins: "00",
-    seconds: "00",
+    days: '0',
+    hours: '00',
+    mins: '00',
+    seconds: '00',
     timer: null,
     curTime: 0,
   }),
@@ -48,71 +48,71 @@ export default {
   computed: {
     duration() {
       if (this.end) {
-        let end = String(this.end).length >= 13 ? +this.end : +this.end * 1000;
-        end -= Date.now();
-        return end;
+        let end = String(this.end).length >= 13 ? +this.end : +this.end * 1000
+        end -= Date.now()
+        return end
       }
-      const time = this.isMiniSecond ? Math.round(+this.time / 1000) : Math.round(+this.time);
-      return time;
+      const time = this.isMiniSecond ? Math.round(+this.time / 1000) : Math.round(+this.time)
+      return time
     },
   },
   mounted() {
-    this.countDown();
+    this.countDown()
   },
   watch: {
     duration() {
-      this.countDown();
+      this.countDown()
     },
     refreshCounter() {
-      this.countDown();
+      this.countDown()
     },
   },
   methods: {
     durationFormatter(time) {
-      if (!time) return { ss: 0 };
-      let t = time;
-      const ss = t % 60;
-      t = (t - ss) / 60;
-      if (t < 1) return { ss };
-      const mm = t % 60;
-      t = (t - mm) / 60;
-      if (t < 1) return { mm, ss };
-      const hh = t % 24;
-      t = (t - hh) / 24;
-      if (t < 1) return { hh, mm, ss };
-      const dd = t;
-      return { dd, hh, mm, ss };
+      if (!time) return { ss: 0 }
+      let t = time
+      const ss = t % 60
+      t = (t - ss) / 60
+      if (t < 1) return { ss }
+      const mm = t % 60
+      t = (t - mm) / 60
+      if (t < 1) return { mm, ss }
+      const hh = t % 24
+      t = (t - hh) / 24
+      if (t < 1) return { hh, mm, ss }
+      const dd = t
+      return { dd, hh, mm, ss }
     },
     countDown() {
       // eslint-disable-next-line no-unused-expressions
-      this.curTime = Date.now();
-      this.getTime(this.duration);
+      this.curTime = Date.now()
+      this.getTime(this.duration)
     },
     getTime(time) {
       // eslint-disable-next-line no-unused-expressions
-      this.timer && clearTimeout(this.timer);
+      this.timer && clearTimeout(this.timer)
       if (time < 0) {
-        return;
+        return
       }
       // eslint-disable-next-line object-curly-newline
-      const { dd, hh, mm, ss } = this.durationFormatter(time);
-      this.days = dd || 0;
+      const { dd, hh, mm, ss } = this.durationFormatter(time)
+      this.days = dd || 0
       // this.hours = `00${hh || ''}`.slice(-2);
       // this.mins = `00${mm || ''}`.slice(-2);
       // this.seconds = `00${ss || ''}`.slice(-2);
-      this.hours = hh || 0;
-      this.mins = mm || 0;
-      this.seconds = ss || 0;
+      this.hours = hh || 0
+      this.mins = mm || 0
+      this.seconds = ss || 0
       this.timer = setTimeout(() => {
-        const now = Date.now();
-        const diffTime = Math.floor((now - this.curTime) / 1000);
-        const step = diffTime > 1 ? diffTime : 1; // 页面退到后台的时候不会计时，对比时间差，大于1s的重置倒计时
-        this.curTime = now;
-        this.getTime(time - step);
-      }, 1000);
+        const now = Date.now()
+        const diffTime = Math.floor((now - this.curTime) / 1000)
+        const step = diffTime > 1 ? diffTime : 1 // 页面退到后台的时候不会计时，对比时间差，大于1s的重置倒计时
+        this.curTime = now
+        this.getTime(time - step)
+      }, 1000)
     },
   },
-};
+}
 </script>
 <style lang="scss" scoped>
 ._base-count-down {

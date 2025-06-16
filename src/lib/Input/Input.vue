@@ -76,19 +76,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, computed } from "vue";
-import { CloseCircleOutline, EyeOutline, EyeOffOutline } from "@vicons/ionicons5";
-import { Icon } from "@vicons/utils";
-import { inputProps } from "./props";
-const props = defineProps(inputProps);
-const v = ref(props.modelValue);
+import { ref, watch, computed } from 'vue'
+import { CloseCircleOutline, EyeOutline, EyeOffOutline } from '@vicons/ionicons5'
+import { Icon } from '@vicons/utils'
+import { inputProps } from './props'
+const props = defineProps(inputProps)
+const v = ref(props.modelValue)
 watch(
   () => props.modelValue,
   () => {
-    v.value = props.modelValue;
+    v.value = props.modelValue
   }
-);
-const emit = defineEmits(["update:modelValue", "clear", "blur", "focus", "change", "input"]);
+)
+const emit = defineEmits(['update:modelValue', 'clear', 'blur', 'focus', 'change', 'input'])
 const input = () => {
   if (props.maxLength) {
     // @ts-ignore
@@ -96,72 +96,72 @@ const input = () => {
       // @ts-ignore
       if (getTextLength(v.value.slice(0, i)) >= props.maxLength) {
         // @ts-ignore
-        v.value = v.value.slice(0, i);
+        v.value = v.value.slice(0, i)
       }
     }
   }
-  emit("update:modelValue", v.value);
-  emit("input", v.value);
-};
+  emit('update:modelValue', v.value)
+  emit('input', v.value)
+}
 const clear = (): void => {
-  emit("clear", v.value);
-  v.value = "";
-  emit("update:modelValue", v.value);
-};
-let _type = ref(props.type);
+  emit('clear', v.value)
+  v.value = ''
+  emit('update:modelValue', v.value)
+}
+const _type = ref(props.type)
 const showPasswordFn = (): void => {
-  _type.value == "text" ? (_type.value = "password") : (_type.value = "text");
-};
-let getCheckNumStr = computed(() => {
+  _type.value == 'text' ? (_type.value = 'password') : (_type.value = 'text')
+}
+const getCheckNumStr = computed(() => {
   if (props.showCount && props.maxLength) {
     // @ts-ignore
-    return getTextLength(v.value) + " / " + props.maxLength;
+    return getTextLength(v.value) + ' / ' + props.maxLength
   } else if (props.showCount) {
     // @ts-ignore
-    return getTextLength(v.value);
+    return getTextLength(v.value)
   } else {
-    return false;
+    return false
   }
-});
+})
 /**
  * 获取字符长度
  * @param val
  */
 const getTextLength = (val: string) => {
   if (!props.niceCount) {
-    return val.length;
+    return val.length
   } else {
-    let len = 0;
+    let len = 0
     for (let i = 0; i <= val.length - 1; i++) {
-      let length = val.charCodeAt(i);
+      const length = val.charCodeAt(i)
       if (length >= 0 && length <= 128) {
-        len += 0.5;
+        len += 0.5
       } else {
-        len += 1;
+        len += 1
       }
     }
-    return Math.trunc(len);
+    return Math.trunc(len)
   }
-};
+}
 
-const yunInputRef = ref();
-const yunTextareaRef = ref();
+const yunInputRef = ref()
+const yunTextareaRef = ref()
 
 const focusFn = () => {
-  if (props.type == "textarea") {
-    yunTextareaRef.value?.focus();
+  if (props.type == 'textarea') {
+    yunTextareaRef.value?.focus()
   } else {
-    yunInputRef.value?.focus();
+    yunInputRef.value?.focus()
   }
-};
+}
 
-defineExpose({ focusFn });
+defineExpose({ focusFn })
 </script>
 
 <script lang="ts">
 export default {
-  name: "Input",
-};
+  name: 'Input',
+}
 </script>
 
 <style lang="scss" scoped>

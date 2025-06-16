@@ -22,23 +22,23 @@
 </template>
 
 <script lang="ts">
-import type { PropType } from "vue";
-import { defineComponent } from "vue";
-import Button from "../Button/Button.vue";
+import type { PropType } from 'vue'
+import { defineComponent } from 'vue'
+import Button from '../Button/Button.vue'
 
 interface DialogProps {
-  visible: boolean;
-  overlayClosable?: boolean;
-  confirm?: () => unknown;
-  cancel?: () => unknown;
+  visible: boolean
+  overlayClosable?: boolean
+  confirm?: () => unknown
+  cancel?: () => unknown
 }
 
 export default defineComponent({
-  name: "Dialog",
+  name: 'Dialog',
   components: {
     Button,
   },
-  emits: ["closeOverlay", "update:visible"],
+  emits: ['closeOverlay', 'update:visible'],
   props: {
     visible: {
       type: Boolean,
@@ -60,33 +60,33 @@ export default defineComponent({
   },
   setup(props: DialogProps, { emit }) {
     const close = () => {
-      emit("update:visible", false);
-    };
+      emit('update:visible', false)
+    }
 
     const onClickOverlay = () => {
       if (props.overlayClosable) {
-        close();
-        emit("closeOverlay");
+        close()
+        emit('closeOverlay')
       }
-    };
+    }
     const confirmDialog = () => {
       if (props.confirm && props.confirm() !== false) {
-        close();
+        close()
       }
-    };
+    }
     const cancel = () => {
-      props.cancel && props.cancel();
-      close();
-    };
+      props.cancel && props.cancel()
+      close()
+    }
 
     return {
       close,
       onClickOverlay,
       confirmDialog,
       cancel,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>
@@ -138,7 +138,7 @@ $border-color: #d9d9d9;
     cursor: pointer;
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       height: 1px;
       background: black;

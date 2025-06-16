@@ -76,5 +76,5 @@ import {
   ErrorCircle24Regular,
   Alert24Regular,
   AlertUrgent20Regular,
-} from "@vicons/fluent";
+} from '@vicons/fluent'
 </script>

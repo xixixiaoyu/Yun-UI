@@ -21,23 +21,23 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-let visible1 = ref(false);
-let visible2 = ref(false);
-let visible3 = ref(false);
-let visible4 = ref(false);
+const visible1 = ref(false)
+const visible2 = ref(false)
+const visible3 = ref(false)
+const visible4 = ref(false)
 
 const open1 = () => {
-  visible1.value = true;
-};
+  visible1.value = true
+}
 const open2 = () => {
-  visible2.value = true;
-};
+  visible2.value = true
+}
 const open3 = () => {
-  visible3.value = true;
-};
+  visible3.value = true
+}
 const open4 = () => {
-  visible4.value = true;
-};
+  visible4.value = true
+}
 </script>

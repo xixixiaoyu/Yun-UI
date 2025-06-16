@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-import { useVModel } from "@vueuse/core";
+import { useVModel } from '@vueuse/core'
 
 const props = defineProps({
   // 控制开关
@@ -48,12 +48,12 @@ const props = defineProps({
   // 取消按钮文本
   cancelText: {
     type: String,
-    default: "取消",
+    default: '取消',
   },
   // 确定按钮文本
   confirmText: {
     type: String,
-    default: "确定",
+    default: '确定',
   },
   // 取消按钮点击事件
   cancelHandler: {
@@ -67,45 +67,45 @@ const props = defineProps({
   close: {
     type: Function,
   },
-});
+})
 
-defineEmits(["update:modelValue"]);
+defineEmits(['update:modelValue'])
 
 // 控制显示处理
-const isVisible = useVModel(props);
+const isVisible = useVModel(props)
 
 /**
  * 取消按钮点击事件
  */
 const onCancelClick = () => {
   if (props.cancelHandler) {
-    props.cancelHandler();
+    props.cancelHandler()
   }
-  close();
-};
+  close()
+}
 
 /**
  * 确定按钮点击事件
  */
 const onConfirmClick = () => {
   if (props.confirmHandler) {
-    props.confirmHandler();
+    props.confirmHandler()
   }
-  close();
-};
+  close()
+}
 
 const close = () => {
-  isVisible.value = false;
+  isVisible.value = false
   if (props.close) {
-    props.close();
+    props.close()
   }
-};
+}
 </script>
 
 <script>
 export default {
-  name: "MyDialog",
-};
+  name: 'MyDialog',
+}
 </script>
 
 <style lang="scss" scoped>

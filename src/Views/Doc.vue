@@ -173,20 +173,20 @@
 </template>
 
 <script>
-import Topnav from "../components/TopNav.vue";
-import { inject, computed } from "vue";
+import Topnav from '../components/TopNav.vue'
+import { inject, computed } from 'vue'
 export default {
   components: { Topnav },
   setup() {
-    const isPhone = computed(() => document.documentElement.clientWidth < 500);
-    const menuVisible = inject("menuVisible"); // get
+    const isPhone = computed(() => document.documentElement.clientWidth < 500)
+    const menuVisible = inject('menuVisible') // get
     const closeOverlay = () => {
-      menuVisible.value = false;
-    };
+      menuVisible.value = false
+    }
 
-    return { menuVisible, closeOverlay, isPhone };
+    return { menuVisible, closeOverlay, isPhone }
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

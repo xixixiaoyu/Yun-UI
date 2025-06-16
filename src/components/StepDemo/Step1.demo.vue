@@ -10,12 +10,12 @@
 </template>
 
 <script setup>
-import { Step } from "../../lib/index";
-import { ref } from "vue";
+import { Step } from '../../lib/index'
+import { ref } from 'vue'
 
-const count = ref(5);
-const active = ref(0);
+const count = ref(5)
+const active = ref(0)
 const next = () => {
-  active.value++;
-};
+  active.value++
+}
 </script>

@@ -49,8 +49,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import Title from "../../lib/Title/Title.vue";
-let isShow = ref(false);
-let title = ref("加载中");
+import { ref } from 'vue'
+import Title from '../../lib/Title/Title.vue'
+const isShow = ref(false)
+const title = ref('加载中')
 </script>

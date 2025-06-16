@@ -11,20 +11,20 @@
 </template>
 
 <script setup>
-import { Card } from "../../lib/index";
+import { Card } from '../../lib/index'
 
 const types = [
-  "secondary",
-  "alert",
-  "success",
-  "purple",
-  "warning",
-  "violet",
-  "cyan",
-  "error",
-  "dark",
-  "lite",
-];
+  'secondary',
+  'alert',
+  'success',
+  'purple',
+  'warning',
+  'violet',
+  'cyan',
+  'error',
+  'dark',
+  'lite',
+]
 </script>
 
 <style lang="scss" scoped>

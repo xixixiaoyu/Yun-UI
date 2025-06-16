@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-const bool = ref(true);
+const bool = ref(true)
 </script>

@@ -8,18 +8,18 @@
   <div style="height: 2000px"></div>
 </template>
 <script setup>
-import Demo from "../Demo.vue";
-import Attr from "../Attr.vue";
-import { columns } from "../../lib/data";
-import StickyDemo1 from "./Sticky.default.demo.vue";
+import Demo from '../Demo.vue'
+import Attr from '../Attr.vue'
+import { columns } from '../../lib/data'
+import StickyDemo1 from './Sticky.default.demo.vue'
 
 const data = [
   {
-    params: "component",
-    desc: "传入组件",
-    type: "object",
-    select: "object",
-    default: "/",
+    params: 'component',
+    desc: '传入组件',
+    type: 'object',
+    select: 'object',
+    default: '/',
   },
-];
+]
 </script>

@@ -17,25 +17,25 @@
 </template>
 
 <script lang="ts" setup>
-import { Dismiss24Filled } from "@vicons/fluent";
-import { Icon } from "@vicons/utils";
-import { useToPage } from "../hooks/index";
-import _props from "./props";
-const yunTo = useToPage();
-const props = defineProps(_props);
-const emit = defineEmits(["close"]);
+import { Dismiss24Filled } from '@vicons/fluent'
+import { Icon } from '@vicons/utils'
+import { useToPage } from '../hooks/index'
+import _props from './props'
+const yunTo = useToPage()
+const props = defineProps(_props)
+const emit = defineEmits(['close'])
 const close = () => {
   if (props.disabled) {
-    return;
+    return
   }
-  emit("close");
-};
+  emit('close')
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "Tag",
-};
+  name: 'Tag',
+}
 </script>
 
 <style lang="scss">

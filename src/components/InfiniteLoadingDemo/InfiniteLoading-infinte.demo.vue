@@ -20,43 +20,43 @@
 </template>
 
 <script setup>
-import axios from "axios";
-import { ref } from "vue";
-import { InfiniteLoading } from "../../lib/index";
+import axios from 'axios'
+import { ref } from 'vue'
+import { InfiniteLoading } from '../../lib/index'
 
 // 加载状态
-const loading = ref(false);
+const loading = ref(false)
 
 // 是否加载完毕
-const finished = ref(false);
+const finished = ref(false)
 
 // 商品列表数据
-const goodsList = ref([]);
+const goodsList = ref([])
 
 const reqParams = {
   page: 1,
   pageSize: 20,
-  categoryId: "109311007",
-};
+  categoryId: '109311007',
+}
 
 const getData = () => {
-  loading.value = true;
+  loading.value = true
   axios
-    .post("http://pcapi-xiaotuxian-front-devtest.itheima.net/category/goods/temporary", reqParams)
+    .post('http://pcapi-xiaotuxian-front-devtest.itheima.net/category/goods/temporary', reqParams)
     .then(({ data: { result } }) => {
       // 获取数据成功
       if (result.items.length) {
         // 有数据就追加数据
-        goodsList.value.push(...result.items);
+        goodsList.value.push(...result.items)
       } else {
         // 没有数据，代表加载完成
-        finished.value = true;
+        finished.value = true
       }
-      loading.value = false;
-    });
-};
+      loading.value = false
+    })
+}
 
-console.log(goodsList.value);
+console.log(goodsList.value)
 </script>
 
 <style scoped lang="scss">

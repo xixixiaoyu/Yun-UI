@@ -10,23 +10,23 @@
 const props = defineProps({
   width: {
     type: String,
-    default: "100px",
+    default: '100px',
   },
   height: {
     type: String,
-    default: "100px",
+    default: '100px',
   },
   bg: {
     type: String,
-    default: "#efefef",
+    default: '#efefef',
   },
   animated: {
     type: Boolean,
     default: false,
   },
-});
-const width = props.width.includes("px") ? props.width : props.width + "px";
-const height = props.height.includes("px") ? props.height : props.height + "px";
+})
+const width = props.width.includes('px') ? props.width : props.width + 'px'
+const height = props.height.includes('px') ? props.height : props.height + 'px'
 </script>
 
 <style lang="scss">
@@ -43,7 +43,7 @@ const height = props.height.includes("px") ? props.height : props.height + "px";
 }
 .shan {
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     animation: shan 1.5s ease 0s infinite;
     top: 0;

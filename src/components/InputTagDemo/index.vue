@@ -7,27 +7,27 @@
 </template>
 
 <script setup>
-import indexTitle from "../indexTitle.vue";
-import Demo from "../Demo.vue";
-import Attr from "../Attr.vue";
-import { columns } from "../../lib/data";
+import indexTitle from '../indexTitle.vue'
+import Demo from '../Demo.vue'
+import Attr from '../Attr.vue'
+import { columns } from '../../lib/data'
 
-import InputTagDemo1 from "./InputTag.default.demo.vue";
+import InputTagDemo1 from './InputTag.default.demo.vue'
 
 const data = [
   {
-    params: "v-model(model-value)",
-    desc: "绑定值",
-    type: "Array",
-    select: "/",
-    default: "[]",
+    params: 'v-model(model-value)',
+    desc: '绑定值',
+    type: 'Array',
+    select: '/',
+    default: '[]',
   },
   {
-    params: "type",
-    desc: "类型(参考Tag 标签)",
-    type: "string",
-    select: "/",
+    params: 'type',
+    desc: '类型(参考Tag 标签)',
+    type: 'string',
+    select: '/',
     default: "''",
   },
-];
+]
 </script>

@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import indexTitle from "../indexTitle.vue";
-import Demo from "../Demo.vue";
-import LayoutDemo from "./Layout1.demo.vue";
+import indexTitle from '../indexTitle.vue'
+import Demo from '../Demo.vue'
+import LayoutDemo from './Layout1.demo.vue'
 </script>

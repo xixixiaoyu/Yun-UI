@@ -20,121 +20,121 @@
   </div>
 </template>
 <script>
-import { computed, reactive, ref } from "vue";
-import Icon from "../Icon/Icon.vue";
-import { onClickOutside } from "@vueuse/core";
-import axios from "axios";
+import { computed, reactive, ref } from 'vue'
+import Icon from '../Icon/Icon.vue'
+import { onClickOutside } from '@vueuse/core'
+import axios from 'axios'
 export default {
-  name: "YunCity",
+  name: 'YunCity',
   components: {
     Icon,
   },
   props: {
     fullLocation: {
       type: String,
-      default: "",
+      default: '',
     },
     placeholder: {
       type: String,
-      defulat: "请选择配送地址",
+      defulat: '请选择配送地址',
     },
   },
   setup(props, { emit }) {
     // 定义选择的 省市区 数据
     const changeResult = reactive({
-      provinceCode: "",
-      provinceName: "",
-      cityCode: "",
-      cityName: "",
-      countyCode: "",
-      countyName: "",
-      fullLocation: "",
-    });
+      provinceCode: '',
+      provinceName: '',
+      cityCode: '',
+      cityName: '',
+      countyCode: '',
+      countyName: '',
+      fullLocation: '',
+    })
 
     // 显示隐藏数据
-    const visible = ref(false);
+    const visible = ref(false)
 
     // 所有省市区数据
-    const allCityData = ref([]);
+    const allCityData = ref([])
 
     // 正在加载数据
-    const loading = ref(false);
+    const loading = ref(false)
 
     // 提供打开和关闭函数
     const open = () => {
-      visible.value = true;
+      visible.value = true
       // 获取地区数据
-      loading.value = true;
+      loading.value = true
       getCityData().then((data) => {
-        allCityData.value = data;
-        loading.value = false;
-      });
+        allCityData.value = data
+        loading.value = false
+      })
       // 清空之前选择
       for (const key in changeResult) {
-        changeResult[key] = "";
+        changeResult[key] = ''
       }
-    };
+    }
 
     // 关闭的函数
     const close = () => {
-      visible.value = false;
-    };
+      visible.value = false
+    }
 
     // 提供一个切换函数给select使用
     const toggle = () => {
-      visible.value ? close() : open();
-    };
+      visible.value ? close() : open()
+    }
 
     // 实现点击组件外部元素进行关闭操作
-    const target = ref(null);
+    const target = ref(null)
     onClickOutside(target, () => {
       // 参数1：监听那个元素
       // 参数2：点击了该元素外的其他地方触发的函数
-      close();
-    });
+      close()
+    })
 
     // 当你点击按钮的时候记录
     const changeItem = (item) => {
       if (item.level === 0) {
         // 省
-        changeResult.provinceCode = item.code;
-        changeResult.provinceName = item.name;
+        changeResult.provinceCode = item.code
+        changeResult.provinceName = item.name
       }
       if (item.level === 1) {
         // 市
-        changeResult.cityCode = item.code;
-        changeResult.cityName = item.name;
+        changeResult.cityCode = item.code
+        changeResult.cityName = item.name
       }
       if (item.level === 2) {
         // 地区
-        changeResult.countyCode = item.code;
-        changeResult.countyName = item.name;
+        changeResult.countyCode = item.code
+        changeResult.countyName = item.name
         // 完整路径
-        changeResult.fullLocation = `${changeResult.provinceName} ${changeResult.cityName} ${changeResult.countyName}`;
+        changeResult.fullLocation = `${changeResult.provinceName} ${changeResult.cityName} ${changeResult.countyName}`
         // 这是最后一级，选完了，关闭对话框，通知父组件数据
-        close();
-        emit("change", changeResult);
+        close()
+        emit('change', changeResult)
       }
-    };
+    }
 
     // 实现计算属性：获取当前显示的地区数组
     const currList = computed(() => {
       // 默认省一级
-      let list = allCityData.value;
+      let list = allCityData.value
       // 可能：市一级
       if (changeResult.provinceCode && changeResult.provinceName) {
-        list = list.find((p) => p.code === changeResult.provinceCode).areaList;
+        list = list.find((p) => p.code === changeResult.provinceCode).areaList
       }
       // 可能：县地区一级
       if (changeResult.cityCode && changeResult.cityName) {
-        list = list.find((c) => c.code === changeResult.cityCode).areaList;
+        list = list.find((c) => c.code === changeResult.cityCode).areaList
       }
-      return list;
-    });
+      return list
+    })
 
-    return { visible, toggle, target, loading, currList, changeItem };
+    return { visible, toggle, target, loading, currList, changeItem }
   },
-};
+}
 // 获取省市区数据函数
 const getCityData = () => {
   // 数据：https://yjy-oss-files.oss-cn-zhangjiakou.aliyuncs.com/tuxian/area.json
@@ -144,17 +144,17 @@ const getCityData = () => {
   return new Promise((resolve, reject) => {
     // 约定：数据存储在window上的cityData字段
     if (window.cityData) {
-      resolve(window.cityData);
+      resolve(window.cityData)
     } else {
-      const url = "https://yjy-oss-files.oss-cn-zhangjiakou.aliyuncs.com/tuxian/area.json";
+      const url = 'https://yjy-oss-files.oss-cn-zhangjiakou.aliyuncs.com/tuxian/area.json'
       axios.get(url).then((res) => {
         // 缓存
-        window.cityData = res.data;
-        resolve(res.data);
-      });
+        window.cityData = res.data
+        resolve(res.data)
+      })
     }
-  });
-};
+  })
+}
 </script>
 <style lang="scss" scoped>
 .yun-city {
@@ -217,7 +217,7 @@ const getCityData = () => {
     .loading {
       height: 290px;
       width: 100%;
-      background: url("https://s1.ax1x.com/2022/03/19/qEraB4.gif") no-repeat center;
+      background: url('https://s1.ax1x.com/2022/03/19/qEraB4.gif') no-repeat center;
     }
   }
 }

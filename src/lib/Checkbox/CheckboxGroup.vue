@@ -14,36 +14,36 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType } from "vue";
-import Checkbox from "./Checkbox.vue";
+import { PropType } from 'vue'
+import Checkbox from './Checkbox.vue'
 
 type Options = {
-  label: string;
-  value: string | number;
-};
+  label: string
+  value: string | number
+}
 const props = defineProps({
   modelValue: {
     type: Array,
     default: () => {
-      return [];
+      return []
     },
     required: true,
   },
   block: {
     type: Boolean,
     default: () => {
-      return false;
+      return false
     },
   },
   round: {
     type: Boolean,
     default: () => {
-      return false;
+      return false
     },
   },
   direction: {
     type: String,
-    default: "x",
+    default: 'x',
   },
   iconable: {
     type: Boolean,
@@ -53,31 +53,31 @@ const props = defineProps({
     type: Array as PropType<Options[]>,
     required: true,
     validator: (value: Array<Options>) => {
-      const hasNameKey = value.every((option) => Object.keys(option).includes("label"));
-      const hasIdKey = value.every((option) => Object.keys(option).includes("value"));
-      return hasNameKey && hasIdKey;
+      const hasNameKey = value.every((option) => Object.keys(option).includes('label'))
+      const hasIdKey = value.every((option) => Object.keys(option).includes('value'))
+      return hasNameKey && hasIdKey
     },
   },
-});
-const emit = defineEmits(["update:modelValue"]);
+})
+const emit = defineEmits(['update:modelValue'])
 const check = (_value: string, checked: boolean) => {
-  let updatedValue = [...props.modelValue];
+  const updatedValue = [...props.modelValue]
   if (checked) {
-    updatedValue.push(_value);
+    updatedValue.push(_value)
   } else {
-    updatedValue.splice(updatedValue.indexOf(_value), 1);
+    updatedValue.splice(updatedValue.indexOf(_value), 1)
   }
-  emit("update:modelValue", updatedValue);
-};
+  emit('update:modelValue', updatedValue)
+}
 const getChecked = (_value: string | number) => {
-  return props.modelValue.includes(_value);
-};
+  return props.modelValue.includes(_value)
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "CheckboxGroup",
-};
+  name: 'CheckboxGroup',
+}
 </script>
 
 <style lang="scss" scoped>

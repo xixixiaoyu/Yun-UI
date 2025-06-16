@@ -11,5 +11,5 @@
 </template>
 
 <script setup>
-import { Sticky } from "../../lib/index";
+import { Sticky } from '../../lib/index'
 </script>

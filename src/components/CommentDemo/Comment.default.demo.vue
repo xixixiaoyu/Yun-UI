@@ -127,7 +127,7 @@
 </template>
 
 <script setup lang="ts">
-import { Chat24Regular } from "@vicons/fluent";
+import { Chat24Regular } from '@vicons/fluent'
 </script>
 
 <style lang="scss" scoped>

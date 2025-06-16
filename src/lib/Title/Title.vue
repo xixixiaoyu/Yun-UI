@@ -12,15 +12,15 @@ defineProps({
   },
   size: {
     type: String,
-    default: "24px",
+    default: '24px',
   },
-});
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "Title",
-};
+  name: 'Title',
+}
 </script>
 
 <style lang="scss">

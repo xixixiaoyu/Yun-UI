@@ -2,10 +2,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: HarmonyOS_Regular, -apple-system, "Noto Sans", "Helvetica Neue", Helvetica,
-    "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC",
-    "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei",
-    "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  font-family:
+    HarmonyOS_Regular,
+    -apple-system,
+    'Noto Sans',
+    'Helvetica Neue',
+    Helvetica,
+    'Nimbus Sans L',
+    Arial,
+    'Liberation Sans',
+    'PingFang SC',
+    'Hiragino Sans GB',
+    'Noto Sans CJK SC',
+    'Source Han Sans SC',
+    'Source Han Sans CN',
+    'Microsoft YaHei',
+    'Wenquanyi Micro Hei',
+    'WenQuanYi Zen Hei',
+    'ST Heiti',
+    SimHei,
+    'WenQuanYi Zen Hei Sharp',
+    sans-serif;
 }
 
 *::before,
@@ -37,7 +54,7 @@ h1 {
   color: var(--yun-text-color-3);
 }
 
-.tippy-box[data-yun~="popover"] {
+.tippy-box[data-yun~='popover'] {
   .tippy-content {
     padding: 6px;
     box-sizing: border-box !important;

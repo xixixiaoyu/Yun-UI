@@ -16,7 +16,7 @@ Footer slot
 </template>
 
 <script setup>
-import { Card } from "../../lib/index";
+import { Card } from '../../lib/index'
 </script>
 
 <style lang="scss" scoped>

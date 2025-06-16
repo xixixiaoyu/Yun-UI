@@ -6,33 +6,33 @@
     <p v-else>{{ description || component.__sourceDescription }}</p>
     <p v-html="html" v-if="html"></p>
     <!--展示代码的地方-->
-    <code-per ref="codePer" :component="component"></code-per>
+    <CodePer ref="codePer" :component="component"></CodePer>
   </div>
 </template>
 
 <script>
-import CodePer from "./Codeper.vue";
+import CodePer from './Codeper.vue'
 export default {
-  name: "demo-doc",
+  name: 'DemoDoc',
   components: { CodePer },
   props: {
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     description: {
       type: String,
-      default: "",
+      default: '',
     },
     html: {
       type: String,
-      default: "",
+      default: '',
     },
     component: {
       type: Object,
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

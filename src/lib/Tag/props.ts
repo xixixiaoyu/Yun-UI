@@ -1,24 +1,24 @@
-let sizeRules = ["small", "medium", "large"];
-let typeRules = ["primary", "info", "success", "error", "warning", "normal"];
+const sizeRules = ['small', 'medium', 'large']
+const typeRules = ['primary', 'info', 'success', 'error', 'warning', 'normal']
 
 const _props = {
   type: {
     type: String,
-    default: "normal",
+    default: 'normal',
     validator(value: string) {
-      return typeRules.includes(value);
+      return typeRules.includes(value)
     },
   },
   size: {
     type: String,
-    default: "medium",
+    default: 'medium',
     validator(value: string) {
-      return sizeRules.includes(value);
+      return sizeRules.includes(value)
     },
   },
   maxWidth: {
     type: String,
-    default: "120px",
+    default: '120px',
   },
   round: {
     type: Boolean,
@@ -34,8 +34,8 @@ const _props = {
   },
   to: {
     type: String,
-    default: "",
+    default: '',
   },
-};
+}
 
-export default _props;
+export default _props

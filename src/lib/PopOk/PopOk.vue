@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
 import {
   Info24Regular,
@@ -36,47 +36,47 @@ import {
   CheckmarkCircle24Regular,
   ErrorCircle24Regular,
   Alert24Regular,
-} from "@vicons/fluent";
-import { Icon } from "@vicons/utils";
+} from '@vicons/fluent'
+import { Icon } from '@vicons/utils'
 defineProps({
   type: {
     type: String,
-    default: "warning",
+    default: 'warning',
   },
-  width: { type: String, default: "250px" },
+  width: { type: String, default: '250px' },
   trigger: {
     type: String,
-    default: "click",
+    default: 'click',
   },
   title: {
     type: String,
-    default: "",
+    default: '',
   },
   content: {
     type: String,
-    default: "",
+    default: '',
   },
   placement: {
     type: String,
-    default: "top",
+    default: 'top',
   },
-});
+})
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-let yunPopoverRef = ref();
-let show = () => {
-  yunPopoverRef.value.show();
-};
-let hide = () => {
-  yunPopoverRef.value.hide();
-};
-const emit = defineEmits(["ok", "cancel"]);
-defineExpose({ show, hide });
+const yunPopoverRef = ref()
+const show = () => {
+  yunPopoverRef.value.show()
+}
+const hide = () => {
+  yunPopoverRef.value.hide()
+}
+const emit = defineEmits(['ok', 'cancel'])
+defineExpose({ show, hide })
 </script>
 
 <script lang="ts">
 export default {
-  name: "PopOk",
-};
+  name: 'PopOk',
+}
 </script>
 
 <style lang="scss" scoped>

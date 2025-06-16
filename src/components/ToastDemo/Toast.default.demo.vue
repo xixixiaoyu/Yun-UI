@@ -8,8 +8,8 @@
 </template>
 
 <script setup>
-let index = 1;
+let index = 1
 const onClick = () => {
-  Toast({ text: `这是第 ${index++} 条消息提示 ~` });
-};
+  Toast({ text: `这是第 ${index++} 条消息提示 ~` })
+}
 </script>

@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-let loading = ref(false);
+const loading = ref(false)
 </script>

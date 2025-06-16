@@ -5,29 +5,29 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
 const options = ref([
   {
-    label: "Avatar",
-    to: "avatar",
+    label: 'Avatar',
+    to: 'avatar',
   },
   {
-    label: "Breadcrumb",
-    to: "breadcrumb",
+    label: 'Breadcrumb',
+    to: 'breadcrumb',
     active: true,
   },
   {
-    label: "Input",
-    to: "input",
+    label: 'Input',
+    to: 'input',
   },
   {
-    label: "Dialog",
-    to: "dialog",
+    label: 'Dialog',
+    to: 'dialog',
   },
   {
-    label: "Flex",
-    to: "flex",
+    label: 'Flex',
+    to: 'flex',
   },
-]);
+])
 </script>

@@ -16,36 +16,36 @@
 </template>
 
 <script lang="ts" setup>
-import { useDOMCreate } from "../hooks/index";
-useDOMCreate("yun-modal");
+import { useDOMCreate } from '../hooks/index'
+useDOMCreate('yun-modal')
 defineProps({
   title: {
     type: String,
-    default: "",
+    default: '',
   },
   width: {
     type: String,
-    default: "",
+    default: '',
   },
   height: {
     type: String,
-    default: "",
+    default: '',
   },
   visible: {
     type: Boolean,
     default: false,
   },
-});
-const emit = defineEmits(["maskClick", "confirm"]);
+})
+const emit = defineEmits(['maskClick', 'confirm'])
 const maskClick = () => {
-  emit("maskClick");
-};
+  emit('maskClick')
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "Modal",
-};
+  name: 'Modal',
+}
 </script>
 
 <style lang="scss" scoped>

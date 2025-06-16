@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from "vue";
+import { PropType } from 'vue'
 import {
   Info24Regular,
   Warning24Regular,
@@ -33,28 +33,28 @@ import {
   ErrorCircle24Regular,
   Alert24Regular,
   Dismiss24Filled,
-} from "@vicons/fluent";
-import { Icon } from "@vicons/utils";
+} from '@vicons/fluent'
+import { Icon } from '@vicons/utils'
 // alert type
 type Alert = {
-  type: string;
-  title: string;
-  content: string;
-};
+  type: string
+  title: string
+  content: string
+}
 
 defineProps({
   list: {
     type: Array as PropType<Alert[]>,
     default: () => [],
   },
-});
-const emit = defineEmits(["close"]);
+})
+const emit = defineEmits(['close'])
 </script>
 
 <script lang="ts">
 export default {
-  name: "Alert",
-};
+  name: 'Alert',
+}
 </script>
 
 <style lang="scss" scoped>

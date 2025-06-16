@@ -7,27 +7,27 @@
 </template>
 
 <script setup>
-import indexTitle from "../indexTitle.vue";
-import Demo from "../Demo.vue";
-import Attr from "../Attr.vue";
-import { columns } from "../../lib/data";
+import indexTitle from '../indexTitle.vue'
+import Demo from '../Demo.vue'
+import Attr from '../Attr.vue'
+import { columns } from '../../lib/data'
 
-import DatePickerDemo1 from "./DatePicker.default.demo.vue";
+import DatePickerDemo1 from './DatePicker.default.demo.vue'
 
 const data = [
   {
-    params: "v-model (model-value)",
-    desc: "绑定值",
-    type: "string",
-    select: "/",
+    params: 'v-model (model-value)',
+    desc: '绑定值',
+    type: 'string',
+    select: '/',
     default: "''",
   },
   {
-    params: "auto-close",
-    desc: "是否在选择日期后自动关闭气泡",
-    type: "boolean",
-    select: "true / false",
-    default: "true",
+    params: 'auto-close',
+    desc: '是否在选择日期后自动关闭气泡',
+    type: 'boolean',
+    select: 'true / false',
+    default: 'true',
   },
-];
+]
 </script>

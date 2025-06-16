@@ -25,9 +25,9 @@
 </template>
 
 <script>
-import { computed, ref, watch } from "vue";
+import { computed, ref, watch } from 'vue'
 export default {
-  name: "YunPagination",
+  name: 'YunPagination',
   props: {
     showCount: {
       type: Number,
@@ -49,34 +49,34 @@ export default {
   setup(props, { emit }) {
     // 需要数据：
     // 1. 约定按钮的个数 5 个，如果成为动态的需要设置响应式数据
-    const count = props.showCount;
+    const count = props.showCount
     // 2. 当前显示的页码
-    const myCurrentPage = ref(props.currentPage);
+    const myCurrentPage = ref(props.currentPage)
     // 3. 总页数 = 总条数 / 每一页条数  向上取整
-    const myTotal = ref(props.total);
-    const myPageSize = ref(props.pageSize);
+    const myTotal = ref(props.total)
+    const myPageSize = ref(props.pageSize)
     // 其他数据（总页数，起始按钮，结束按钮，按钮数组）依赖上面数据得到
     const pager = computed(() => {
       // 总页数
-      const pageCount = Math.ceil(myTotal.value / myPageSize.value);
+      const pageCount = Math.ceil(myTotal.value / myPageSize.value)
       // 按钮个和当前页码 ====> 起始按钮，结束按钮，按钮数组
       // 1. 理想情况下：
-      const offset = Math.floor(count / 2);
-      let start = myCurrentPage.value - offset;
-      let end = start + count - 1;
+      const offset = Math.floor(count / 2)
+      let start = myCurrentPage.value - offset
+      let end = start + count - 1
       // 2. 如果起始页码小于1需要处理
       if (start < 1) {
-        start = 1;
-        end = start + count - 1 > pageCount ? pageCount : start + count - 1;
+        start = 1
+        end = start + count - 1 > pageCount ? pageCount : start + count - 1
       }
       // 3. 如果结束页码大于总页数需要处理
       if (end > pageCount) {
-        end = pageCount;
-        start = end - count + 1 < 1 ? 1 : end - count + 1;
+        end = pageCount
+        start = end - count + 1 < 1 ? 1 : end - count + 1
       }
-      const btnArr = [];
+      const btnArr = []
       for (let i = start; i <= end; i++) {
-        btnArr.push(i);
+        btnArr.push(i)
       }
       // 提供计算属性数据
       return {
@@ -84,33 +84,33 @@ export default {
         btnArr,
         start,
         end,
-      };
-    });
+      }
+    })
 
     // 监听props的变化，更新组件内部数据
     watch(
       props,
       () => {
-        myTotal.value = props.total;
-        myPageSize.value = props.pageSize;
-        myCurrentPage.value = props.currentPage;
+        myTotal.value = props.total
+        myPageSize.value = props.pageSize
+        myCurrentPage.value = props.currentPage
       },
       { immediate: true }
-    );
+    )
 
     // 切换分页函数
     const changePager = (page) => {
       // 页码相同不作为
       if (myCurrentPage.value !== page) {
-        myCurrentPage.value = page;
+        myCurrentPage.value = page
         // 通知父组件
-        emit("current-change", page);
+        emit('current-change', page)
       }
-    };
+    }
 
-    return { myCurrentPage, pager, changePager };
+    return { myCurrentPage, pager, changePager }
   },
-};
+}
 </script>
 
 <style lang="scss">

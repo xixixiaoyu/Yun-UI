@@ -13,18 +13,18 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType } from "vue";
-import Radio from "./components/Radio.vue";
+import { PropType } from 'vue'
+import Radio from './components/Radio.vue'
 
 type Options = {
-  label: string;
-  value: string;
-};
+  label: string
+  value: string
+}
 
 defineProps({
   modelValue: {
     type: [String, Number],
-    default: "",
+    default: '',
     required: true,
   },
   block: {
@@ -37,29 +37,29 @@ defineProps({
   },
   direction: {
     type: String,
-    default: "x",
+    default: 'x',
   },
   options: {
     type: Array as PropType<Options[]>,
     default: () => [],
     required: true,
     validator: (value: Array<number>) => {
-      const hasNameKey = value.every((option) => Object.keys(option).includes("label"));
-      const hasIdKey = value.every((option) => Object.keys(option).includes("value"));
-      return hasNameKey && hasIdKey;
+      const hasNameKey = value.every((option) => Object.keys(option).includes('label'))
+      const hasIdKey = value.every((option) => Object.keys(option).includes('value'))
+      return hasNameKey && hasIdKey
     },
   },
-});
-const emit = defineEmits(["update:modelValue"]);
+})
+const emit = defineEmits(['update:modelValue'])
 const check = (_value: string) => {
-  emit("update:modelValue", _value);
-};
+  emit('update:modelValue', _value)
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "RadioGroup",
-};
+  name: 'RadioGroup',
+}
 </script>
 
 <style lang="scss">

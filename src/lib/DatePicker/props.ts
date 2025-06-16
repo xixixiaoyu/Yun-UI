@@ -12,7 +12,7 @@ export const datePickerProps = {
     type: Boolean,
     default: false,
   },
-};
+}
 
 export const dateProps = {
   modelValue: {
@@ -24,4 +24,4 @@ export const dateProps = {
     type: Boolean,
     default: false,
   },
-};
+}

@@ -15,65 +15,65 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
-let options = ref([
+const options = ref([
   {
-    label: "宋太宗",
-    value: "1",
+    label: '宋太宗',
+    value: '1',
   },
   {
-    label: "明神宗",
-    value: "2",
+    label: '明神宗',
+    value: '2',
   },
   {
-    label: "雍正帝",
-    value: "3",
+    label: '雍正帝',
+    value: '3',
   },
   {
-    label: "宋宁宗",
-    value: "4",
+    label: '宋宁宗',
+    value: '4',
   },
   {
-    label: "陈高祖陈霸先",
-    value: "5",
+    label: '陈高祖陈霸先',
+    value: '5',
   },
   {
-    label: "宋钦宗",
-    value: "6",
+    label: '宋钦宗',
+    value: '6',
   },
   {
-    label: "唐高宗",
-    value: "7",
+    label: '唐高宗',
+    value: '7',
   },
   {
-    label: "齐高帝萧道成",
-    value: "8",
+    label: '齐高帝萧道成',
+    value: '8',
   },
   {
-    label: "晋武帝",
-    value: "9",
+    label: '晋武帝',
+    value: '9',
   },
   {
-    label: "唐中宗",
-    value: "10",
+    label: '唐中宗',
+    value: '10',
   },
   {
-    label: "唐睿宗",
-    value: "11",
+    label: '唐睿宗',
+    value: '11',
   },
   {
-    label: "汉献帝",
-    value: "12",
+    label: '汉献帝',
+    value: '12',
   },
   {
-    label: "齐武帝",
-    value: "13",
+    label: '齐武帝',
+    value: '13',
   },
-]);
+])
 
-let v = ref("");
+const v = ref('')
 const get = () => {
-  console.log(v.value);
-};
+  console.log(v.value)
+}
 </script>

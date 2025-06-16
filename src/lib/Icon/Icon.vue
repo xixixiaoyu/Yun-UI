@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import "./Icon.scss";
-import { computed } from "vue";
+import './Icon.scss'
+import { computed } from 'vue'
 export default {
-  name: "Icon",
+  name: 'Icon',
   props: {
     name: {
       type: String,
@@ -17,7 +17,7 @@ export default {
     prefix: {
       type: String,
       required: false,
-      default: "icon",
+      default: 'icon',
     },
     extraClass: {
       type: String,
@@ -28,11 +28,11 @@ export default {
   },
   setup(props) {
     const iconName = computed(() => {
-      return "#" + props.prefix + "-" + props.name;
-    });
+      return '#' + props.prefix + '-' + props.name
+    })
     return {
       iconName,
-    };
+    }
   },
-};
+}
 </script>

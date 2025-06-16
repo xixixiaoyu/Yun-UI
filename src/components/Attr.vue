@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: "attr",
+  name: 'Attr',
   props: {
     columns: {
       type: Object,
@@ -30,10 +30,10 @@ export default {
     },
     title: {
       type: String,
-      default: "Props",
+      default: 'Props',
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

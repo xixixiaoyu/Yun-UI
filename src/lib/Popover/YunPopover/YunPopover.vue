@@ -10,72 +10,72 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
-import tippy from "tippy.js";
-let triggerRef = ref(null);
-let bodyRef = ref(null);
-let instance: any;
+import { ref, onMounted, onUnmounted } from 'vue'
+import tippy from 'tippy.js'
+const triggerRef = ref(null)
+const bodyRef = ref(null)
+let instance: any
 const props = defineProps({
   trigger: {
     type: String,
-    default: "click",
+    default: 'click',
   },
   placement: {
     type: String,
-    default: "bottom",
+    default: 'bottom',
   },
   arrow: {
     type: Boolean,
     default: true,
   },
-});
+})
 onMounted(() => {
-  let trigger = props.trigger;
-  let placement = props.placement;
-  if (trigger == "hover") {
-    trigger = "mouseenter";
+  let trigger = props.trigger
+  const placement = props.placement
+  if (trigger == 'hover') {
+    trigger = 'mouseenter'
   }
   // @ts-ignore
   instance = tippy(triggerRef.value, {
-    theme: "light",
+    theme: 'light',
     trigger: trigger,
     content: bodyRef.value,
-    animation: "shift-away-subtle",
+    animation: 'shift-away-subtle',
     interactive: true,
     placement: placement,
     arrow: props.arrow,
     appendTo: () => document.body,
     allowHTML: true,
-    maxWidth: "none",
+    maxWidth: 'none',
     onShow(instance) {
-      const node = document.getElementsByTagName("html")[0];
-      if (node.classList.contains("yun-dark")) {
-        instance.popper.children[0].setAttribute("data-theme", "dark");
+      const node = document.getElementsByTagName('html')[0]
+      if (node.classList.contains('yun-dark')) {
+        instance.popper.children[0].setAttribute('data-theme', 'dark')
       } else {
-        instance.popper.children[0].setAttribute("data-theme", "light");
+        instance.popper.children[0].setAttribute('data-theme', 'light')
       }
-      emit("onShow");
+      emit('onShow')
     },
     onHide() {
-      emit("onHide");
+      emit('onHide')
     },
-  });
-  instance.popper.children[0].setAttribute("data-yun", "popover");
-});
-const emit = defineEmits(["onShow", "onHide"]);
+  })
+  instance.popper.children[0].setAttribute('data-yun', 'popover')
+})
+const emit = defineEmits(['onShow', 'onHide'])
 const show = () => {
-  instance.show();
-};
+  instance.show()
+}
 const hide = () => {
-  instance.hide();
-};
-defineExpose({ show, hide });
+  instance.hide()
+}
+defineExpose({ show, hide })
 </script>
 
 <script lang="ts">
 export default {
-  name: "YunPopover",
-};
+  name: 'YunPopover',
+}
 </script>
 
 <style lang="scss">

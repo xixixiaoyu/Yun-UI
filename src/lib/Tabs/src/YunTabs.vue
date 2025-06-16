@@ -23,73 +23,73 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch } from "vue";
-import { tabsProps } from "./props";
+import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { tabsProps } from './props'
 type Options = {
-  label: string;
-  value: string;
-};
-const props = defineProps(tabsProps);
-let activeItemStyle = ref("");
-let v = ref(props.modelValue);
-let itemRef = ref([] as any);
+  label: string
+  value: string
+}
+const props = defineProps(tabsProps)
+const activeItemStyle = ref('')
+const v = ref(props.modelValue)
+const itemRef = ref([] as any)
 watch(
   () => props.modelValue,
   () => {
-    v.value = props.modelValue;
-    setStyle(v.value);
+    v.value = props.modelValue
+    setStyle(v.value)
   }
-);
+)
 const init = () => {
-  let index = props.options.findIndex((e) => e.value == v.value);
-  if (index < 0) index = 0;
-  activeItemStyle.value = `width:${itemRef.value[index].offsetWidth}px;transform: translateX(${itemRef.value[index].offsetLeft}px);`;
-};
-const emit = defineEmits(["change", "update:modelValue"]);
-let curIndex = props.options.findIndex((e) => v.value == e.value);
+  let index = props.options.findIndex((e) => e.value == v.value)
+  if (index < 0) index = 0
+  activeItemStyle.value = `width:${itemRef.value[index].offsetWidth}px;transform: translateX(${itemRef.value[index].offsetLeft}px);`
+}
+const emit = defineEmits(['change', 'update:modelValue'])
+let curIndex = props.options.findIndex((e) => v.value == e.value)
 const setStyle = (value) => {
-  let index = props.options.findIndex((e) => value == e.value);
+  const index = props.options.findIndex((e) => value == e.value)
   if (curIndex != index) {
-    let _item = props.options[index];
+    const _item = props.options[index]
     if (v.value != _item.value) {
-      v.value = _item.value;
+      v.value = _item.value
     }
-    let activeRef = itemRef.value[index];
-    activeItemStyle.value = `width:${activeRef.offsetWidth}px;transform: translate(${activeRef.offsetLeft}px);`;
+    const activeRef = itemRef.value[index]
+    activeItemStyle.value = `width:${activeRef.offsetWidth}px;transform: translate(${activeRef.offsetLeft}px);`
     if (v.value != props.modelValue) {
-      emit("change", {
+      emit('change', {
         label: _item.label,
         value: _item.value,
         activeIndex: index,
-      });
-      emit("update:modelValue", v.value);
+      })
+      emit('update:modelValue', v.value)
     }
-    curIndex = index;
+    curIndex = index
   }
-};
-let timer: ReturnType<typeof setTimeout> | undefined;
+}
+let timer: ReturnType<typeof setTimeout> | undefined
 const debounce = () => {
-  clearTimeout(timer);
+  clearTimeout(timer)
   timer = setTimeout(() => {
-    init();
-  }, 250);
-};
+    init()
+  }, 250)
+}
 onMounted(() => {
-  if (props.modelValue == "") {
-    v.value = props.options[0].value;
+  if (props.modelValue == '') {
+    v.value = props.options[0].value
   }
-  init();
-  window.addEventListener("resize", debounce, false);
-});
+  init()
+  window.addEventListener('resize', debounce, false)
+})
 onUnmounted(() => {
-  window.removeEventListener("resize", debounce);
-});
+  window.removeEventListener('resize', debounce)
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "YunTabs",
-};
+  name: 'YunTabs',
+}
 </script>
 
 <style lang="scss" scoped>

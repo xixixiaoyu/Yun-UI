@@ -9,6 +9,6 @@
 
 <script setup>
 const onClick = () => {
-  Toast({ text: "这是一条居中的消息提示~", center: true });
-};
+  Toast({ text: '这是一条居中的消息提示~', center: true })
+}
 </script>

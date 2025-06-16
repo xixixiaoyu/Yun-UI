@@ -13,27 +13,27 @@ defineProps({
   },
   status: {
     type: String,
-    default: "",
+    default: '',
   },
   statusPosition: {
     type: String,
-    default: "",
+    default: '',
   },
   src: {
     type: String,
-    default: "",
+    default: '',
   },
   alt: {
     type: String,
-    default: "",
+    default: '',
   },
-});
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "Avatar",
-};
+  name: 'Avatar',
+}
 </script>
 
 <style lang="scss" scoped>
@@ -58,7 +58,7 @@ export default {
     position: absolute;
     top: -0.3rem;
     left: -0.3rem;
-    content: "";
+    content: '';
     width: 0.6rem;
     height: 0.6rem;
     border-radius: 50%;

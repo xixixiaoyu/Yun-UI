@@ -1,11 +1,11 @@
 export const buttonProps = {
   type: {
     type: String,
-    default: "primary",
+    default: 'primary',
   },
   size: {
     type: String,
-    default: "medium",
+    default: 'medium',
   },
   loading: {
     type: Boolean,
@@ -27,4 +27,4 @@ export const buttonProps = {
     type: Boolean,
     default: false,
   },
-};
+}

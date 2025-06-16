@@ -24,8 +24,8 @@
         @click.stop
         @input="input"
         @change="emit('change', v)"
-        @blur="emit('blur', v), delayHide()"
-        @focus="open(), emit('focus', v)"
+        @blur="(emit('blur', v), delayHide())"
+        @focus="(open(), emit('focus', v))"
         @clear="clear"
       />
     </Dropdown>
@@ -34,64 +34,64 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
-import { inputProProps } from "./props";
+import { ref, watch } from 'vue'
+import { inputProProps } from './props'
 
-const props = defineProps(inputProProps);
+const props = defineProps(inputProProps)
 
-const v = ref(props.modelValue);
+const v = ref(props.modelValue)
 watch(
   () => props.modelValue,
   () => {
-    v.value = props.modelValue;
+    v.value = props.modelValue
   }
-);
-const emit = defineEmits(["update:modelValue", "clear", "blur", "focus", "change", "input"]);
+)
+const emit = defineEmits(['update:modelValue', 'clear', 'blur', 'focus', 'change', 'input'])
 
-let yunDropdownRef = ref(null);
-let yunInputProRef = ref(null);
+const yunDropdownRef = ref(null)
+const yunInputProRef = ref(null)
 
 const input = (e) => {
-  emit("update:modelValue", e);
-  emit("input", e);
-};
+  emit('update:modelValue', e)
+  emit('input', e)
+}
 
 const clear = () => {
-  emit("clear", v.value);
-  v.value = "";
-  emit("update:modelValue", v.value);
-};
+  emit('clear', v.value)
+  v.value = ''
+  emit('update:modelValue', v.value)
+}
 
 const selectFn = (e: any) => {
-  v.value = e.value.value;
-  emit("update:modelValue", v.value);
-  emit("input", v.value);
-  emit("change", v.value);
+  v.value = e.value.value
+  emit('update:modelValue', v.value)
+  emit('input', v.value)
+  emit('change', v.value)
   setTimeout(() => {
-    hide();
-  }, 120);
-};
+    hide()
+  }, 120)
+}
 
 const open = () => {
-  if (props.options.length == 0) return;
-  yunDropdownRef.value.show();
-};
+  if (props.options.length == 0) return
+  yunDropdownRef.value.show()
+}
 
 const hide = () => {
-  yunDropdownRef.value.hide();
-};
+  yunDropdownRef.value.hide()
+}
 
 const delayHide = () => {
   setTimeout(() => {
-    hide();
-  }, 120);
-};
+    hide()
+  }, 120)
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "InputPro",
-};
+  name: 'InputPro',
+}
 </script>
 
 <style lang="scss" scoped>

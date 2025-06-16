@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: "YunTab",
-};
+  name: 'YunTab',
+}
 </script>

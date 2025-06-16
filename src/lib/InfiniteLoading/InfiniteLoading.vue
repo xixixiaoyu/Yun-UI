@@ -11,10 +11,10 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
-import { useIntersectionObserver } from "@vueuse/core";
+import { ref } from 'vue'
+import { useIntersectionObserver } from '@vueuse/core'
 export default {
-  name: "YunInfiniteLoading",
+  name: 'YunInfiniteLoading',
   props: {
     loading: {
       type: Boolean,
@@ -26,7 +26,7 @@ export default {
     },
   },
   setup(props, { emit }) {
-    const target = ref(null);
+    const target = ref(null)
     // 监听target是否进入可视区
     useIntersectionObserver(
       target,
@@ -35,17 +35,17 @@ export default {
           // console.log("进入可视区了");
           // 触发加载事件条件：请求加载完成，数据加载完毕
           if (!props.loading && !props.finished) {
-            emit("infinite");
+            emit('infinite')
           }
         }
       },
       {
         threshold: 0,
       }
-    );
-    return { target };
+    )
+    return { target }
   },
-};
+}
 </script>
 <style lang="scss">
 .yun-infinite-loading {
@@ -57,7 +57,7 @@ export default {
     .img {
       width: 50px;
       height: 50px;
-      background: url("https://s1.ax1x.com/2022/03/19/qEraB4.gif") no-repeat center / contain;
+      background: url('https://s1.ax1x.com/2022/03/19/qEraB4.gif') no-repeat center / contain;
     }
     .text {
       color: #999;
@@ -72,7 +72,7 @@ export default {
     .img {
       width: 200px;
       height: 134px;
-      background: url("https://s1.ax1x.com/2022/03/20/qZCLuR.png") no-repeat center / contain;
+      background: url('https://s1.ax1x.com/2022/03/20/qZCLuR.png') no-repeat center / contain;
     }
     .text {
       color: #999;

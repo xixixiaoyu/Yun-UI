@@ -19,21 +19,21 @@
 </template>
 
 <script setup lang="ts">
-import { buttonProps } from "./props";
+import { buttonProps } from './props'
 
-const emit = defineEmits(["click"]);
-const props = defineProps(buttonProps);
+const emit = defineEmits(['click'])
+const props = defineProps(buttonProps)
 
 const handleClick = (e) => {
-  if (props.disabled) return;
-  emit("click", e);
-};
+  if (props.disabled) return
+  emit('click', e)
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "Button",
-};
+  name: 'Button',
+}
 </script>
 
 <style lang="scss" scoped>
@@ -49,7 +49,10 @@ export default {
   width: auto;
   white-space: nowrap;
   box-sizing: border-box;
-  transition: background-color 0.1s, transform 0.1s, color 0.35s cubic-bezier(0.65, 0, 0.25, 1);
+  transition:
+    background-color 0.1s,
+    transform 0.1s,
+    color 0.35s cubic-bezier(0.65, 0, 0.25, 1);
   border: none;
   cursor: pointer;
   border-radius: var(--yun-form-border-radius);
@@ -78,7 +81,7 @@ export default {
     top: 50%;
     user-select: none;
     transform: translate(-50%, -50%);
-    content: "";
+    content: '';
     animation: yun-loading-spinner-spin 0.65s linear infinite;
     border-radius: 50%;
   }

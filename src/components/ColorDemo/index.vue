@@ -5,6 +5,6 @@
 </template>
 
 <script setup>
-import Demo from "../Demo.vue";
-import ColorDemo from "./Color.demo.vue";
+import Demo from '../Demo.vue'
+import ColorDemo from './Color.demo.vue'
 </script>

@@ -7,12 +7,12 @@
 </template>
 
 <script setup>
-import IndexTitle from "../indexTitle.vue";
-import Demo from "../Demo.vue";
-import Attr from "../Attr.vue";
-import { columns } from "../../lib/data";
+import IndexTitle from '../indexTitle.vue'
+import Demo from '../Demo.vue'
+import Attr from '../Attr.vue'
+import { columns } from '../../lib/data'
 
-import CommentDemo1 from "./Comment.default.demo.vue";
+import CommentDemo1 from './Comment.default.demo.vue'
 
-const data = [];
+const data = []
 </script>

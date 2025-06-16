@@ -41,21 +41,21 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-const visible1 = ref(false);
-const visible2 = ref(false);
+const visible1 = ref(false)
+const visible2 = ref(false)
 const toggle1 = () => {
-  visible1.value = !visible1.value;
-};
+  visible1.value = !visible1.value
+}
 
 const toggle2 = () => {
-  visible2.value = !visible2.value;
-};
+  visible2.value = !visible2.value
+}
 const handleConfirm = () => {
-  console.log("onConfirm");
-};
+  console.log('onConfirm')
+}
 const handleCancel = () => {
-  console.log("onCancel");
-};
+  console.log('onCancel')
+}
 </script>

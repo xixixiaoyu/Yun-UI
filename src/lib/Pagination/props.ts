@@ -1,9 +1,9 @@
-import { PropType } from "vue";
+import { PropType } from 'vue'
 
 type Options = {
-  label: number | string;
-  value: number | string;
-};
+  label: number | string
+  value: number | string
+}
 
 export const paginationProps = {
   total: {
@@ -37,26 +37,26 @@ export const paginationProps = {
     default() {
       return [
         {
-          label: "10 / 页",
+          label: '10 / 页',
           value: 10,
         },
         {
-          label: "20 / 页",
+          label: '20 / 页',
           value: 20,
         },
         {
-          label: "30 / 页",
+          label: '30 / 页',
           value: 30,
         },
         {
-          label: "50 / 页",
+          label: '50 / 页',
           value: 30,
         },
         {
-          label: "100 / 页",
+          label: '100 / 页',
           value: 100,
         },
-      ];
+      ]
     },
   },
-};
+}

@@ -58,8 +58,8 @@
 </template>
 
 <script lang="ts" setup>
-import Button from "../../Button/Button.vue";
-import { ref, computed } from "vue";
+import Button from '../../Button/Button.vue'
+import { ref, computed } from 'vue'
 import {
   Info24Regular,
   Warning24Regular,
@@ -67,8 +67,8 @@ import {
   ErrorCircle24Regular,
   Alert24Regular,
   Dismiss24Filled,
-} from "@vicons/fluent";
-import { Icon } from "@vicons/utils";
+} from '@vicons/fluent'
+import { Icon } from '@vicons/utils'
 
 const props = defineProps({
   visible: {
@@ -81,7 +81,7 @@ const props = defineProps({
   },
   type: {
     type: String,
-    default: "",
+    default: '',
   },
   ok: {
     type: Function,
@@ -93,47 +93,47 @@ const props = defineProps({
   },
   layout: {
     type: String,
-    default: "normal",
+    default: 'normal',
   },
-});
-const emit = defineEmits(["update:visible", "closeOverlay"]);
+})
+const emit = defineEmits(['update:visible', 'closeOverlay'])
 
 const OnClickOverlay = () => {
   if (props.closeOnClickOverlay) {
-    close();
-    emit("closeOverlay");
+    close()
+    emit('closeOverlay')
   }
-};
+}
 
-let isShowDialog = ref(true);
+const isShowDialog = ref(true)
 const close = () => {
-  isShowDialog.value = false;
+  isShowDialog.value = false
   setTimeout(() => {
-    emit("update:visible", false);
-    isShowDialog.value = true;
-  }, 250);
-};
+    emit('update:visible', false)
+    isShowDialog.value = true
+  }, 250)
+}
 
-const showAnimation = computed(() => (isShowDialog.value ? "yunDialogOpen" : "yunDialogClose"));
+const showAnimation = computed(() => (isShowDialog.value ? 'yunDialogOpen' : 'yunDialogClose'))
 
 const okFn = () => {
-  if (typeof props.ok === "function" && props.ok() === true) {
-    close();
+  if (typeof props.ok === 'function' && props.ok() === true) {
+    close()
   }
-};
+}
 const cancelFn = () => {
-  if (typeof props.cancel === "function") {
-    props.cancel();
+  if (typeof props.cancel === 'function') {
+    props.cancel()
   }
-  close();
-};
+  close()
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "Dialog",
-  emits: ["update:visible", "closeOverlay"],
-};
+  name: 'Dialog',
+  emits: ['update:visible', 'closeOverlay'],
+}
 </script>
 
 <style lang="scss" scoped>

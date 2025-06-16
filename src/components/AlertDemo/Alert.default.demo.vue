@@ -63,20 +63,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
 interface Options {
-  type: string;
-  title: string;
-  content: string;
+  type: string
+  title: string
+  content: string
 }
 
-let list = ref([]);
+const list = ref([])
 
 const addAlert = (opt: Options) => {
-  list.value.unshift(opt);
-};
+  list.value.unshift(opt)
+}
 const close = (opt: Options) => {
-  list.value.splice(opt, 1);
-};
+  list.value.splice(opt, 1)
+}
 </script>

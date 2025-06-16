@@ -1,21 +1,21 @@
-import { PropType } from "vue";
+import { PropType } from 'vue'
 
 type Options = {
-  label: number | string;
-  value: number | string;
-};
+  label: number | string
+  value: number | string
+}
 
 export const inputProProps = {
   // 类型
   type: {
     type: String,
-    default: "",
+    default: '',
   },
   // 绑定值
   modelValue: {
     // 父组件 v-model 没有指定参数名，则默认是 modelValue
     type: [Number, String],
-    default: "",
+    default: '',
   },
   autoWidth: {
     type: Boolean,
@@ -24,12 +24,12 @@ export const inputProProps = {
   options: {
     type: Array as PropType<Options[]>,
     default() {
-      return [];
+      return []
     },
   },
   align: {
     type: String,
-    default: "left",
+    default: 'left',
   },
   // 禁用
   disabled: {
@@ -44,7 +44,7 @@ export const inputProProps = {
   // 默认提示语
   placeholder: {
     type: String,
-    default: "请输入",
+    default: '请输入',
   },
   // 是否只读
   readonly: {
@@ -70,26 +70,26 @@ export const inputProProps = {
   },
   size: {
     type: String,
-    default: "medium",
+    default: 'medium',
   },
 
   popoverWidth: {
     type: String,
-    default: "auto",
+    default: 'auto',
   },
 
   trigger: {
     type: String,
-    default: "click",
+    default: 'click',
   },
 
   placement: {
     type: String,
-    default: "bottom-start",
+    default: 'bottom-start',
   },
 
   arrow: {
     type: Boolean,
     default: true,
   },
-};
+}

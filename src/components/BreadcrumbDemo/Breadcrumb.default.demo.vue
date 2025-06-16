@@ -5,22 +5,22 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-let options = ref([
+import { ref } from 'vue'
+const options = ref([
   {
-    label: "首页",
-    to: "/",
+    label: '首页',
+    to: '/',
   },
   {
-    label: "Vue",
-    to: "https://vuejs.org",
+    label: 'Vue',
+    to: 'https://vuejs.org',
   },
   {
-    label: "商品列表",
+    label: '商品列表',
   },
   {
-    label: "商品详情",
+    label: '商品详情',
     active: true,
   },
-]);
+])
 </script>

@@ -9,5 +9,5 @@ Shadow 效果
 </template>
 
 <script setup>
-import { Card } from "../../lib/index";
+import { Card } from '../../lib/index'
 </script>

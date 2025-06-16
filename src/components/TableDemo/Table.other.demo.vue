@@ -55,10 +55,10 @@
       </PopOk>
     </template>
     <template #type="{ row }">
-      <Tag type="success">{{ row.type == "movie" ? "电影" : "电视剧" }} </Tag>
+      <Tag type="success">{{ row.type == 'movie' ? '电影' : '电视剧' }} </Tag>
     </template>
     <template #has_linewatch="{ row }">
-      <span>{{ row.has_linewatch ? "是" : "否" }}</span>
+      <span>{{ row.has_linewatch ? '是' : '否' }}</span>
     </template>
     <template #actors="{ row }">
       <Flex
@@ -97,106 +97,106 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed } from 'vue'
 
-import mvJson from "./movie.json";
+import mvJson from './movie.json'
 
-const data = ref(mvJson);
+const data = ref(mvJson)
 
 const columns = [
   {
-    type: "template",
-    title: "选择",
-    field: "checkbox",
-    width: "50px",
-    align: "center",
-    sticky: "left",
-    offsetX: "0px",
-    x: "center",
+    type: 'template',
+    title: '选择',
+    field: 'checkbox',
+    width: '50px',
+    align: 'center',
+    sticky: 'left',
+    offsetX: '0px',
+    x: 'center',
   },
   {
-    type: "text",
-    title: "id",
-    field: "id",
-    width: "100px",
-    sticky: "left",
-    offsetX: "50px",
-    x: "center",
+    type: 'text',
+    title: 'id',
+    field: 'id',
+    width: '100px',
+    sticky: 'left',
+    offsetX: '50px',
+    x: 'center',
   },
   {
-    type: "text",
-    title: "名称",
-    field: "title",
-    width: "180px",
+    type: 'text',
+    title: '名称',
+    field: 'title',
+    width: '180px',
   },
 
   {
-    type: "text",
-    title: "上线日期",
-    field: "release_date",
-    width: "100px",
-    x: "center",
+    type: 'text',
+    title: '上线日期',
+    field: 'release_date',
+    width: '100px',
+    x: 'center',
   },
   {
-    type: "template",
-    title: "在线观看",
-    field: "has_linewatch",
-    width: "100px",
-    x: "center",
+    type: 'template',
+    title: '在线观看',
+    field: 'has_linewatch',
+    width: '100px',
+    x: 'center',
   },
   {
-    type: "html",
-    title: "导演",
-    field: "directors",
-    width: "120px",
+    type: 'html',
+    title: '导演',
+    field: 'directors',
+    width: '120px',
   },
   {
-    type: "text",
-    title: "简介",
-    field: "info",
-    width: "auto",
+    type: 'text',
+    title: '简介',
+    field: 'info',
+    width: 'auto',
   },
   {
-    type: "template",
-    title: "主演",
-    align: "start",
-    field: "actors",
-    width: "300px",
+    type: 'template',
+    title: '主演',
+    align: 'start',
+    field: 'actors',
+    width: '300px',
   },
   {
-    type: "template",
-    title: "类型",
-    field: "type",
-    width: "100px",
-    x: "center",
+    type: 'template',
+    title: '类型',
+    field: 'type',
+    width: '100px',
+    x: 'center',
   },
   {
-    type: "template",
-    title: "执行",
-    field: "action",
-    width: "120px",
-    align: "center",
-    sticky: "right",
-    offsetX: "0px",
-    x: "center",
+    type: 'template',
+    title: '执行',
+    field: 'action',
+    width: '120px',
+    align: 'center',
+    sticky: 'right',
+    offsetX: '0px',
+    x: 'center',
   },
-];
+]
 
-let isCheckeds = ref([]);
+const isCheckeds = ref([])
 
 const get = (e) => {
-  if (e.column.field == "action") {
-    Toast.info({ text: "点击了 id：" + e.row.id });
+  if (e.column.field == 'action') {
+    Toast.info({ text: '点击了 id：' + e.row.id })
   }
-};
+}
 
 const change = (e, row, column) => {
-  console.log(e, row.id, column.field);
-};
+  console.log(e, row.id, column.field)
+}
 
 const getChecked = computed(() => (id) => {
-  return isCheckeds.value.includes(id);
-});
+  return isCheckeds.value.includes(id)
+})
 </script>
 
 <style lang="scss" scoped>

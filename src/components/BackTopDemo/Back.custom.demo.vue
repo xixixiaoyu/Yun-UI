@@ -24,9 +24,9 @@
 </template>
 
 <script setup>
-import { BackTop } from "../../lib/index";
+import { BackTop } from '../../lib/index'
 
 const handleClick = () => {
-  console.log("BackTop is clicked");
-};
+  console.log('BackTop is clicked')
+}
 </script>

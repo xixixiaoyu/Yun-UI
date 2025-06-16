@@ -25,39 +25,39 @@
 </template>
 
 <script>
-import Topnav from "../components/Topnav.vue";
-import Icon from "../lib/Icon/Icon.vue";
-import Main from "./Main.vue";
+import Topnav from '../components/Topnav.vue'
+import Icon from '../lib/Icon/Icon.vue'
+import Main from './Main.vue'
 export default {
   components: { Topnav, Icon, Main },
   setup() {
     return {
       contentList: [
         {
-          iconName: "vue",
-          title: "Vue3",
-          description: "使用了最新的 Vue3.2 setup 语法",
+          iconName: 'vue',
+          title: 'Vue3',
+          description: '使用了最新的 Vue3.2 setup 语法',
         },
         {
-          iconName: "vite",
-          title: "Vite3",
-          description: "官网基于 Vite3.x 构建",
+          iconName: 'vite',
+          title: 'Vite3',
+          description: '官网基于 Vite3.x 构建',
         },
         {
-          iconName: "ts",
-          title: "TypeScript",
-          description: "源代码采用了 TypeScript 编写",
+          iconName: 'ts',
+          title: 'TypeScript',
+          description: '源代码采用了 TypeScript 编写',
         },
 
         {
-          iconName: "gj",
-          title: "文档完整",
-          description: "所有组件拥有完整的使用文档及示例",
+          iconName: 'gj',
+          title: '文档完整',
+          description: '所有组件拥有完整的使用文档及示例',
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -143,8 +143,8 @@ $color: #039994;
       justify-content: flex-start;
       align-content: space-between;
       grid-template-areas:
-        "icon title"
-        "icon text";
+        'icon title'
+        'icon text';
       grid-template-columns: 80px auto;
       grid-template-rows: 1fr 1fr;
       color: var(--yun-text-color-1);

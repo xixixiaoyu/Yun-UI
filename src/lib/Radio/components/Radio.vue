@@ -23,7 +23,7 @@ defineProps({
   block: {
     type: Boolean,
     default: () => {
-      return false;
+      return false
     },
   },
   iconable: {
@@ -33,17 +33,17 @@ defineProps({
   checked: {
     type: Boolean,
   },
-});
-const emit = defineEmits(["update:checked"]);
+})
+const emit = defineEmits(['update:checked'])
 const setChecked = () => {
-  emit("update:checked");
-};
+  emit('update:checked')
+}
 </script>
 
 <script lang="ts">
 export default {
-  name: "Radio",
-};
+  name: 'Radio',
+}
 </script>
 
 <style lang="scss">

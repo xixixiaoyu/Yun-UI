@@ -3,23 +3,23 @@
 </template>
 
 <script lang="ts">
-import { ref, provide } from "vue";
-import { router } from "./router";
+import { ref, provide } from 'vue'
+import { router } from './router'
 export default {
-  name: "App",
+  name: 'App',
   setup() {
-    const width = document.documentElement.clientWidth;
-    const menuVisible = ref(width <= 500 ? false : true);
-    provide("menuVisible", menuVisible); // set
+    const width = document.documentElement.clientWidth
+    const menuVisible = ref(width <= 500 ? false : true)
+    provide('menuVisible', menuVisible) // set
     router.afterEach(() => {
       if (width <= 500) {
-        menuVisible.value = false;
+        menuVisible.value = false
       }
-    });
+    })
   },
-};
+}
 </script>
 
 <style lang="scss">
-@import "prismjs/themes/prism-solarizedlight.css";
+@import 'prismjs/themes/prism-solarizedlight.css';
 </style>

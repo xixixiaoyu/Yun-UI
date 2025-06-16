@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { CountDown } from "../../lib/index";
-const countDown = ref(10);
+import { ref } from 'vue'
+import { CountDown } from '../../lib/index'
+const countDown = ref(10)
 </script>

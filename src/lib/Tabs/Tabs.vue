@@ -9,7 +9,7 @@
         @click="select(tab.title)"
         :ref="
           (el) => {
-            if (tab.title === selected) selectedItem = el;
+            if (tab.title === selected) selectedItem = el
           }
         "
       >
@@ -24,52 +24,52 @@
 </template>
 
 <script>
-import { computed, ref, watchEffect } from "vue";
-import Tab from "./Tab.vue";
+import { computed, ref, watchEffect } from 'vue'
+import Tab from './Tab.vue'
 export default {
-  name: "YunTabs",
+  name: 'YunTabs',
   props: {
     selected: {
       type: String,
     },
   },
   setup(props, context) {
-    const selectedItem = ref(null);
-    const indicator = ref(null);
-    const container = ref(null);
+    const selectedItem = ref(null)
+    const indicator = ref(null)
+    const container = ref(null)
 
     watchEffect(
       () => {
-        const { width } = selectedItem.value.getBoundingClientRect();
-        indicator.value.style.width = width + "px";
-        const { left: left1 } = container.value.getBoundingClientRect();
-        const { left: left2 } = selectedItem.value.getBoundingClientRect();
-        const left = left2 - left1;
-        indicator.value.style.left = left + "px";
+        const { width } = selectedItem.value.getBoundingClientRect()
+        indicator.value.style.width = width + 'px'
+        const { left: left1 } = container.value.getBoundingClientRect()
+        const { left: left2 } = selectedItem.value.getBoundingClientRect()
+        const left = left2 - left1
+        indicator.value.style.left = left + 'px'
       },
-      { flush: "post" }
-    );
+      { flush: 'post' }
+    )
 
-    const defaults = context?.slots?.default();
+    const defaults = context?.slots?.default()
 
     const subElements = defaults.map((tag) => ({
       title: tag.props.title,
-      disabled: tag.props.disabled === true || tag.props.disabled === "",
-    }));
+      disabled: tag.props.disabled === true || tag.props.disabled === '',
+    }))
 
     defaults.forEach((tag) => {
       if (tag.type.name !== Tab.name) {
-        throw new Error("Tabs 子标签必须是 Tab");
+        throw new Error('Tabs 子标签必须是 Tab')
       }
-    });
+    })
 
     const current = computed(() => {
-      return defaults.find((tag) => tag.props.title === props.selected);
-    });
+      return defaults.find((tag) => tag.props.title === props.selected)
+    })
 
     const select = (title) => {
-      context.emit("update:selected", title);
-    };
+      context.emit('update:selected', title)
+    }
     return {
       defaults,
       select,
@@ -78,13 +78,13 @@ export default {
       container,
       current,
       subElements,
-    };
+    }
   },
-};
+}
 </script>
 
 <style lang="scss">
-@import "../style/common.scss";
+@import '../style/common.scss';
 
 $blue: #40a9ff;
 $color: #333;
