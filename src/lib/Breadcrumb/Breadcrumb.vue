@@ -43,35 +43,35 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from "vue";
-import { useToPage } from "../hooks/index.ts";
+import { PropType } from 'vue'
+import { useToPage } from '../hooks/index'
 
-const yunTo = useToPage();
+const yunTo = useToPage()
 type Options = {
-  label: string;
-  to: string;
-  active: boolean;
-};
+  label: string
+  to: string
+  active: boolean
+}
 defineProps({
   options: {
     type: Array as PropType<Options[]>,
     default() {
-      return [];
+      return []
     },
   },
   iconType: {
     type: String,
     default() {
-      return "sprit"; // shoulder ｜ sprit
+      return 'sprit' // shoulder ｜ sprit
     },
   },
-});
+})
 </script>
 
 <script lang="ts">
 export default {
-  name: "BreadCrumb",
-};
+  name: 'BreadCrumb',
+}
 </script>
 
 <style lang="scss" scoped>

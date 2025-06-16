@@ -1,40 +1,45 @@
-import { md } from "./plugins/md";
-import fs from "fs";
-import path from "path";
-import { baseParse, ElementNode } from "@vue/compiler-core";
-import { defineConfig } from "vite";
-import { searchTagContent } from "./src/utils";
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
-import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
-import compressPlugin from "vite-plugin-compression";
+import { md } from './plugins/md'
+import fs from 'fs'
+import path from 'path'
+import { baseParse, ElementNode } from '@vue/compiler-core'
+import { defineConfig } from 'vite'
+import { searchTagContent } from './src/utils'
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import compressPlugin from 'vite-plugin-compression'
 
 type FindElementType = {
-  tag: string;
-} & ElementNode;
+  tag: string
+} & ElementNode
 const yunDemoParse = {
-  name: "yun-demo-parse",
+  name: 'yun-demo-parse',
+  server: {
+    port: 8888, // 修改为你想要的端口号
+    host: true, // 可选：允许外部访问
+    open: true, // 可选：自动打开浏览器
+  },
   transform(code: string, id: string) {
-    if (!/vue&type=demo/.test(id)) return;
-    const title = searchTagContent(code, "title") || code;
-    const description = searchTagContent(code, "desc");
-    const file = fs.readFileSync(id.split("?")[0]).toString();
-    const parsed = baseParse(file).children.find((n: FindElementType) => n.tag === "demo");
-    const main = file.split(parsed.loc.source).join("").trim();
-    const sourceCode = main;
+    if (!/vue&type=demo/.test(id)) return
+    const title = searchTagContent(code, 'title') || code
+    const description = searchTagContent(code, 'desc')
+    const file = fs.readFileSync(id.split('?')[0]).toString()
+    const parsed = baseParse(file).children.find((n: FindElementType) => n.tag === 'demo')
+    const main = file.split(parsed.loc.source).join('').trim()
+    const sourceCode = main
     return `export default Comp => {
       Comp.__sourceCode = ${JSON.stringify(sourceCode)}
       Comp.__sourceCodeTitle = ${JSON.stringify(title)}
       Comp.__sourceDescription = ${JSON.stringify(description)}
-    }`;
+    }`
   },
-};
+}
 
 export default defineConfig({
   build: {
-    assetsDir: "assets",
+    assetsDir: 'assets',
   },
-  base: "./",
+  base: './',
   plugins: [
     md(),
     vue(),
@@ -42,20 +47,20 @@ export default defineConfig({
     vueJsx(),
     createSvgIconsPlugin({
       // 指定需要缓存的图标文件夹
-      iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
       // 指定symbolId格式
-      symbolId: "icon-[name]",
+      symbolId: 'icon-[name]',
     }),
     // compressPlugin开启gzip压缩
     compressPlugin({
-      ext: ".gz",
+      ext: '.gz',
       deleteOriginFile: false, // 是否删除原始文件
     }),
   ],
   resolve: {
     alias: {
-      "yun-ui": path.resolve("lib"),
-      "@": path.resolve(__dirname, "src"),
+      'yun-ui': path.resolve('lib'),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
-});
+})

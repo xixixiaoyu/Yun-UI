@@ -1,43 +1,56 @@
-<script lang="jsx">
-export default {
-  name: "YunSteps",
-  props: {
-    active: {
-      type: Number,
-      default: 1,
-    },
-  },
-  render() {
-    // 1. 获取到默认插槽的节点
-    const items = this.$slots.default();
-    // 2. 获取所有的动态生成的XtxStepsItem组件节点
-    const dymanicItems = [];
-    items.forEach((item) => {
-      if (item.type.name === "YunStepsItem") {
-        dymanicItems.push(item);
-      } else {
-        item.children.forEach((item) => {
-          dymanicItems.push(item);
-        });
-      }
-    });
+<template>
+  <div class="xtx-steps">
+    <div
+      v-for="(item, i) in stepItems"
+      :key="i"
+      :class="{ active: i < active, 'xtx-steps-item': true }"
+    >
+      <div class="step">
+        <span>{{ i + 1 }}</span>
+      </div>
+      <div class="title">{{ item.title }}</div>
+      <div class="desc">{{ item.desc }}</div>
+    </div>
+  </div>
+</template>
 
-    // 3. 根据动态节点生成 item 的jsx对象
-    const itemsJsx = dymanicItems.map((item, i) => {
-      return (
-        <div class={{ active: i < this.active, "xtx-steps-item": true }}>
-          <div class="step">
-            <span>{i + 1}</span>
-          </div>
-          <div class="title">{item.props.title}</div>
-          <div class="desc">{item.props.desc}</div>
-        </div>
-      );
-    });
-    // 4. 插入大容器中
-    return <div class="xtx-steps">{itemsJsx}</div>;
-  },
-};
+<script setup lang="ts">
+import { computed, useSlots } from 'vue'
+
+interface Props {
+  active?: number
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  active: 1,
+})
+
+const slots = useSlots()
+
+const stepItems = computed(() => {
+  const items = slots.default?.() || []
+  const dynamicItems: any[] = []
+
+  items.forEach((item) => {
+    if (item.type?.name === 'YunStepsItem') {
+      dynamicItems.push(item.props)
+    } else if (item.children) {
+      item.children.forEach((child: any) => {
+        if (child.props) {
+          dynamicItems.push(child.props)
+        }
+      })
+    }
+  })
+
+  return dynamicItems
+})
+</script>
+
+<script lang="ts">
+export default {
+  name: 'YunSteps',
+}
 </script>
 
 <style lang="scss">
@@ -93,7 +106,7 @@ export default {
       }
       &::after,
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 23px;
         width: 50%;

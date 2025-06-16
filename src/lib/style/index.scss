@@ -1,0 +1,12 @@
+// Yun-UI 样式入口文件
+
+// 基础样式
+@import './reset.scss';
+@import './var.scss';
+@import './common.scss';
+@import './yun.scss';
+
+// 第三方依赖样式
+@import 'tippy.js/dist/tippy.css';
+@import 'tippy.js/animations/shift-away-subtle.css';
+@import 'tippy.js/themes/light.css';
