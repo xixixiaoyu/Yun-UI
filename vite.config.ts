@@ -14,11 +14,6 @@ type FindElementType = {
 } & ElementNode
 const yunDemoParse = {
   name: 'yun-demo-parse',
-  server: {
-    port: 8888, // 修改为你想要的端口号
-    host: true, // 可选：允许外部访问
-    open: true, // 可选：自动打开浏览器
-  },
   transform(code: string, id: string) {
     if (!/vue&type=demo/.test(id)) return
     const title = searchTagContent(code, 'title') || code
@@ -36,6 +31,11 @@ const yunDemoParse = {
 }
 
 export default defineConfig({
+  server: {
+    port: 8888, // 默认启动端口
+    host: true, // 允许外部访问
+    open: true, // 自动打开浏览器
+  },
   build: {
     assetsDir: 'assets',
   },
