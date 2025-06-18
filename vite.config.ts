@@ -39,7 +39,7 @@ export default defineConfig({
   build: {
     assetsDir: 'assets',
   },
-  base: process.env.NODE_ENV === 'production' ? '/Yun-UI/' : './',
+  base: process.env.NODE_ENV === 'production' ? '/Yun-UI/' : '//',
   plugins: [
     md(),
     vue(),
