@@ -40,7 +40,7 @@ import { inject, onMounted } from 'vue'
 import { LogoGithub, MoonOutline, SunnyOutline } from '@vicons/ionicons5'
 import { Icon } from '@vicons/utils'
 import { useRoute, useRouter } from 'vue-router'
-import { Toast } from '../lib/directives'
+import { Toast } from '../lib/Directives'
 
 const router = useRouter()
 const route = useRoute()
