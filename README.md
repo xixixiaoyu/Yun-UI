@@ -8,7 +8,7 @@
   <strong>一个现代化的 Vue 3 组件库</strong>
 </p>
 
-<img src="https://cdn.nlark.com/yuque/0/2025/png/21596389/1750091450494-1f2a2e8f-a499-4f09-b4d3-844ab274afe0.png?x-oss-process=image%2Fformat%2Cwebp">
+<img src="https://cdn.nlark.com/yuque/0/2025/png/21596389/1750255917806-58a7ad70-c5a7-4901-830a-675e648ec999.png?x-oss-process=image%2Fformat%2Cwebp">
 
 <img src="https://cdn.nlark.com/yuque/0/2025/png/21596389/1750091665211-bed83012-9e33-47e1-a9ec-4c900f6f19b0.png?x-oss-process=image%2Fformat%2Cwebp">
 
