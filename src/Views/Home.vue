@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import Topnav from '../components/Topnav.vue'
+import Topnav from '../components/TopNav.vue'
 import Icon from '../lib/Icon/Icon.vue'
 import Main from './Main.vue'
 export default {
