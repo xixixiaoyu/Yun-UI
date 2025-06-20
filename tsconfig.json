@@ -5,6 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "allowJs": true,
 
     /* Bundler mode */
     "moduleResolution": "node",
@@ -28,12 +29,11 @@
       "yun-ui": ["src/lib"]
     },
 
-    /* Declaration */
-    "declaration": true,
-    "declarationMap": true,
-    "outDir": "dist"
+    /* Declaration - only for build */
+    "declaration": false,
+    "declarationMap": false
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "exclude": ["node_modules", "dist", "**/*.demo.vue", "**/*.test.*"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules", "dist", "**/*.demo.vue", "**/*.test.*", "src/utils"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
