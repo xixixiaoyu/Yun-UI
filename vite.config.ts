@@ -35,11 +35,12 @@ export default defineConfig({
     port: 8888, // 默认启动端口
     host: true, // 允许外部访问
     open: true, // 自动打开浏览器
+    cors: true, // 启用 CORS
   },
   build: {
     assetsDir: 'assets',
   },
-  base: process.env.NODE_ENV === 'production' ? '/Yun-UI/' : '//',
+  base: process.env.NODE_ENV === 'production' ? '/Yun-UI/' : '/',
   plugins: [
     md(),
     vue(),
