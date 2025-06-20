@@ -36,6 +36,7 @@ jobs:
         run: pnpm run build:demo
         env:
           NODE_ENV: production
+          CLOUDFLARE_PAGES: true
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1

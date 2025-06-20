@@ -12,3 +12,4 @@ build_output_dir = "dist"
 # 环境变量
 [env.production.vars]
 NODE_ENV = "production"
+CLOUDFLARE_PAGES = "true"

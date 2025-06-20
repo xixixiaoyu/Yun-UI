@@ -52,8 +52,8 @@
     "type-check": "vue-tsc --noEmit",
     "quality": "npm run format && npm run lint && npm run type-check",
     "quality:fix": "npm run format && npm run lint:fix && npm run type-check",
-    "deploy:cf": "npm run build:demo && wrangler pages deploy dist",
-    "deploy:cf:preview": "npm run build:demo && wrangler pages deploy dist --compatibility-date=2024-01-01"
+    "deploy:cf": "cross-env CLOUDFLARE_PAGES=true NODE_ENV=production npm run build:demo && wrangler pages deploy dist",
+    "deploy:cf:preview": "cross-env CLOUDFLARE_PAGES=true NODE_ENV=production npm run build:demo && wrangler pages deploy dist --compatibility-date=2024-01-01"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
@@ -79,6 +79,7 @@
     "@vue/eslint-config-typescript": "^14.5.0",
     "autoprefixer": "10.4.2",
     "axios": "^0.26.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.1",
