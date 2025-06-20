@@ -2,13 +2,7 @@
   "name": "yun-ui",
   "version": "1.0.0",
   "description": "一个现代化的 Vue 3 组件库",
-  "keywords": [
-    "vue",
-    "vue3",
-    "component",
-    "ui",
-    "frontend"
-  ],
+  "keywords": ["vue", "vue3", "component", "ui", "frontend"],
   "author": "Yun",
   "license": "MIT",
   "homepage": "https://github.com/yunmu/yun-ui#readme",
@@ -33,11 +27,7 @@
     "./dist/style.css": "./dist/style.css",
     "./style.css": "./dist/style.css"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
+  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "dev": "vite",
     "build": "vite build --config vite.lib.config.ts",
@@ -52,8 +42,7 @@
     "type-check": "vue-tsc --noEmit",
     "quality": "npm run format && npm run lint && npm run type-check",
     "quality:fix": "npm run format && npm run lint:fix && npm run type-check",
-    "deploy:cf": "cross-env CLOUDFLARE_PAGES=true NODE_ENV=production npm run build:demo && wrangler pages deploy dist",
-    "deploy:cf:preview": "cross-env CLOUDFLARE_PAGES=true NODE_ENV=production npm run build:demo && wrangler pages deploy dist --compatibility-date=2024-01-01"
+    "deploy": "cross-env CLOUDFLARE_PAGES=true NODE_ENV=production npm run build:demo && wrangler pages deploy dist"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
