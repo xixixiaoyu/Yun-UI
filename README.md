@@ -81,6 +81,44 @@ pnpm build
 
 # 构建演示站点
 pnpm build:demo
+
+# 部署到 Cloudflare Pages
+pnpm run deploy:cf
+```
+
+## 🌐 部署
+
+### Cloudflare Pages
+
+本项目已配置支持 Cloudflare Pages 部署，提供全球 CDN 加速。
+
+**快速部署：**
+1. Fork 本仓库到你的 GitHub 账户
+2. 在 [Cloudflare Dashboard](https://dash.cloudflare.com/) 创建 Pages 项目
+3. 连接 GitHub 仓库，使用以下构建设置：
+   - 构建命令：`npm run build:demo`
+   - 构建输出目录：`dist`
+   - 环境变量：`NODE_ENV=production`, `CLOUDFLARE_PAGES=true`
+
+**本地部署：**
+```bash
+# 安装 Wrangler CLI
+npm install -g wrangler
+
+# 登录 Cloudflare
+wrangler login
+
+# 部署
+pnpm run deploy:cf
+```
+
+详细部署指南请查看 [CLOUDFLARE_DEPLOYMENT.md](./CLOUDFLARE_DEPLOYMENT.md)
+
+### GitHub Pages
+
+传统的 GitHub Pages 部署仍然支持：
+```bash
+./deploy.sh
 ```
 
 ## 📄 许可证

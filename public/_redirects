@@ -1,0 +1,3 @@
+# Cloudflare Pages SPA 路由重定向
+# 所有非文件请求都重定向到 index.html
+/*    /index.html   200

@@ -39,8 +39,15 @@ export default defineConfig({
   },
   build: {
     assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue', 'vue-router'],
+        },
+      },
+    },
   },
-  base: process.env.NODE_ENV === 'production' ? '/Yun-UI/' : '/',
+  base: process.env.CLOUDFLARE_PAGES ? '/' : (process.env.NODE_ENV === 'production' ? '/Yun-UI/' : '/'),
   plugins: [
     md(),
     vue(),

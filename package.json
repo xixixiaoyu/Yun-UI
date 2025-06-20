@@ -51,7 +51,9 @@
     "format:check": "prettier --check .",
     "type-check": "vue-tsc --noEmit",
     "quality": "npm run format && npm run lint && npm run type-check",
-    "quality:fix": "npm run format && npm run lint:fix && npm run type-check"
+    "quality:fix": "npm run format && npm run lint:fix && npm run type-check",
+    "deploy:cf": "npm run build:demo && wrangler pages deploy dist",
+    "deploy:cf:preview": "npm run build:demo && wrangler pages deploy dist --compatibility-date=2024-01-01"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
@@ -95,7 +97,8 @@
     "vite-plugin-svg-icons": "2.0.1",
     "vue": "^3.2.31",
     "vue-router": "4.0.0-beta.3",
-    "vue-tsc": "^2.2.10"
+    "vue-tsc": "^2.2.10",
+    "wrangler": "^3.0.0"
   },
   "engines": {
     "node": ">=14",
